@@ -1,0 +1,45 @@
+STEP-2:  Plotting objective function:
+		Max z= 3x1 - x2
+
+Assuming Z=3 we get
+	3 = 3.x1 - x2  
+
+	i)	 For point P1 put x1=2: 
+		3 = 3(2) - x2
+		-3=-x2
+		x2= 3
+		(x1,x2)= (2,3)
+
+	ii)	For point P2 put x2=0: 
+		3 = 3x1 - 0
+		3=3x1
+		x1= 1
+		(x1,x2)= (1,0)
+
+Join these Points to form O.F's Line
+Since we see that moving this Line in outward direction, the line overlaps the equation line of Cons#1
+Hence we can say all points lying on cons#1 line will be the optimal solution points let's prove it:
+	As Point B(3,3) & C(2,0) also lie on this line so we will put both for finding optimal value:
+		  Max z= 3x1 - x2
+		putting point B(3,3) we get:
+		  z= 3(3)-3
+		  z= 9-3
+		  z=6
+
+		 Max z= 3x1 - x2
+		putting point C(2,0) we get:
+		  z= 3(2)-0
+		  z= 6-0
+		  z=6
+	Let's take Another point X(2.6,1.8) lying on this line for checking too:
+		 Max z= 3x1 - x2
+		putting point X(2.6,1.8) we get:
+		  z= 3(2.6)-1.8
+		  z= 7.8-1.8
+		  z=6
+
+Since the Value of O.F we get For each at these points is 6 hence 
+	6 is the optimal value But O.F has many Optimal Points.
+
+
+

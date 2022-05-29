@@ -1,0 +1,2454 @@
+OR approach for problem solving: 
+
+			this process is a feedback/ we can say bit how iterative.
+==> it is flexible , we can revise previous steps if management is not satisfied with sth
+in this way we can optimise our results .
+==> it is a complete feedback loop/ on-going process.
+
+==================================
+1. observation: problem should be observed
+2. problem definition:
+		problem should be cleared.wrong problem clerance lead to wrong decisions. 
+
+Mathematical model:
+==>the set of mathematical equations.
+3. Model Construction:
+consider a business firm that sells a product. The product costs $5 to produce and sells for 20$
+then a model that computes that total profit that will accrue from the items sold is :
+     >>   Z=   $20x-$5x    //x is number of items sold. & Z= total profit.
+==>   This equation can be called as functional relationship. i.e (Z is function of x)
+4. Model Solutions:
+==> Once models have been  constructed in management science, they are solved using management 
+science techniques.
+5. Implementation. TO put something in use/ to actually utilize something
+   ==> It is actual use of a model once it has been developed, if this process(implementation) is not done then , the  
+efforts and resources used in development will be wasted.
+
+
+=> OR is "Scienece for better/decision making".
+plays role in managerial decision making
+=> allows better decisions, better systems, better setups.
+
+===============
+Mathematical programming:
+
+Set of mathematical steps written one after another , used to find optimal soltion to a problem.
+that describes how to use set of resources in efficient way for better of management.
+==>resources impose limitations. e.g hard ware resources have quantity. 10gb,256gb,tc.we can not store more 
+than this limit.
+==> for a single problem there wil be many solutions, but this not fact that all will be best for us the best of
+all will be the that is most/feasible/optimal solution to the mathematical model.
+
+
+Linear Programming:
+   it requires all the mathemtical functions in the mathematical model should be linear in nature.
+highestdegree one.
+==> programming model: solution technique consists of predetermined steps.that is a program.
+
+
+
+
+============================
+Date 14/01/2021
+Model Formulation: 
+  three characteristsics of lP:
+   1. decision variable/ unknowns in mathematucal model(MM) / independent variables:     
+       ==> defining unknowns
+   2. Objective function: => in a LP model reprents objective/goal int terms of desicion variables of a business firm.
+   3. model constraints : 
+
+***
+Every business firm has some set of resources and these resources have limited quantity.
+
+===========
+Model Formulation: Example case study:
+  About company , its owner, what they do/produce
+  what kind of resources company uses i.e labor,clay but resources are limited as we know, so here it has also 
+ restrictions.,company thinking how to get best possible profit(this is objective function) using resoures at
+ maximum depending upon avaiablity.
+ =====> unit should be used the same as it is given in case study i.e hour,minutes etc.
+
+========================
+//Model Construction: 
+========================
+Case study #1
+Step-1 : Defining decision variables:
+	here they are : quatity of bowls and mugs.
+	Z = 40$/bowl + 50$/mugs
+Step-2: Formulating objective function:
+	Objective is to maximize profit.
+    Total Profit => maximize Z=  40.x1(bowls)  +50.x2(no of mugs daily produced)
+////15/01/2021
+Step-3: Formulating Model constraints
+	contraint#1: labor constraint:
+			as total avaialable labor=40 hrs each day
+	labor constraint= 1.x1 + 2.x2  <=40
+
+	constraint#2 clay constraint:
+             total available clay 120 pounds(lbs) each day
+	clay constraint= 4.x1 +  3.x2	<= 120
+
+	constrait#3 non-negativity constraint 
+           :-> that is x,x2>=0
+=============================================================0
+
+So the complete LP model:_
+      maximize Z= $40x1 + 50x2
+subject to
+ 1x1+2x2 <=40
+ 4x1+3x2 <=120
+    x1,x2>=0
+=======================================================0
+
+
+
+=========================================
+ Case study#2: Astro and Cosmo tv sets:
+===========================================
+      Model construction:
+	
+	Step-1: defining Decision-variables			
+	 
+	 * let A be the units of Astro tv sets to be produced per day		
+	 * let C be the units of Cosmo tv sets to be produced per day		
+
+	Step-2: formulating objective function. : goal is to maximize profit
+		maximize Z = 20.A + 30.c
+	
+	Step-3: formulating model constraints:
+           constraint#1: DEPT A (labor constraint)
+		labor constraint: 1A + 2C  <= 120
+
+	   constraint#2: DEPT B(labor constraint)
+		labor constraint: 1A + 1C <= 90
+		
+	   constraint#3 Astro production line
+		A<=70
+	   constraint#4 Cosmo production line
+    		C<=50
+
+
+
+
+Complete LP model of Astro/Cosmo:
+     maximize Z = 20A + 30C
+subject to:
+     A+2C<= 120
+     A+C<=90
+     A<=70
+     C<=50
+     A,C>=0    //this constraint is added every time.
+
+
+18/01/2021:
+=========================
+"can not fall more than 10% below goal of 150 hours"= 150- 10%(150)=150-15=135
+at least 135 hours can be used for testing.
+
+case study#4 E-9s and F-9s problem
+step-1: defining the decision variables:
+	let E be the no of e-9 equipments to be produced by company during next month.
+	let F /////////////f-9/////////////////////////
+
+step-2: formulating objective function:
+goal= to sell each e-9=5000$ & f-9=4000$
+	maximize Z= 5000.E + 4000.F
+
+
+step-3: formulating constraints:
+	const#1 labor hour constraint for dept-A:
+		10.E + 15.F <= 150	
+	
+	const#2 labor hour constraint for dept-B:
+		20.E + 10.F <= 160
+
+	constraint#3: Testing constraint:
+		30.E + 10.F >=135
+
+	cons#4:  Ratio constraint   (H/W)
+		F >= 1/3 E
+		or E <=3F
+		or E-3F <=0
+
+	cons#5: combination constraint
+		E+F>=5
+
+	cons#6: non-negativity constraint
+		E,F>=0
+
+Complete lp-model:
+    Maximize Z= 5000.E + 4000.F
+	subject to:
+   
+10.E + 15.F <= 150    ......(i)
+20.E + 10.F <= 160	......(ii)
+30.E + 10.F >=135	......(iii)
+E-3F <=0		......(iv)
+E+F>=5			......(v)
+E,F>=0			......(vi)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If we have cost data then OF(objective function) willbe minimize Z;
+but if we have profit data then OF willbe maximize Z
+
+=============================================================
+case-study#5:   A blending problem of Gruel(a food)  : Total Gruels=4 each of 16 ounces(oz)
+===========================================================
+	step-1:  defining decision variables:
+description: since there are 4-gruels to be belended in such a way so as to fulfill the regular diet
+	   	, requirements, while minimizing the cost, thereforethe four decision variables 
+			represent the proportion of each gruel in 16-ounce can of food.
+ 
+		let x1 denote proportion of gruel 1 in a 16-ounce can of food
+		let x2 denote proportion of gruel 2 in a 16-ounce can of food
+		let x3 denote proportion of gruel 3 in a 16-ounce can of food
+		let x4 denote proportion of gruel 4 in a 16-ounce can of food
+we have to make a can in different proportion of each gruel such that sum of all proportions=16
+so there can be many possible proportion like: 
+Rough: 1 can= 16 ounce
+	possibility #1:
+	1/4 + 1/4 +1/4 +1/4(1-forth of gruel-4 in 16 ounce) =1 (can)     //1-fourth of 16=>  1/4 x 16= 4 ounces
+//->    4 + 4 + 4 + 4 = 16 (16 onces of new can)
+
+	possibility #2:
+	1/2 + 1/4 +1/4 +0 = 1
+->    	8 + 4 + 4 + 0=16(new can)
+and many more possiblities
+
+	step-2:  formulating objective function:
+description: The objective of company is to formulate a least-cost can of food statisfying the 
+		requirements.		
+
+
+Rough:   price of a proportion of 1/4 for gruel-1: 4 x 1/4(proportion) = 1$(price)
+				similar we saw <	W<ly  for proportion x->   : price= 4 x x1  
+		Minimize Cost=  4x1 + 6x2 + 3x3 + 2x4
+
+	step-3: formulating constraints:(H/W)
+		constraint#1: protein constraint:
+		        3x1 + 5x2 + 2x3 + 3x4 >=3 (at least protein)			
+
+		constraint#2: carbohydrates constraint:
+			7x1 + 4x2 + 2x3 + 8x4 >=5
+		      	
+		constraint#3: fat contents constraint:
+			5x1 + 6x2 + 6x3 + 2x4 >=4
+
+		constraint#4: constraint for ensuring formulation of 1-can of food(16-ounces):
+			x1+x2+x3+x4 =1
+
+		constraint#5: non-negativity constraint:
+			x1,x2,x3,x4>=0
+===========================================================================
+Complete Lp-Model:
+===========================================================================
+	minimize cost=  4x1 + 6x2 + 3x3 + 2x4   
+subject to: 
+protein constraint:		3x1 + 5x2 + 2x3 + 3x4 >=3		-----> (i)
+carbohydrates constraint:	7x1 + 4x2 + 2x3 + 8x4 >=5		-----> (ii)
+fat contents constraint:	5x1 + 6x2 + 6x3 + 2x4 >=4		-----> (iii)
+ensure formulation constaint:   x1+x2+x3+x4 =1				-----> (iv)
+non-negativity constraint:	x1,x2,x3,x4>=0				-----> (v)
+
+
+
+21/01/2021.
+============================================
+Feasible Solution:
+	A solution to a LP which satisfies all constraints including non-negativity constraint.
+
+Optimal Solution: 
+	A feasible solution with the largest objective function value (for a maximization problem)
+	and has smallest OF value (minimization problem)
+	* Here this value is called Optimal value.
+E.g of optimal problem: find values of variables that minimize or maximize the objective function while
+	satisfying constraints.
+
+
+Infeasible Solution:
+	A solution to a LP which violates at least one constraint including non-negativity constraint.
+	They are of no use and are discarded.
+
+==========================================================
+Example of feasible , optimal & infeasible solutions:
+==========================================================
+Complete lp-model:
+    Maximize Z= 5000.E + 4000.F
+	subject to:
+   
+10.E + 15.F <= 150    ......(i)
+20.E + 10.F <= 160	......(ii)
+30.E + 10.F >=135	......(iii)
+E-3F <=0		......(iv)
+E+F>=5			......(v)
+E,F>=0			......(vi)
+
+Trail Points:
+1  let E= 6 , F=5        (Infeasible solution: does not satisfies 2nd constraint)
+2. let let E= 5 , F=4	 (feasible solution)   Z= 25000+  16000= 41000
+3. let let E= 6 , F=4	 (feasible solution)   Z= 30000+  16000= 46000
+
+
+
+
+
+
+
+
+
+22/01/2021
+=======================================================
+case study#6  : Flair FURNITURE Company case study(CS)
+=======================================================
+Two Depertments: Carpentary dept (total hours= 240), Painting and varnishing dept (total hours=100)
+Constructing LP model:
+	step-1: identifying decision variables:
+		T= let T be the no of tables to be produced per week
+		C= let C be the no of chairs to be produced per week
+
+	step2: formulating objective function:
+	per table= $70 profit & per chair= $50
+		maximize profit(Z)= $70.T + $50.C
+
+
+	step3- formulating constraints:
+		constraint#1. Carpentary Constraint:
+			4.T + 3.C <= 240
+		
+		constraint#2. Painting and varnishingConstraint:
+			2.T + 1.C <= 100(hours of painting and vanishing )
+		
+   		constraint#3: Non-negativity Constraint:
+			T,C>=0
+
+Complete LP Model:
+    maximize profit(Z)= $70.T + &50.C
+subject to:
+	4.T + 3.C <= 240(Carpentary Constraint)
+	2.T + 1.C <= 100(Painting and varnishing Constraint)
+	T,C>=0(Non-negativity Constraint)
+
+
+
+
+Graphical Method For solving LP models:
+=========================================
+=>easiest way to solve lp model graphically.
+=>applicable to models having exact 2 decision variables.
+=>provides valuable insight into how other approaches work.
+=>non-ve constraints mean that we are always working in the first (or northeast)
+	quadrant of a graph.(i.e 1st quadrant)
+
+
+So the solution space is considered in 1st qudrant bcz of non -ve constraint, that's y technique 
+  is restricted upto 2 decision variables.
+
+
+
+
+1/25/2021
+========================================================================================
+
+step-1: Plot each constraint as an equation and then decide which side of the line is feasible (if its an inequality.)
+step-2: find the feasible region. 
+step-3: find the co-ordinates of the corner(extreme) points of the feasible region.
+step-4: substitute the corner point coordinates in the objective function. 
+step-5: choose the optimal solution.     
+
+
+step1- Plotting each constraint of LP model as equation on graph:
+	Constraint#1: Carpentary Constraint:
+		4.T + 3.C <= 240
+	after converting it into equality(for plotting it on graph)
+		4.T + 3.C =240
+step-2: solve for the axis intercepts and draw the line i.e in order to plot this equation on graph
+		we need at least two points P1 & P2
+Contraint#1:
+
+	to identify point P1, put T=0
+		4(0) + 3.C =240
+		3.C = 240
+		C= 80
+		Hence P1(T,C)= (0,80)
+	to identify point P2, put C=0
+		4.T + 3(0) =240
+		4.T = 240
+		T= 60
+		Hence P1(T,C)= (60,0)
+
+
+
+1/27/2021
+========================================================================================
+continueing previous model solution:
+========================================================================================
+	we take origin(0,0) as a trial point
+=>Take (0,0) as trial point in constraint#1 to identify its feasible region on the graph.
+ 			4T + 3C  <=240
+			0+0 <=240
+       			0<=240(constraint is satisfied)
+    since point below line(i.e origin) is satisfying the costraint's inequality hence
+	feasible region for cons#1 is downward. 
+
+
+Contraint#2:   Painting and varnishing Constraint
+    2T + 1.C <=100
+  in equality:
+	 2T + 1.C =100
+
+	to identify point P1, put T=0
+		2(0) + 1.C =100
+		1.C = 100
+		C= 100
+		Hence P1(T,C)= (0,100)
+	to identify point P2, put C=0
+		2.T + 1(0) =100
+		2.T = 100
+		T= 50
+		Hence P1(T,C)= (50,0)
+
+Take (0,0) as trial point in constraint#2 to identif its feasible region pon the graph.
+ 			2T + 1C  <=100
+			0+0 <=100
+       			0<=100(constraint is satisfied)
+    since point below line(i.e origin) is satisfying the costraint's inequality hence
+	feasible region for cons#2 is downward. (we will give an arrow downward from the equation's line)
+
+
+
+1/29/2021
+=================================================
+continueing previous solution
+      PLOTTING OBJECTIVE FUNCTION ON GRAPH
+     Max Z= $70T + $50C
+Note: There are three unknowns i.e Z, T & C in-order to compute points P1 & P2:
+	=> Assume profit value or Z= $2,100   
+Note: (i) (Any value can be assumed for which points will contain integer values like here p1(30,0) p2(0,42) )
+		and donot answer in decimal points as it increases inaccuracy.
+      (ii) If for our assumed value the line formed by join of p1 & p2	is outward of feasible region then we 
+		will move this line in inward direction(keeping slope constant) the very first point feasible region 
+		touched by this moving line will be optimal point. 
+	=> The Objective function willbe 	2100=  70T + 50C
+	for P1 put C=0
+	2100 = 70T + 0
+	(T,C)= (30,0).........(i)
+
+	for P2 put T=0
+	2100 = 0 + 50C
+	(T,C)= (0,42).........(ii)
+
+The last point the line touches before leaving feasible solution will be the optimal point.
+ so the C(30,40) is optimal solution.
+now we will put it in Objective function equation:
+		Z = 70T + 50C
+		Z=  70(30)+ 50(40)
+		Z=  2100+2000= 4100
+		Z= 4100 is the optimal value
+===========================================================
+	Solution:
+		P(30,40) [Optimal Solution point]
+		Z= $4100 [Optimal Value]
+(we will place this solution in rectangle like this)
+============================================================
+Alternative method for finding co-ordinatal-points of optimal point.
+
+As from C(30,40) two lines are being passed through i.e cons#1 equation & cons2'equation
+	cons#1 Carpentary Constraint eq:   		4T + 3C = 240
+	cons#2 Painting and varnishing Constraint eq:   2T + 1C = 100
+	
+This method is used when the optimal solution is in b/w Graph that is , point doesNot lie on axis points.
+solving simultaneously these eqs we get C(30,40) that is our optimal point;
+
+
+===================================================================================
+Another Method to find Optimal solution:
+	Corner point Method:
+		Acc/ to theory of graphical approach, optimal solution point willbe any of the 
+	extreme/corner points i.e in our case any of the (A,B,C,D) so we will put eahc corner point
+	in Objective Function and will compare each obtained value hence we will get the Optimal solution.
+	i.e At A(0,0)   Z=$0
+	    At B(0,80)  Z=$4000
+	    At C(30,40) Z=$4100
+            At D(50,0)  Z=$3500
+hence Profit of C(30,40) is maximum of all hence its an optimal point and Z=4100 is optimal solution
+================================================================================
+
+
+
+Graphical Solution Example2
+==========================================
+  Maximize Z= 20A + 30C
+ subject to:
+  A+2C <=120 .....(i)
+  A<=60      .....(ii)
+  C<=50	     .....(iii)
+  A,C >=0    ......(iV)
+
+==================================================
+1/02/2021
+==================================================
+Step-1: Converting constraints in equations:
+Constraint#1: 
+A+2C <=120
+	After converting into equation:
+		A+2C = 120
+We need two points P1 & P2 to draw the line of this equation:
+a.	For P1 putting A=0 we get:
+             0+2C = 120
+		2C= 120
+		C=60
+Hence point P1(A,C)= (0,60)
+b.	For P2 putting C=0 we get:
+             A+2(0) = 120
+		A+0= 120
+		A=120
+Hence point P1(A,C)= (120,0)
+Now Taking Origin(0,0) as a trial point in Constraint#1 to identify its feasible region on graph:
+A+2C <=120
+0+0 <=120
+0<=120               => since point below line(i.e origin) is      
+                               satisfying the constraint's inequality hence     
+                               feasible region for cons#1 is downward.
+Constraint#2: 
+ A<=60         
+	After converting into equation:
+		         A=60          (For all values of C value of A is constant)
+So the Point P1(A,C)= (60,0);
+Now Taking Origin(0,0) as a trial point in Constraint#2 to identify its feasible region on graph:
+A<=60    
+0<=60                => since point below line(i.e origin) is      
+                               satisfying the constraint's inequality hence     
+                               feasible region for cons#2 is downward.
+Constraint#3: 
+ C<=50         
+	After converting into equation:
+		         C=50  		(For all values of A value of C is constant)
+So the Point P1(A,C)= (0,50);
+Now Taking Origin(0,0) as a trial point in Constraint#3 to identify its feasible region on graph:
+C<=50
+0<=50                => since point below line(i.e origin) is      
+                               satisfying the constraint's inequality hence     
+                               feasible region for cons#3 is downward.
+Constraint#4: 
+ A,C >=0       
+Since we are working only in first quadrant hence this constraint is already satisfied.
+
+
+
+
+Step-2: Finding feasible region of all constraints:
+	5 corner points are found including origin : A,B,C,D,E 
+		
+Step#2: NOw PLot Objective function:
+	Maximize Z= 20A + 30C
+
+ Assuming Z=1800 we get
+	1800 = 20A + 30C
+  For point P1 put C=0: 
+	1800 = 20A + 0
+	20A= 1800
+	A= 90
+	(A,C)= (90,0)
+ For point P1 put A=0: 
+	1800 = 0 + 30C
+	30C= 1800
+	C= 60
+	(A,C)= (0,60)
+
+Plotting points on Graph and joining both to form its line.
+Move this Line in outward direction keeping slope constants since point D is last point touched by this objective function 
+	line that's why D is the optimal point for given objective function.
+	Now to find point D :
+	
+     As the D point is intersection of line of cons#1 & cons#2:
+	cons#1:  	
+		A+2C = 120
+	cons#2:
+		A=60
+	solving simultaneously we get= D(60,30) this is the optimal point
+
+Now for finding optimal solution we will put D(60,30) in objective function's line
+	
+	Maximize Z= 20A + 30C
+	Z= 20(60)   + 30(30)
+	Z= 1200+900
+	Z= 2100
+
+===========================================================
+	Solution:
+		P(60,30) [Optimal Solution point]
+		Z= $2100 [Optimal Value]
+(we will place this solution in rectangle like this)
+============================================================
+
+
+
+
+
+
+2/3/2021
+=====================================================================0
+E-9s and F-9s problem:
+
+ 	Maximize Z= 5000.E + 4000.F
+	subject to:
+10.E + 15.F <= 150    ......(i)  dep. A
+20.E + 10.F <= 160	......(ii) dept B
+30.E + 10.F >=135	......(iii)  Testing
+E-3F <=0		......(iv)   Ratio
+E+F>=5		......(v)            Combination
+E,F>=0			......(vi)
+
+step-1: Converting constraints in equations:
+	Constraint#1: 
+		10.E + 15.F <= 150    
+	After converting into equation:
+		10.E + 15.F = 150    
+We need two points P1 & P2 to draw the line of this equation:
+	a.	For P1 putting E=0 we get:
+             10(0)+15F = 150
+		15F= 150
+		F=10
+	Hence point P1(E,F)= (0,10)
+	b.	For P2 putting F=0 we get:
+             10E+15(0) = 150
+		10E= 150
+		E=15
+	Hence point P2(E,F)= (15,0)
+Now Taking Origin(0,0) as a trial point in Constraint#1 to identify its feasible region on graph:
+		10.E + 15.F <= 150    
+		0+0 <=150
+		0<=150               => since point below line(i.e origin) is      
+                              		 satisfying the constraint's inequality hence     
+                              		 feasible region for cons#1 is downward.
+Constraint#2: 
+	 20.E + 10.F <= 160         
+	After converting into equation:
+		  20.E + 10.F = 160
+          i) For P1 putting E=0 we get:
+             20(0)+10F = 160
+		10F= 160
+		F=16
+	Hence point P1(E,F)= (0,16)
+	 ii)	For P2 putting F=0 we get:
+             20E+10(0) = 160
+		20E= 160
+		E=8
+	Hence point P2(E,F)= (8,0)
+Now Taking Origin(0,0) as a trial point in Constraint#2 to identify its feasible region on graph:
+		20.E + 10.F <= 160         
+		0+0<=160                => since point below line(i.e origin) is      
+                               		satisfying the constraint's inequality hence     
+                               		feasible region for cons#2 is downward.
+
+
+Constraint#3: 
+ 	30.E + 10.F =135         
+	After converting into equation:
+		 30.E + 10.F =135
+	i) For P1 putting E=0 we get:
+             30(0)+10F = 135
+		10F= 135
+		F=13.5
+	Hence point P1(E,F)= (0,13.5)
+	ii)	For P2 putting F=0 we get:
+             30E+10(0) = 135
+		30E= 135
+		E=13.5
+	Hence point P2(E,F)= (4.5,0)
+	Now Taking Origin(0,0) as a trial point in Constraint#3 to identify its feasible region on graph:
+		30.E + 10.F >= 135         
+		0+0>=135                => since point below line(i.e origin) is  not   
+                              	 	satisfying the constraint's inequality hence     
+                               		feasible region for cons#3 is upwards.
+
+
+Constraint#4: 
+		E-3F <=0
+	After converting into equation:
+ 		E-3F =0
+	i) For P1 putting E=0 we get:
+                (0)-3F = 0
+		-3F= 0
+		F=0
+	Hence point P1(E,F)= (0,0)
+	ii)	For P2 putting F=2(any value other than 0 so that we can plot on graph) we get:
+                E-3(2) = 0
+		E-6= 0
+		E=6
+	Hence point P2(E,F)= (6,2)
+Now Taking Origin(6,4) as a trial point in Constraint#4 to identify its feasible region on graph:
+		E - 3.F <= 0         
+		6-12<=0                => since point above line is satisfying               
+                                   	 the constraint's inequality hence     
+                               		feasible region for cons#4 is upwards.
+
+Constraint#5: 
+		E+F>=5
+      After converting into equation:
+ 		E+F =5
+	i) For P1 putting E=0 we get:
+               (0)+ F = 5
+		F= 5
+	Hence point P1(E,F)= (0,5)
+	ii)	For P2 putting F=0 we get:
+                E+(0) = 5
+		E= 5
+	Hence point P2(E,F)= (5,0)
+Now Taking Origin(0,0) as a trial point in Constraint#4 to identify its feasible region on graph:
+		E + F >=5         
+		0+0>=0                => since point below line(i.e origin) is not            
+                            		satisfying the constraint's inequality hence     
+                               		feasible region for cons#5 is upwards.
+
+
+STEP-2:  Plotting objective function:
+		Maximize Z= 5000.E + 4000.F
+
+Assuming Z=20000 we get
+	20000 = 5000.E + 4000.F  
+
+	i)	 For point P1 put E=0: 
+		20000 = 0 + 4000F
+		4000F= 20000
+		F= 5
+		(E,F)= (0,5)
+
+	ii)	For point P2 put F=0: 
+		20000 = 5000E + 0
+		5000E= 20000
+		E= 4
+		(E,F)= (4,0)
+
+Plotting points on Graph and joining both to form its line.
+Move this Line in outward direction keeping slope constants since point C is last point touched by this objective function 
+	line that's why C is the optimal point for given objective function.
+	Now to find point C :
+	
+As the C point is intersection of line of cons#1 & cons#2 lines:
+	cons#1:  	
+		10.E + 15.F = 150    
+	cons#2:
+		20.E + 10.F = 160
+	solving simultaneously we get= C(4.5,7) this is the optimal point
+	 
+Now for finding optimal solution we will put C(4.5,7) in objective function's line
+	
+	Maximize Z= 5000.E + 4000.F
+	Z= 5000(4.5)   + 4000(7)
+	Z= 22500+28000
+	Z= 50500
+
+===========================================================
+	Solution:
+		P(4.5,7) [Optimal Solution point]
+		Z= $50500 [Optimal Value]
+============================================================
+
+DBS pr assignment:  OLTP(Online transaction processing system)
+		    OLAP(Online analytical processing system)
+
+
+
+MM/DD/YYYY
+2/4/2021
+=====================================================================
+Irregular Lp-Models/ Special Cases of Lp-Models:
+=====================================================================
+	1) LP-Model having Multiple Optimal Solution Points:
+		If Objective Function line is parallel to a boundary constraint then there's possibility that 
+		there willbe multiple optimal Solutions Point.
+	2) Infeasible Lp-Model	:  a Linear Program having too many constraints that are not  satisfied simultaneously.
+					& is also called over-constrated LP_Model.
+	3) Unbouded LP-model: A problem in which Feasible region is not closed/ profit value without having any limit.
+
+Examples:
+	e.g 1: Infeasible problem:
+================================================================
+		Max z= 2x1 + 6x2
+	   subject to:
+		4x1 + 3x2 <=12
+		2x1 + x2>=8
+		x1,x2>=0		
+
+	P1 for cons#1 Put x1=0:
+		(x1,x2)= (0,4)
+	P2 for cons#1 Put x2=0:
+		(x1,x2)= (3,0)	
+
+	P1 for cons#2 Put x1=0:
+		(x1,x2)= (0,8)
+	P2 for cons#2 Put x2=0:
+		(x1,x2)= (4,0)	
+
+=> Plot these points on Graph:
+	Feasible region for Cons#1= downwards
+	Feasible region for Cons#2= upwards
+=> As we see that there's no any common feasible region for all constraints that satisfy all constraints so we can 
+	conclude that Its an Infeasible Problem hence we will not solve it further.
+
+
+	E.g 2: Unbounded Problem:
+=============================================================
+		The feasible region is unbounded and the objective function line can be moved parallel to itself without
+		bound so that z can be increased infinitely.
+	Max   z= 3x1+4x2
+	s.t
+          x1+x2>=5
+	  3x1 + x2 >=8
+      	   x1,x2>=0
+
+	P1 for cons#1 Put x1=0:
+		(x1,x2)= (0,5)
+	P2 for cons#1 Put x2=0:
+		(x1,x2)= (5,0)	
+
+	P1 for cons#2 Put x1=0:
+		(x1,x2)= (0,8)
+	P2 for cons#2 Put x2=0:
+		(x1,x2)= (2.67,0)	
+
+
+Plot these points on Graph:
+	Feasible region for Cons#1= upwards
+	Feasible region for Cons#2= upwards
+=> As we see that there's common feasible region is upwards  for all constraints .
+
+Now PLotting Objective Function's Line:
+	Assuming Z=12;
+	12 = 3x1+4x2
+	
+	P1 for OF Put x1=0:
+		(x1,x2)= (0,3)
+	P2 for OF Put x2=0:
+		(x1,x2)= (4,0)	
+
+Plot these points on Graph and join them: 
+	Move this O.F line  outwards:
+
+	since we see its closed in internal boundary but not in external boundary that increases profit value Respectively
+	so we can say that problem is unbounded problem.
+  
+
+	e.g 3: Multiple Optimal Solution Points problem:
+================================================================
+		Max z= 3x1 - x2
+	   subject to:
+		15x1 - 5x2 <=30
+		10x1 + 30x2<=120
+		x1,x2>=0		
+
+	P1 for cons#1 Put x1=3(other values result in -ve result):
+		(x1,x2)= (3,3)
+	P2 for cons#1 Put x2=0:
+		(x1,x2)= (2,0)	
+
+	P1 for cons#2 Put x1=0:
+		(x1,x2)= (0,4)
+	P2 for cons#2 Put x2=0:
+		(x1,x2)= (12,0)	
+
+=> Plot these points on Graph:
+	Feasible region for Cons#1= downwards   i.e found by substituting Origin(0,0)
+	Feasible region for Cons#2= downwards   i.e found by substituting Origin(0,0)
+
+STEP-2:  Plotting objective function:
+		Max z= 3x1 - x2
+
+Assuming Z=3 we get
+	3 = 3.x1 - x2  
+
+	i)	 For point P1 put x1=2: 
+		3 = 3(2) - x2
+		-3=-x2
+		x2= 3
+		(x1,x2)= (2,3)
+
+	ii)	For point P2 put x2=0: 
+		3 = 3x1 - 0
+		3=3x1
+		x1= 1
+		(x1,x2)= (1,0)
+
+Join these Points to form O.F's Line
+Since we see that moving this Line in outward direction, the line overlaps the equation line of Cons#1
+Hence we can say all points lying on cons#1 line will be the optimal solution points let's prove it:
+	As Point B(3,3) & C(2,0) also lie on this line so we will put both for finding optimal value:
+		  Max z= 3x1 - x2
+		putting point B(3,3) we get:
+		  z= 3(3)-3
+		  z= 9-3
+		  z=6
+
+		 Max z= 3x1 - x2
+		putting point C(2,0) we get:
+		  z= 3(2)-0
+		  z= 6-0
+		  z=6
+	Let's take Another point X(2.6,1.8) lying on this line for checking too:
+		 Max z= 3x1 - x2
+		putting point X(2.6,1.8) we get:
+		  z= 3(2.6)-1.8
+		  z= 7.8-1.8
+		  z=6
+
+Since the Value of O.F we get For each at these points is 6 hence 
+	6 is the optimal value But O.F has many Optimal Points.
+
+
+
+MM/DD/YYYY
+2/8/2021
+=========================================================================================
+Slack (variable/value):
+	Amount of resources that is not used(left unused) at optimality. is called slack.
+	It is always computed for less than equal to constraints.
+
+   a)For a less-than-or-equal-to constrainst:
+	Slack =(Amont of resources available)  -  (Amount of resource used)
+	Slack = R.H.S - L.H.S
+Surplus value:
+	At optimality how much excesive amount is used surplus.
+	Extra amount over the constrait that is being produced or utilized. 
+	It is always computed for greater than equal to constraints.
+
+   a)For a greater-than-or-equal-to constrainst:
+	Surplus =(Amount of resource used) - (Amont of resources available)  
+	Surplus = L.H.S - R.H.S
+
+
+E-9s and F-9s problem:
+
+ 	Maximize Z= 5000.E + 4000.F
+	subject to:
+10.E + 15.F <= 150    ......(i)  dep. A
+20.E + 10.F <= 160	......(ii) dept B
+30.E + 10.F >=135	......(iii)  Testing
+E-3F <=0		......(iv)   Ratio
+E+F>=5		......(v)            Combination
+E,F>=0			......(vi)
+
+
+
+1.  10.E + 15.F <= 150    ......(i)  dep. A
+	evaluate at optimality point(4.5,7)
+     10(4.5)  + 15(7) <=150
+     45 + 105 <=150
+	150 <=150
+ Slack= R.H.S - L.H.S
+ Slack= 150-150=0
+ Slack=0
+   It means at optimality none of the labour hours in constraint#1 is unused  i.e all are utilized. 
+
+
+
+
+2.  20.E + 10.F <= 160	......(ii) dept B
+	evaluate at optimality point(4.5,7)
+     20(4.5)  + 10(7) <=160
+     90 + 70 <=160
+	160 <=160
+ Slack= R.H.S - L.H.S
+ Slack= 160-160=0
+ Slack=0
+   It means at optimality none of the labour hours in constraint#2 is unused  i.e all are utilized. 
+
+
+3.  30.E + 10.F >=135	......(iii)  Testing
+	evaluate at optimality point(4.5,7)
+     30(4.5)  + 10(7) >=135
+     135 + 70 >=135
+	205 >=135
+ Surplus= L.H.S - R.H.S                            //we will compute surplus as constraint is of >= inequality
+ Surplus= 205-135=70 
+ Surplus= 70
+   It means at optimality 70 units in constraint#3 is used extra from its minimum requirements.
+
+
+
+4.  E-3F <=0		......(iv)   Ratio
+	evaluate at optimality point(4.5,7)
+     4.5  - 3(7) <=0
+     4.5 - 21 <=0
+	-16.5 <=0
+ Slack= R.H.S - L.H.S
+ Slack= 0-(-16.5)=0
+ Slack=  16.5
+   It means at optimality 16.5 units in constraint#4 is unused .
+
+
+
+5.  E+F>=5		......(v)            Combination
+	evaluate at optimality point(4.5,7)
+     4.5 + 7 >=5
+     11.5  >=5
+ Surplus= L.H.S - R.H.S                             //we will compute surplus as constraint is of >= inequality
+ Surplus= 11.5-5=6.5
+ Surplus= 6.5
+   It means at optimality 6.5 units in constraint#5 is used extra from its minimum requirements.
+
+
+//Equality constaint is also known as banding constraint, both slack & surplus have zero value for equality.
+
+ 
+
+
+Active & Inactive Constraints:
+=====================================
+ Active constraint: Which actively participate in optimal solution points.
+ inActive constraint: which participate in formulating Feasible region only. 
+
+IN Our example of E9 & F9 Const#1 (Dept-A) and Cons#2 (Dept-B) are passing through optimal solution point i.e C(4.5,7)
+	Hence they are Active Constraints.
+
+IN Our example of E9 & F9 Const#3, Cons#2 & Cons#3 are not passing through optimal solution point i.e C(4.5,7)
+	Hence they are Inactive Constraints.
+
+=>A Constraint when evaluated on OPtimal solution point(s) gives L.H.S=R.H.S is called active constraint.
+e.g:  Constraint#1 (Dept-A)
+	150=150    //L.H.S=R.H.S
+      Constraint#2 (Dept-B):
+	160=160    //L.H.S=R.H.S
+	
+=>A constraint when evaluated on optimal solution point(s) gives L.H.S!=R.H.S is called inactive constraint.
+e.g   Cons#3 ( Testing)
+	205 != 135   //L.H.S != R.H.S
+	
+      Cons-4 (Ratio) 
+	-16.5 !=0    //L.H.S != R.H.S
+
+    & Cons#5(Combination)
+	11.5 !=5     //L.H.S != R.H.S
+
+
+Geometrical Interpretation Of Constraints:
+	1. If a Constraint's equation line is passing through Optimal solution point then constraint is 
+	    called Active constraint.  
+
+	2 If a Constraint's equation line is not passing through Optimal solution point then constraint is 
+	    called Inactive constraint.  
+
+
+
+
+
+MM/DD/YYYY
+2/10/2021
+=========================================================================================
+Solving minimization model using Graphical approach:
+	minimize z= $6x1 + $3x2
+	subjct to:
+		2x1+4x2>=16 lb of nitrogen
+		4x1+3x2>=24 lb of phosphate
+		x1,x2>=0
+	where 
+	x1= bags of super-gro fertilizer
+	x2= bags of crop-quick fertilizer
+	z=  farmer's totl cost($) of purchasing fertilizer
+
+
+
+Step-1: converting cons in equations:
+	cons1:
+	2x1 + 4x2>=16 lb of nitrogen
+
+	i)	For point P1 put x1=0: 
+		2(0) + 4x2>=16 
+		4x2= 16
+		x2= 5
+		(x1,x2)= (0,4)
+
+	ii)	For point P2 put x2=0: 
+		2x1 + 4(0)>=16 
+		2x1= 16
+		x1= 8
+		(x1,x2)= (8,0)
+
+
+	cons2:
+	4x1+3x2>=24 lb of phosphate
+
+	i)	For point P1 put x1=0: 
+		4(0)+3x2>=24 
+		3.x2= 24
+		x2= 8
+		(x1,x2)= (0,8)
+
+	ii)	For point P2 put x2=0: 
+		4(x1)+3(0)>=24 
+		4.x1= 24
+		x1= 6
+		(x1,x2)= (6,0)
+
+Plotting euations on graph.
+
+take origin as trial point in both cons#1,2:
+	cons#1: 2x1 + 4x2>=16 
+		0+0>=16  //not true hence feasible region is above line not below the line
+	cons#2: 4x1 + 3x2>=24 
+		0+0>=24 //not true hence feasible region is above line not below the line
+	
+feasible region for cons#1= upwards
+feasible region for cons#2= upwards
+
+PLotting Objective function's line:
+	minimize z= $6x1 + $3x2
+
+	ASSUMING z=6 we get;
+	i)	For point P1 put x1=0: 
+		6=6(0)+3x2 
+		3.x2= 6
+		x2=2
+		(x1,x2)= (0,2)
+
+	ii)	For point P2 put x2=0: 
+		6=6x1+3(0) 
+		6.x1= 6
+		x1=1
+		(x1,x2)= (1,0)
+
+Plotting obj function line;
+
+
+MOving O.F line in outward direction and the point touching this line very first will be the optimal point i.e here A(0,8) is 
+	optimal solution point. As A is the first point touched by this line entering into feasible region.
+	
+=>No need to solve simultaneouly the constraints's equation as A point lie on x2 Axis line:
+	A(0,8)
+Now to find optimal value put A(0,8) in Objective function:
+	 minimize z= $6x1 + $3x2
+	 z= 6(0) + 3(8)
+	z= 24
+
+===========================================================
+	Solution:
+		P(0,8) [Optimal Solution point]
+		Z= $24 [Optimal Value]
+============================================================
+=> We could also Used Corner point method to find optimal solution point here.
+=>As its an minimization model so the corner point resulting in least value willbe the optimal point.
+	i.e or we while moving objective function's line outward the point very first touched point by this line before entering into 
+		feasible region will be the optimal point. 
+
+
+
+
+
+
+MM/DD/YYYY
+2/11/2021
+=========================================================================================
+	Sensitivity Analysis:
+=========================================================================================
+	=>When LP models were formulated in, it was implicitly assumed that parameters(coefficients in equations)
+		of model were known exactly/ with certainity. But we should be noted they are not always 100% certain 
+			they are always subject to change.
+	=>For this reason, it's interest to manager to identify what change in solution of model occurs by a change in a 
+		parameter.
+	=>The analysis of parameter changes and their effects on the model solution is known as sensitivity analysis(i.e Parametric
+					analysis of Post-Optimality analysis).
+	
+A) Changes in Objective function coefficients(x1):
+================================================
+	Original Model:
+	========================================
+		   old maximize Z= $40x1 + 50x2
+		subject to
+ 			 x1  + 2x2 <=40		hr. of labor
+		        4x1  + 3x2 <=120	120 lb. of clay
+			    x1,x2>=0
+	Cons#1:
+		x1  + 2x2 <=40	
+
+	i)	For point P1 put x1=0: 
+		0  + 2x2 <=40
+		2.x2= 40
+		x2=20
+		(x1,x2)= (0,20)
+
+	ii)	For point P2 put x2=0: 
+		x1  + 2(0) <=40
+		x1= 40
+	       (x1,x2)= (40,0)
+	Feasible region = downwards
+	Cons#2:
+		4x1  + 3x2 <=120
+	
+	i)	For point P1 put x1=0: 
+		4(0)  + 3x2 <=120
+		3.x2= 120
+		x2=40
+		(x1,x2)= (0,40)
+
+	ii)	For point P2 put x2=0: 
+		4x1  + 3(0) <=120 
+		4.x1= 120
+		x1=30
+		(x1,x2)= (30,0)
+
+	Feasible region = downwards
+
+PLotting objective function:
+	maximize Z= $40x1 + $50x2
+	
+assume z=800	
+	800= 40x1+ 50x2
+	i)	For point P1 put x1=0: 
+		800= 40(0)+ 50x2
+		50x2= 800
+		x2=16
+		(x1,x2)= (0,16)
+
+	ii)	For point P2 put x2=0: 
+		800= 40x1 + 50(0)
+		40x1= 800
+		x1=20
+		(x1,x2)= (20,0)
+After PLotting on graph move this line in outward direction
+since point B is last point touched by this line before leaving feasible region so to find B 
+
+	As B is intersection of cons#1 & cons#2 lines so solving simultaneoulsy we get
+			 x1  + 2x2 <=40		
+		        4x1  + 3x2 <=120
+Hence B is B(24,8)
+To find optimal value put B(24,8) in O.F :
+	z= 40x1+ 50x2
+	z= 40(24) + 50(8)
+	z=1360
+
+
+
+
+======================================================
+1)Now changing Coefficients(x1) Of Objective function:
+i.e 
+	NEW MODEL:
+	======================================================
+	new maximize Z= $100x1 + 50x2
+		subject to
+ 			 x1  + 2x2 <=40		hr. of labor
+		        4x1  + 3x2 <=120		120 lb. of clay
+			    x1,x2>=0
+
+Assuming z= 3000;
+	3000= 100x1+ 50x2
+	i)	For point P1 put x1=0: 
+		3000= 100(0)+ 50x2
+		50x2= 3000
+		x2=60
+		(x1,x2)= (0,60)
+
+	ii)	For point P2 put x2=0: 
+		3000= 100x1 + 50(0)
+		100x1= 3000
+		x1=30
+		(x1,x2)= (30,0)
+
+After PLotting on graph move this line in  inward
+since point C is first point touched by this line before entering into feasible region.
+
+	As C lies on x1 axis;
+Hence C is B(30,0)
+To find optimal value put C(30,0) in O.F :
+	Z= $100x1 + 50x2
+	z= 100(30) + 50(0)
+	z=  3000
+
+
+So Now calculating difference b/w Old & New Z;
+	delta OV(delta Z)= Z(new) -Z(old)
+	delta objective value z= 3000-1360
+	delta OV z= 1640
+==========================================================================================
+So The objective Function's Optimal value changes by 1640 by changing coefficient of x1;
+==========================================================================================
+
+
+
+
+MM/DD/YYYY
+2/12/2021
+=========================================================================================
+	Conclusion:
+	1. There was no change in feasible region.
+	2. Optimal solution point was changes from B(24,8) to point C(30,0)
+	3. Optimal value was also changed and new optimal value		
+		 i.e new Z =3000
+	4. Delta OV=1640(new Z - old Z)
+	
+2)Now changing Coefficients(x2) Of Objective function:
+i.e 
+	NEW MODEL:
+	======================================================
+	new maximize Z1= $40x1 + 100x2
+		subject to
+ 			 x1  + 2x2 <=40		hr. of labor
+		        4x1  + 3x2 <=120		120 lb. of clay
+			    x1,x2>=0
+
+
+	Assuming z= 3000;
+	3000= 40x1+ 50x2
+	i)	For point P1 put x1=0: 
+		3000= 40(0)+ 100x2
+		100x2= 3000
+		x2=60
+		(x1,x2)= (0,30)
+
+	ii)	For point P2 put x2=0: 
+		3000= 40x1 + 1000(0)
+		40x1= 3000
+		x1=30
+		(x1,x2)= (30,0)
+
+After PLotting on graph move this line in inward
+since point A is first point touched by this line before entering into feasible region.
+
+	As A lies on x2 axis;
+Hence C is C(0,20)
+To find optimal value put C(0,20) in O.F :
+	Z= $40x1 + 100x2
+	z= 40(0) + 100(20)
+	z=  2000
+
+
+So Now calculating difference b/w Old & New Z;
+	delta OV(delta Z)= Z(new) -Z(old)
+	delta objective value z= 2000-1360
+	delta OV z= 640
+==========================================================================================
+So The objective Function's Optimal value changes by 640 by changing coefficient of x2;
+==========================================================================================
+
+
+
+
+==================================================================
+	max Z= 40x1 + 50x2
+	subject to
+ 		 x1  + 2x2 <=40		hr. of labor
+	        4x1  + 3x2 <=120	120 lb. of clay
+		    x1,x2>=0
+	
+Now we have to Find Range of values for this Objective Function's coefficients Over which the Optimal solution point will
+	remain Optimal.
+
+let C1=40
+let C2=50
+
+
+==============================================================================================
+Sensitivity Range for C1:
+==============================================================================================
+		
+	Range of Values(Maximum value,Minimum value) over which current optimal solution point will remain optimal.
+Note=>For finding Maximum & Minimum Value oF C1,C2 we will need to equate slope of Objective Function to slope of 
+	each Active Constraint.
+	
+		Z= 40x1 + 50x2
+		50x2= Z - 40x1
+		x2 = Z/50 - 40x1/50
+Equation in the form of : y= mx+c; or y= a+bx
+i.e we need to find slope:
+	so intercept a= Z/50
+	   intercept b= -4/5
+=====================================================
+So Slope of max z= -a/b= -40/50 = -C1/C2
+=====================================================
+For slope We will take Active constraints:
+
+cons#2:	4x1  + 3x2 <=120		
+	slope= -4/3
+so now:
+    -C1/C2= -4/3
+    or
+    -C1/50=-4/3			:>C2=50
+       -3C1= 50 * -4
+	-3C1= -200
+	C1=66.67(maximum value)
+
+
+Cons#1:   x1  + 2x2 <=40	
+	slope= -a/b= -1/2
+so now:
+ 	-c1/c2= -1/2
+	-c1/50= -1/2		:>C2=50
+	-2c1= -50
+	c1=25(minimum value)
+
+So Sensitivity range for C1= 25<=C1<=66.67 (Sensitivity Range Of C1)
+	i.e By changing C1 in this range point B(24,8) will still be the optimal solution point however optimal 
+		value of O.F fun may change.
+
+
+
+==============================================================================================
+Sensitivity Range for C2:
+==============================================================================================
+	For slope We will take Active constraints:
+	
+cons#2:	4x1  + 3x2 <=120		
+	slope= -4/3
+so now:
+    -C1/C2= -4/3
+    or
+    -40/C2=-4/3			:>C1=40
+       c2= 120/4
+	C2=30(minimum value)
+
+
+Cons#1:   x1  + 2x2 <=40	
+	slope= -a/b= -1/2
+so now:
+ 	-c1/c2= -1/2
+	-40/c2= -1/2     	:>C1=40
+	c2= 80
+	c1=80(maximum value)
+
+So Sensitivity range for C2= 30<=C2<=80 (Snsitivity Range Of C2)
+	i.e By changing C2 in this range point B(24,8) will still be the optimal solution point however optimal 
+		value of O.F fun may change.
+
+
+NOTE:
+	1.Change in Objective function co-efficients does not change feasible region of Lp-Model.
+	2.Optimal solution point may or may not be change acc/ to range.
+	3.OPtimal value will change because of changes in parameters/co-efficients.
+	4. delta OV= Znew- Zold
+
+
+
+
+MM/DD/YYYY
+2/15/2021
+=========================================================================================
+
+B) Changes in constraints's coefficients(x1):
+================================================
+	max Z= 40x1 + 50x2
+	subject to
+ 		 x1  + 2x2 <=40		hr. of labor
+	        4x1  + 3x2 <=120	120 lb. of clay
+		    x1,x2>=0
+:>Old Z= 1360
+	i)(a)Changing Cons#1 coefficient(i.e An active constraint):
+		x1 + 2x2<=60
+	in equation:
+		x1 + 2x2 =60
+	so p1 & p2 are P1(60,0) & P2(0,30)
+Plot these points on graph.
+
+For feasible region put  O(0,0) as trial point:
+	 x1 + 2x2 <=60
+	 0 + 0 <=60
+	hence Feasible region=downwards;
+
+Since point B' is last point  touched by O.F line while moving outwards.
+	And Its an intersection point of con#1(new) & cons#2's equation line so
+	solving them silmutaneously we get:
+		x1   + 2x2 =60		
+	        4x1  + 3x2 =120
+	B'(24,18)
+To find optimal value put B'(24,18) in O.F:
+	Z= $40x1 +  50x2
+	z= 40(24) + 50(18)
+	z=  1860
+
+
+So Now calculating difference b/w Old & New Z;
+	delta OV(delta Z)= Z(new) -Z(old)
+	delta objective value z= 1860-1360
+	delta OV z= 500
+=========================================================================================================
+So The objective Function's Optimal value changes by 500 by changing right side of cons#1 from 40 to 60;
+=========================================================================================================
+	
+
+
+Conslusion:
+ 1. There is a parallel shift in the constraint's line:
+ 2. Feasible region has been enlarged/shrink by changing right side of 1st constraint.
+ 3. Optimal value may or may not change depending on constraint(i.e is active/inactive).
+ 4. Optimal solution may change if we changed resources(i.e right side) of a non-binding(inactive) constraint.
+ 5. Changing in the right side of binding constraint's always change the solution.
+
+
+	
+	i)(b)Changing Cons#1 coefficient:
+		x1 + 2x2<=80
+	in euqation:
+		x1 + 2x2 =80
+	so p1 & p2 are P1(80,0) & P2(0,40)
+
+Plot these points on graph.
+
+For feasible region put  O(0,0) as trial point:
+	 x1 + 2x2 <=80
+	 0 + 0 <=80
+	hence Feasible region=downwards;
+
+Since point A'' is last point  touched by O.F line while moving outwards.
+	As A'' point lies on x2 axis Hence no need to solve silmutaneously the equations:
+	So the A'' point is A''(0,40)
+
+
+To find optimal value put A''(0,40) in O.F:
+	Z= $40x1 +  50x2
+	z= 40(0) + 50(40)
+	z=  2000
+
+
+So Now calculating difference b/w Old & New Z;
+	delta OV(delta Z)= Z(new) -Z(old)
+	delta objective value z= 2000-1360
+	delta OV z= 640
+========================================================================================================
+So The objective Function's Optimal value changes by 640 by changing right side of cons#1 from 40 t0 80;
+========================================================================================================
+
+
+Conclusion:
+ 1. There is a parallel shift in the constraint#1's line:
+ 2. Feasible region has been enlarged by changing right side of constraint#1 from 40 to 80.
+ 3. Optimal value has been changed by 640 units from original value.
+ 4. Optimal Solution Point has been changed from B(24,8) to A''(0,40).
+
+	
+
+
+
+MM/DD/YYYY
+2/17/2021
+=========================================================================================
+THE DUAL LINEAR PROGRAM:
+========================
+	=>For every LP(linear program)i.e primal problem, there is always a corresponding lp problem called as 'dual' problem or dual lp.
+	=>Primal LP is converted into Dual Lp by some set of transformation rules.
+		Primal LP -----> Transformation Rules ------> Dual LP
+	=>We convert Primal lp to dual lp because dual has economic, theoritic & computational significiance over primal lp.
+
+
+	Example of Primal LP:
+	E-9s and F-9s problem & etc.
+
+Example to convert A primal problem into dual problem:
+======================================================
+ 	Maximize Z= 3x1 + 4x2 - 2x3
+	subject to:
+		 4x1 -12x2 +3x3<= 12    ......(i)  
+		-2x1 + 3x2 +x3 <= 6	......(ii) 
+		-5x1 +x2-6x3 >= -40	......(iii)  
+		3x1+4x2-2x3 =10		......(iv)  
+		x1>=0, x2<=0, x3 is unconstrained in sign.
+
+
+Rule#1: The no of variables in the dual problem is equal to number of constraints in the original(primal) problem. The number of constraints in the
+	 dual problem(dp) is equal to no of variables in primal problem(pp).
+	Result of Rule#1: 4 variables(y1,y2,y3,y4)   //as there were 4 constraints in pp
+			  3 constraints		//as there were 3 variables in pp
+		
+Rule#2: Co-efficient of the objective function in DP come from right hand side of constraints of primal problem:
+		
+		Result of rule#2: Objective function of dual problem:
+			Z = 12y1 + 6y2 - 40y3 + 10y4			//12y1 //12 came from right side of first constraint
+				//still we are unaware of Z is either max or min objective function.
+
+Rule#3: If primal problem is maximization problem then dual problem willbe a minimization problem and vice versa.
+		Result of rule#3:  Dual will be minimiaztion problem 		//as pp is a maximization problem. 
+			MIN Z = 12y1 + 6y2 - 40y3 + 10y4
+
+Rule#4: The co-efficiens of the first constraint function for the dual problem are the co-efficients of first variable in the constraints for the pp
+		& similarly for other constraints.
+    Result of rule#4:  left hand side of constraints
+	cons#1:	4y1 - 2y2 -5y3 + 3y4
+	cons#2: -12y1 + 3y2 +y3 + 4y4
+	cons#3: 3y1 + y2 -6y3 - 2y4
+
+
+Rule#5: The right hand side of dual constraints come from the objective function coefficients in the original problem.
+    Result of Rule#5:  Right hand side of constrainst:
+	cons#1: 3
+	cons#2: 4
+	cons#3: -2
+		Still we don't know about sign of left hand side & right hand side.
+	L.H.S     			R.H.S
+
+cons#1:  4y1 - 2y2 -5y3 + 3y2		  3
+cons#2:	-12y1 + 3y2 +y3 + 4y2		  4
+cons#3:  3y1 + y2 -6y3 - 2y4		 -2
+
+Rule#6: 
+
+
+
+MM/DD/YYYY
+2/18/2021  THU
+=========================================================================================
+//continueing previous primal problem:
+
+Rule#6: The sign of the ith dual constraint is '=' if and only if the ith variable in the original problem is unconstrained in sign:
+	Result of Rule#6:
+		//as we see third variable(x3) is unconstrained variable in our original PP(primal problem) 
+		so third constraint becomes	:
+
+		cons#3:  3y1 + y2 -6y3 - 2y4 = -2			:>as x3 was 'x3 is unconstrained'
+
+
+Rule#7: If the original problem is a Max(or Min) model,then after applying Rule#6, assign to remaining dual constraints a sign of
+			the same as('opposite to' for Min Model) the corresponding varaible in original PP.
+	Key Points:
+		=>For Maximization PP sign= same as corresponding variable    //we will check this in non negativity constraint
+		=>For Minimization PP sign= opposite corresponding variable   //we will check this in non negativity constraint
+		
+	Result of Rule#7:
+		cons#1:	 4y1 - 2y2 -5y3 + 3y2 >= 3			:>as x1 was x1>=0
+
+		cons#2:	-12y1 + 3y2 +y3 + 4y2 <=4			:>as x2 was x2<=0
+
+Rule#8: The ith variable in the dual problem is unconstrained in sign if and only if the ith constraint in the original problem 
+		is an equality constraint:
+	Result of Rule#8:
+		Y4 is unconstrained in sign;
+
+Rule#9: If Original PP ia a Max(Min) model then after applying Rule#8, assign to the remaining dual variables a sign of opposite 
+			to('same as' for MIN PP) the corresponding constraint in Original PP.
+	Key Points:
+		=>For Minimization PP sign= same as corresponding constraint    //we will check this in corresponding constraint
+		=>For Maximization PP sign= opposite corresponding constraint   //we will check this in corresponding  constraint
+	Y1>=0;		//as 1st constraint  is of '<=' inequality
+	Y2>=0;		//as 2nd constraint  is of '<=' inequality
+	Y3<=0;		//as 3rd constraint  is of '>=' inequality
+
+
+So Complete/Final DUAL LP Model:
+================================
+		MIN Z = 12y1 + 6y2 - 40y3 + 10y4
+	subject to:
+		cons#1:	 4y1 - 2y2 -5y3 + 3y2 >= 3	  -------(i)		
+		cons#2:	-12y1 + 3y2 +y3 + 4y2 <=4	  -------(ii)		
+		cons#3:  3y1 + y2 -6y3 - 2y4 = -2	  -------(iii)	
+			y1>=0 , y2>=0 , y3<=0 , y4 is unconstrained.
+
+
+
+MM/DD/YYYY
+2/19/2021  FRI
+=========================================================================================
+Relations b/w Primal & Dual LP:
+===============================
+
+Property#1: 
+	=>The dual of the dual problem is again the primal problem.
+	Primal Lp -------> Dual Lp--------->Dual Lp(Dual LP)-------->Primal LP
+    PROOF:
+    =====
+	1.Let's take same LP Model that we first converted into Dual:
+	   a)	Maximize Z= 3x1 + 4x2 - 2x3
+	subject to:
+	        cons#1: 4x1 -12x2 +3x3<= 12    ......(i)  
+		cons#2: -2x1 + 3x2 +x3 <= 6	......(ii) 
+		cons#3: -5x1 +x2-6x3 >= -40	......(iii)  
+		cons#4: 3x1+4x2-2x3 =10		......(iv)  
+		x1>=0, x2<=0, x3 is unconstrained in sign.
+
+ 	  Equivalent DUAL LP Model:
+  	  ==============================
+	    b)	MIN Z = 12y1 + 6y2 - 40y3 + 10y4
+	subject to:
+		cons#1:	 4y1 - 2y2 -5y3 + 3y4 >= 3	  -------(i)		
+		cons#2:	-12y1 + 3y2 +y3 + 4y4 <=4	  -------(ii)		
+		cons#3:  3y1 + y2 -6y3 - 2y4 = -2	  -------(iii)	
+			y1>=0 , y2>=0 , y3<=0 , y4 is unconstrained.
+
+	=>Let's Consider this Dual Problem (b) as Primal Lp and Try to convert it into Dual-LP using same set of Transformation rules:
+		
+	DUAL OF THE DUAL LP:
+	====================
+Result of Rule#1: 3 variables(x1,x2,x3)   //as there were 3 constraints in pp
+		  4 constraints		//as there were 4 variables in pp
+		
+Result of rule#2: Objective function of dual problem:
+		Z = 3x1 + 4x2 -2x3		
+ 			//still we are unaware of Z is either max or min objective function.
+
+Result of rule#3:  Dual will be maximiaztion problem 		//as pp is a minimization problem. 
+		Max Z = 3x1 + 4x2 -2x3
+
+Result of Rule#4:  left hand side of constraints
+	cons#1:	 4x1 - 12x2 + 3x3
+	cons#2: -2x1 + 3x2  +  x3 
+	cons#3: -5x1 +  x2  -  6x3 
+	cons#4:  3x1 + 4x2  -  2x3
+
+Result of Rule#5:  Right hand side of constraints:
+	cons#1: 12
+	cons#2: 6
+	cons#3: -40
+	cons#4: 10
+		Still we don't know about sign of left hand side & right hand side.
+
+      L.H.S     			R.H.S
+cons#1:  4x1 - 12x2 + 3x3		  12
+cons#2: -2x1 + 3x2  +  x3 		   6 
+cons#3: -5x1 +  x2  - 6x3 		 -40
+cons#4:  3x1 + 4x2  - 2x3		  10
+
+Result of Rule#6:
+	cons#4:  3x1 + 4x2 - 2x3 = 10		:>as y4 was 'y4 is unconstrained'
+
+Result of Rule#7:  
+		For Minimization dual constraint's sign= opposite to corresponding variable's sign in as of PP
+	cons#1:	 4x1 - 12x2 + 3x3 <= 12			:>as y1 was y1>=0
+	cons#2:	-2x1 + 3x2  +  x3 <=6			:>as y2 was y2>=0
+	cons#3:	-5x1 +  x2 -  6x3 >=-40			:>as y3 was y3<=0
+
+Result of Rule#8:
+	x3 is unconstrained in sign;    //as 3rd constraint has equality sign
+
+Result of Rule#9:
+	    For Minimization dual variable sign= same as corresponding constraint's sign in pp
+	x1>=0;		//as 1st constraint  is of '>=' inequality
+	x2<=0;		//as 2nd constraint  is of '<=' inequality
+	
+so Dual Model Of Dual Problem:
+	Maximize Z= 3x1 + 4x2 - 2x3
+	subject to:
+		 4x1 -12x2 +3x3<= 12    ......(i)  
+		-2x1 + 3x2 +x3 <= 6	......(ii) 
+		-5x1 +x2-6x3 >= -40	......(iii)  
+		3x1+4x2-2x3 =10		......(iv)  
+		x1>=0, x2<=0, x3 is unconstrained in sign.
+
+	As we see Primal Lp -------> Dual Lp--------->Dual Lp(Dual LP)-------->Primal LP
+		Hence Property#1 Proved.
+
+Property#2:
+	=>Either of two problems has an optimal solution if and only if the other does.
+		When there is a solution the optimal value of O.F in the primal is same as the optimal value of the O.F of the dual.
+
+	For Multiple Optimal Solution Points(multiple optimal points):
+		Z(primal) = Z(dual)
+	=>i.e Max Z(primal) = Min Z(dual);
+
+Property#3:
+	If One problem is feasible but unbounded, then the other is infeasible; if one is infeasible then other is either infeasible or
+		feasible/unbounded.
+
+Property#4:
+	=>If(x1,x2,x3...Xn) is any set of Primal Feasible Values and  If(y1,y2,y3...Yn) is any set of dual Feasible Values, the primal O.F(i.e
+		the function to be maximized) evaluated at x can not exceed the dual O.F(i.e the function to be minimized) evaluated at y.
+	PROOF:
+	======
+	Consider This as Primal LP model:
+		Max Z= 3x1 + 4x2
+	subject to: 
+	       -2x1+3x2 <=6
+	        5x1 - x2 <=40
+	        x1+ x2 <=7
+	         x1>=0,x2>=0
+
+
+	e.g P(x1,x2) = (3,2)(primal feasible values)
+		to check if P is a primal feasible value(i.e should satisfy every constraint)
+		-2x1+3x2 <=6    =>-6 + 6 <=6  => 0<=6 
+	        5x1 - x2 <=40   =>15 -2 <=40  => 13<=40
+	        x1+ x2 <=7     =>3+2 <=7      => 5<=7
+
+		//All cons satisfied:
+	To find optimal value: put P in O.F
+		Max Z= 3x1 + 4x2
+		Max Z= 3(3) +4(2)
+		Max Z=  9+8
+		Z(primal)= 17
+
+
+
+
+
+MM/DD/YYYY
+03/14/2021
+==========
+THE TRANSPORTATION PROBLEMS:
+============================
+  =>There are 4 algorithms to solve a transportation problem.
+  =>First two algos are used to find initial feasible solution & rest are used to find final optimal solution.
+
+   1. NWCM(north west corner method)
+   2. Vogel's approximation method.
+   3. Stepping stone method.
+   4. Modified distribution method.
+
+1. NWCM(north west corner method):
+=================================
+	It is used to find initial feasible solution of a transportation problem and contains 4 steps.
+	
+   Step-1: Start in the upper left corner(north west corner) and allocate as many units as possible.
+   Step-2: Adjust supply & demand values accordingly.
+   Step-3: If supply=0 then eliminate that row for further consideration, if demand=0 then eliminate that column
+		from further consideration.
+   Step-4: Move from left to right and allocate maximum possible units, stop when supply & demand is equal to zero.
+	
+
+2. Vogel's approximation method:
+================================
+	It is used to find initial feasible solution of a transportation problem and contains 6 steps.
+
+   Step-1: For each row & each column calculate the penality cost by subtracting smallest entry from 2nd smallest entry.
+   Step-2: Identify the row or column with largest penality cost value.
+   Step-3: Allocate maximum possible units to the available route or cell with the lowest cost(per unit) in the row or column
+		selected in step-2(i.e having largest penality cost value(pcv)).
+   Step-4: Adjust the supply & demand values according to allocation.
+   Step-5: Remove any row with zero supply, & any column with zero demand, from further consideration.
+   Step-6: Return to step-1.(repeat process until supply & demand both become zero for all sources,destinations repectively.)
+		
+			Penality Cost = 2nd smallest entry - smallest entry(in terms of cost pr unit).
+	=>This method introduces better initial feasible solution than NWCM because of considering cost values.
+
+
+3. Stepping stone method(SSM):
+=========================
+	It is used to find final optimal solution to a transportation problem.
+   =>This method is used to convert initial feasible solution to optimal solution hence it can not be applied on 
+	a blank transportation table. For this method to work it requires a filled transportation table with the
+	solution given by (NWCM or Vogels's approximation method).
+   =>We will need to find marginal cost values(for unused cells).
+   =>the insertion of (+)  & (-) (i.e that indicate addition & subtraction of 1 unit through particular route or cell respectively)
+	makes a path that is known as stepping stone path.
+	e.g
+	 suppose A4 is a unused column & stepping stone path has values(i.e cost per of each cell that is included in this path) 
+		like: +6,-4,+9,-13
+		so the marginal cost for A4 cell will be:
+	M.C value for A4=  +6-4+9-13=-2 
+		=>That means if we incorporate this route(A4) then per unit whole cost will decreased by 2$. 
+
+
+MM/DD/YYYY
+03/24/2021  WED
+==========
+
+4. Modified Distribution method(MDM):
+================================
+	It is also used to find final optimal solution to a transportation problem.
+   =>It is a two step procedure for finding marginal costs as is some how same as 'STEPPING STONE METHOD' but the way
+	we compute marginal cost values is different.
+   =>It is preferred over 'STEPPING STONE METHOD(SSM)' when we have a large number of source/destination points because in 
+	it is cumborsome to make stepping stone path again and again of so many source/destination points for computing
+	marginal cost values.
+   =>Usually we use SSM method when we have (source/destination points <= 4) but after that we prefer to use MDM method.
+
+	It consists of 2-main steps:
+	======================
+   Step-1: Determine an index for each row & each column such that:
+		     Ui + Vj = Cij .................(i)	        :- For every used cell
+	//where Ui is the index of ith row & Vj is index of jth column & Cij is the cost per unit of (i,j)th cell/route.
+	//Or Cij is the cost of sending a unit through origin(source) 'i' to destination 'j'
+
+   Step-2: Calculate marginal cost for every unused cell by using equation:
+		eij = Cij - (Ui+Vj) ................(ii)	:- For every used cell
+	//where eij is marginal cost value of (i,j)th cell.
+	//Cij is the cost per unit of (i,j) cell.
+	//Ui & Vj are the indices of ith row & jth column respectively.
+    =>Rest of the steps are same as in the SSM method.
+
+    =>This method is used to convert initial feasible solution to optimal solution hence it can not be applied on 
+	a blank transportation table. For this method to work it requires a filled transportation table with the
+	solution given by (NWCM or Vogels's approximation method).
+  
+	so we will use our previous transportation table(i.e with output of NWCM):
+	
+		source\Destination	   1	   2	   3	   4	supply
+
+			A		400(12)	100(13)	  (4)	  (6)      500
+			B		  (6)	700(4)	  (10)	  (11)     700	
+			C		 (10)	100(9)	200(12)	 500(4)    800
+
+		      Demand		  400	  900	  200	  500   2000\2000
+Step-1: Finding row & column indices.
+		Ui + Vj = Cij        
+    =>For every used cell we will now make this kind of equation but first of all we need to know about Ui & Vj
+		that is below:
+	Row(sources)-indices:
+	============
+		here Ui=U(A,B,C)   =>Ua,Ub,Uc		//let A=a , B=b, C=c for readability
+
+	Column(destinations)-indices:
+	==============
+		here Vj=V(1,2,3,4) =>V1,V2,V3,V4
+	
+   =>Now making equations:
+	Used Cells(A1,A2,B2,C2,C3,C4)
+    values for Cij(12,13, 4, 9,12, 4)		//cost per unit for each corresponding cell 
+	so we need to form equation of each of these cells(i.e total 6 equations):
+	
+	1. A1 => Ua  + V1 =  Ca1  => Ua  + V1 = 12 -------(i)
+	2. A2 => Ua  + V2 =  Ca2  => Ua  + V2 = 13 -------(ii)
+	3. B2 => Ub  + V2 =  Ca2  => Ub  + V2 =  4 -------(iii)
+	4. C2 => Uc  + V2 =  Ca2  => Uc  + V2 =  9 -------(iv)
+	5. C3 => Uc  + V3 =  Ca3  => Uc  + V3 = 12 -------(v)
+	6. C4 => Uc  + V4 =  Ca4  => Uc  + V4 =  4 -------(vi)
+
+Total Unknowns/Variables(7): Ua,V1,V2,Ub,Uc,V3,V4
+   =>We have to find these unknowns/variables using these 6 equations but we can't find that by solving simultaneously the 
+	equations so we will assume value for one of these varaibles to find values of 6 others.
+
+	let Ua=0
+	  =>Now we will find other variables' values by putting required values in corresponding equations:
+	From eq-(i):
+		Ua  + V1 = 12
+		0   + V1 = 12		:- Ua=0
+		      V1 = 12
+
+	From eq-(ii):
+		Ua  + V2 = 13
+		0   + V2 = 13		:- Ua=0
+		      V2 = 13
+
+	From eq-(iii):
+		Ub  + V2 =  4
+		Ub  + 13 =  4		:- V2=13
+		Ub  = 4 - 13
+		Ub  = -9
+
+	From eq-(iv):
+		Uc  + V2 = 9
+		Uc  + 13 = 9		:- V2=13
+		Uc  = 9 - 13
+		Uc  = -4
+
+	From eq-(v):
+		Uc  + V3 = 12
+		-4  + V3 = 12		:- Uc=-4
+		V3  = 12 + 4
+		V3  = 16
+
+
+	From eq-(vi):
+		Uc  + V4 = 4
+		-4  + V4 = 4		:- Uc=-4
+		V4  =  4 + 4
+		V4  =  8
+
+	so we got values for all unknowns as:
+	Ua =  0
+	V1 = 12
+	V2 = 13
+	Ub = -9
+	Uc = -4
+	V3 = 16
+	V4 =  8
+	
+	
+
+MM/DD/YYYY
+03/25/2021  THI
+==========
+	Step-2: Calculating marignal cost(or opportunity cost) values for unused cell:
+	 	Eij= Cij-(Ui+Vj)        :-For every unused cells
+	Un-used Cells(A3,A4,B1,B3,B4,C1)
+       values for Cij( 4, 6, 6,10,11,10)		//cost per unit for each corresponding cell 
+	so we need to form equation of each of these cells(i.e total 6 equations):
+	1. A3 => Ca3 - (Ua  + V3) =  Ea3 => 4 - (0 + 16) = -12 -------(i)
+	2. A4 => Ca4 - (Ua  + V4) =  Ea4 => 6 - (0 +  8) =  -2 -------(ii)
+	3. B1 => Cb1 - (Ub  + V1) =  Eb1 => 6 - (-9 + 12)=   3 -------(iii)
+	4. B3 => Cb3 - (Ub  + V3) =  Eb3 =>10 - (-9 + 16)=   3 -------(iv)
+	5. B4 => Cb4 - (Ub  + V4) =  Eb4 =>11 - (-9 + 8) =  12 -------(v)
+	6. C1 => Cc1 - (Uc  + V1) =  Ec1 =>10 - (-4 + 12)=   2 -------(vi)
+
+  So the marginal cost values for unused cells are as under:
+       unused cell 	marinal values
+	A3 =   		-12
+	A4 =		 -2
+	B1 = 		  3
+	B3 =		  3
+	B4 =		 12
+	C1 = 		  2
+Remaining steps:-
+===============
+	//are same as SSM method steps.	
+   =>As we see in this iteration, A3 cell has maximum negative(-12) marginal cost value that is if we incorporate this cell
+		then per unit we will save 12$ of our cost, so we will incorporate this cell.
+	so we will find stepping stone path of A3 now:
+
+MM/DD/YYYY
+03/25/2021  FRI
+==========
+		after making stepping stone path new table becomes:
+		
+		source\Destination	   1	   2	   3	   4	supply
+
+			A		400(12)	  0(13)	 100(4)	  (6)      500
+			B		  (6)	700(4)	  (10)	  (11)     700	
+			C		 (10)	200(9)	100(12)	 500(4)    800
+
+		      Demand		  400	  900	  200	  500   2000\2000
+
+		//A2,C2,C3 are modified because of allocation in A3(unused cell having highest marginal cost value)
+		//so now the cell A3 is used cell and A2 is a un-used cell hence our first iteration is complete now.
+		
+
+Rule for Marginal Cost:
+=======================
+	=>Check O.C(opportunity costs) >=0
+	=>If all values are o.c>0 but one o.c=0 then solution is optimal but not unique.
+
+
+
+Handling Unbalanced Transportation Model:
+========================================
+		A transportation model where demand & supply are not equal.
+	Two cases:
+	1. When supply exceed demand:
+	=============================
+	e.g:
+	===
+		source\Destination	   1	   2	   3	      supply
+
+			A		 (12)	  (13)	  (4)	        200
+			B		  (6)	  (4)	  (10)	        100	
+			C		 (10)	  (9)	  (12)	        400
+
+		      Demand		  200	  100	  300	     600\700
+
+		Solution to this is , that we will add a dummy destination point like:
+
+		source\Destination	   1	   2	   3	  4    supply
+
+			A		 (12)	  (13)	  (4)	 (0)     200
+			B		  (6)	  (4)	  (10)	 (0)     100	
+			C		 (10)	  (9)	  (12)	 (0)     400
+
+		      Demand		  200	  100	  300	 100    700\700
+
+ 	2. When demand exceed supply:
+	=============================
+	e.g:
+		source\Destination	   1	   2	   3	  4    supply
+
+			A		 (12)	  (13)	  (4)	 (0)     200
+			B		  (6)	  (4)	  (10)	 (0)     300	
+			C		 (10)	  (9)	  (12)	 (0)     300
+
+		      Demand		 100	  200	  450	 250    1000\800
+	
+		Solution to this is , that we will add a dummy source point like:
+		
+		source\Destination	   1	   2	   3	  4    supply
+
+			A		 (12)	  (13)	  (4)	 (0)     200
+			B		  (6)	  (4)	  (10)	 (0)     300	
+			C		 (10)	  (9)	  (12)	 (0)     300
+			D		  (0)     (0)      (0)   (0)     200
+		      Demand		 100	  200	  450	 250    1000\1000
+	
+
+
+Solving Maximization Transportation Problems:
+============================================
+	=>same steps as of previous transportation problems(i.e minimization problems).
+		only change is that we will allocate in that cell where marginal cost(M.C) value is highest(+ve) than all
+		and will repeat iterations till all M.Cs become zero or negative(-ve).
+
+
+Degeneracy in Transportation problems:
+=====================================
+	=>In a standrad transporataion problem with m sources of supply and n demand destination, the test of optimality 
+		of any feasible solution requires allocations in 
+			m+n-1	
+	=>independent cells. If the no of allocations is less than it, then solution is said to be degenerate solution.	
+		OR
+	If the number of used cells is less than (m+n-1) then it is called as degeneracy in transportation problem.
+
+   Example:(Transportation-table(T.T) filled with NWCM solution):
+
+		source\Destination	   1	   2	   3	  4    supply  it(#1)
+
+			A		 400(12)  100(13) (4)	 (6)     500    100 
+			B		  (6)	  700(4)  A.U.C(10)	 (11)    700			//AUT=Artificial used cell
+			C		 (10)	  (9)	 200(12) 600(4)  800
+
+		      Demand		 400	  800	  200	 600    2000\2000
+		
+		so here no of used cells= 5(A1,A2,B2,C3,C4)
+		According to definition of degeneracy:
+			=>if no of used-cells(let n.u.s) < m+n-1 then transportation problem is degenerated.
+		As we see in our Example problem m(no of source points)= 3			
+					       & n(no of desti. points)= 4
+		so the m+n-1= 3+4-1=6 
+		but in our example problem we have 5 used cells that is less than 6, hence we can say that it is a degenerated 
+			solution to this transportation problem.
+
+
+MM/DD/YYYY
+03/31/2021
+==========
+	Let's apply modified distribution method on it now:
+		Step-1:(For every used cells forming equations:-(Ui + Vj = Cij)
+			Ua + v1 = 12
+			Ua + V2 = 13
+			Ub + V2 =  4
+			Uc + V3 = 12
+			Uc + V4 =  4
+		Total Unknowns:  Ua,Ub,Uc,V1,V2,V3, and V4
+	Let Ua=0;
+	then 
+	From equ:1     V1=12     //Ua=0
+	From equ:2     V2=13     //Ua=0
+	From equ:3     Ub=-9	//V2=13
+	From equ:4     Uc= 	//here we are stuck because of degenracy as we see=> no of total unknowns > no of total equations
+		//to overcome it we will introduce an artificial used cell let its B3(A.U.T)
+			So we will also make its equation:
+		Ub + V3 = 10
+		so we get :-
+			V3=19  //Ub=-9
+	Now:-
+	From equ:4     Uc= -7    //V3=19
+	From equ:5     V4= 11   //Uc=-7			//and hence we become able to find the values of these two because of adding an
+							//artificial used cell i.e (B3)
+
+
+
+ASSIGNMENT PROBLEM:
+==================
+    =>Special Type of LP problem where objective is to minimize cost or time of completing a number of jobs by a number of persons.
+Example:
+	Assign the four tasks to four operators:
+		Cost Matrix is given below:-
+	
+			operators
+		=======================
+		1      2      3      4
+
+	A	20     28     19     13	
+(Tasks)	B	15     30     31     28			
+	C	40     21     20     17	
+	D	21     28     26     12					
+
+Hungarian Method:
+================
+	=>It is used to solve assignment Problems.
+
+Step-1:	If in a given problem the no of rows is not equal to no of columns then the matrix is not a square matrix then the problem is
+		is an unbalanced assignment problem(AP) then we will resolve it just like we did in solving unbalanced Transportation 
+		problem(i.e by adding dummy row/column) to convert it into a balanced problem.				
+				
+	=>Since the given cost matrix is already a square matrix i.e no of rows= no of columns o no need to add imaginary(dummy) row/column.
+
+Step-2: Row Reduction:
+	==============
+	i.e : Find smallest cost element in each row of cost matrix then subtract from each cost the main cost in same row.
+
+	Elements in 1st row: 
+			20     28     19     13
+	Smallest=13 that is in A4 column: so we will do like this now:
+		20 - 13 = 7
+		28 - 13 = 15
+		19 - 13 = 6
+		13 - 13 = 0
+
+	Elements in 2nd row: 
+			15     30     31     28	
+	Smallest=15 that is in A1 column: so we will do like this now:
+		15 - 15 = 0
+		30 - 15 = 15
+		31 - 15 = 16
+		28 - 15 = 13	
+
+	Elements in 3rd row: 
+			40     21     20     17
+	Smallest=17 that is in A4 column: so we will do like this now:
+		40 - 17 = 23
+		21 - 17 = 4
+		20 - 17 = 3
+		17 - 17 = 0	
+
+	Elements in 4th row: 
+			21     28     26     12	
+	Smallest=12 that is in A4 column: so we will do like this now:
+		21 - 12 = 9
+		28 - 12 = 16
+		26 - 12 = 14
+		12 - 12 = 0	
+
+	So the new Cost matrix becomes :-
+		7  15 6  0
+		0  15 16 13
+		23 4  3  0
+		9  16 14 0
+
+
+MM/DD/YYYY
+04/31/2021     THU
+==========
+	
+Step-3:  Column-Reduction:
+	=>Find the Min element in each column of cost matrix, subtract from each cost the min cost in its column.
+
+	Element in 1st Column:
+		7  
+		0  
+		23
+		9  
+	Smallest element= 0;
+	so now:
+		7-0=  7
+		0-0=  0
+		23-0=23
+		9-0=  9
+
+
+	Element in 2nd Column:
+		  15
+		  15 
+		  4  
+		  16
+	Smallest element= 4;
+	so now:
+		15-4=  11
+		15-4=  11
+		4-4=   0
+		16-4=  12
+
+
+	Element in 3rd Column:
+		 6  
+		 16 
+		 3  
+		 14  
+	Smallest element= 3;
+	so now:
+		6-3=  3
+		16-3= 13
+		3-3=  0
+		14-3= 11
+
+
+	Element in 4th Column:
+		  0
+		 13
+		  0
+		  0
+	Smallest element= 0;
+	so now:
+		0-0=  0
+		13-0= 13
+		0-0=  0
+		0-0=  0
+
+	So the new Cost matrix becomes :-
+		7  11 3  0
+		0  11 13 13
+		23 0  0  0
+		9  12 11 0
+
+
+Step-4: Check if matrix is reduced:
+	=>Draw minimum number of lines necessary to cover all zeros.
+
+		|7  11 3  0 |
+		|0  11 13 13|
+		|___________|				// | = vertical line
+		|23 0  0  0 |				//-----=horizontal line				
+		|9  12 11 0 |
+
+
+	//as we see nof of minimum lines to cover all zeros =3
+		7  11 3  0_|
+		___________|
+		0  11 13 13|
+		___________|				// | = vertical line
+		23 0  0  0 |				//-----=horizontal line				
+		9  12 11 0 |
+
+	//as we see nof of minimum lines to cover all zeros =3 so this is also correct we can do like this too;
+	
+
+Step-5: Check if matrix is reduced:
+	If Number of lines drawn= order of matrix, then matrix is reduced hence locate the optimal solution(step-8)
+	but if the matrix is not reduced go to step-6 i.e further reduction.
+	
+	As we see the minimum no of lines =3 =nol (no of lines)
+		and order =4 x4=> 4 =nor(no of rows x no of cols)
+
+	since nol < nor (3 < 4) hence the given matrix is not reduced.
+
+Step-6: Further Reduction:
+	=>Take smallest element of matrix that is not covered by single line , which is 3 here. Subtract 3 from all other values
+		that are not covered and add 3 at the intersection of lines. leave values which are covered by single line.
+		Following table shows the details.
+
+
+		|7  11 3  0 |
+		|0  11 13 13|
+		|___________|				// | = vertical line
+		|23 0  0  0 |				//-----=horizontal line				
+		|9  12 11 0 |
+
+
+	Uncovered Cells/entries= A2(11), B2(11), D2(12), A3(3), B3(13), D3(11)
+	SO minimum entry in the matrix that is not covered by lines= A3(3) //having 3 value
+	So we will now subtract A3(3) from all other uncovered entries:
+		A2  11-3=8
+		B2  11-3=8
+		D2  12-3=9
+		A3  3-3=0
+		B3  13-3=10
+		D3  11-3=8
+
+	And we will add 3 in intersection points(entries): C1(23), C4(0)
+		C1  23+3=26
+		C4   0+3=3
+
+=>So the new Cost matrix becomes :-
+		7  8  0  0
+		0  8 10 13
+		26 0  0  3
+		9  9  8  0
+
+MM/DD/YYYY
+04/02/2021
+==========	
+
+Step-7:To check if matrix is reduced or not, by drawing lines.
+
+		7  8  0  0
+		__________
+		0  8 10 13
+		__________
+		26 0  0  3
+		__________
+		9  9  8  0
+		__________
+
+	=>as we see the no of lines = order hence matrix is reduced. //in case if it still gets not reduced then we would have 
+									repaeted step-6 again
+
+Step-8:
+	=> Assign the tasks to the operators. Select a row that has a single zero and assign by squaring it. Strike off remaining 
+		zeros if any in that row or column. Repeat the assignment for other tasks. Final assignment is shown in table 
+		below:
+		
+=>Cost matrix :-
+			operators
+		=======================
+		1      2      3      4
+
+	A	7      8      0      0
+(Tasks)	B	0      8     10     13
+	C	26     0      0      3
+	D	9      9      8      0
+
+	//where there is zero :>indicates that this can be the possible assignment
+	Therefore:
+		=>Task A can be assigned to operator 3 or 4.		
+		=>Task B can be assigned to operator 1.	
+		=>Task C can be assigned to operator 2 or 3.	
+		=>Task D can be assigned to operator 4.	
+			//as operator 1 & 4 are already assigned to taskB & D respectively we will now don't consider these operators further.
+			=>So now for Task A possible operators are 3 & 4 as we have not to consider operator 4 so 
+			we will assign TAsk A to operator 3. 
+			=>So now for Task C possible operators are 2 & 3 as we have not to consider operator 3 so 
+			we will assign TAsk C to operator 2. 
+
+Original Cost Matrix:
+		
+			operators
+		=======================
+		1      2      3      4
+
+	A	20     28     19     13	
+(Tasks)	B	15     30     31     28			
+	C	40     21     20     17	
+	D	21     28     26     12					
+
+
+NOw we will calculate the total cost of tasks assigned to the corresponding operators keeping this original cost matrix in mind:
+	Task    OPerator  Cost
+	----------------------
+	 A	  3	    19
+	 B	  1	    15
+	 C        2	    21
+	 D        4	    12
+        -----------------------
+	Total Cost:     Rs. 67.00
+
+MM/DD/YYYY
+04/07/2021
+==========
+
+Solving Maximization Assignment Problems:
+=========================================
+
+  Note:>Previous was MInimization problem and here also all steps are same except following differences:
+=>Calculating equivalent cost matrix
+=>Subtract each entry in the column fom the maximum entry in that column.
+
+Example:(profit matrix is given below):
+
+			Territory
+(SalesMan) 	  1	    2		3
+
+	   A	  40	    30		20
+	   B      18	    28		22
+	   C      12	    16		20
+	   D	  25        24		27
+
+Subtract each entry in the column fom the maximum entry in that column.
+	column-1:   largest element=40
+	40-40=0
+	40-18=22
+	40-12=28	
+	40-25=15	
+		
+		
+	column-2:   largest element=30
+	30-30=0
+	30-28=2
+	30-16=14
+	30-24=6		
+			
+	column-3:   largest element=27
+	27-20=7
+	27-22=18
+	27-20=20
+	27-27=13
+
+
+	new profit matrix:
+		0  	10  	20
+		22 	12  	18
+		28 	24  	20	
+		15 	16  	13	
+AS this matrix is unbalanced we will add a dummy column here to balance it:
+			
+	new profit matrix:
+		0  	10  	20	0
+		22 	12  	18	0
+		28 	24  	20	0
+		15 	16  	13	0
+
+Rest Steps are same as in Minimization Problem.
+
+
+10 marks on presentation :
+topic= simplex method/algorithm that is used to solve LP problems even when we have more nober of variables.
+1 ppt having:
+2 headings
+1.Introduction & steps of simplex algorithm
+2. Example problem
+
+Name of ppt= 19SWRollnumber
+
+

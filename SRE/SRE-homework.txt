@@ -1,0 +1,16 @@
+Supportability:
+	Supportability refers to the software's ability to be easily modified or maintained to 
+	accommodate typical usage or change scenarios. 
+	E.G:
+	The system shall allow users to create new workflows without the need for additional programming.
+
+Testability:
+	Testability refers to extent of ease with which a system can be tested.
+	Higher the testability of system the easier will be finding faults in system.
+
+Serviceability:
+	Ability of a system to provide good service to its users.
+	Or
+	Speed with which a system can be repaired or maintained.
+	Software upgrade, hardware upgrade and Documentation are some of the faetures that
+	facilitate serviceability.
