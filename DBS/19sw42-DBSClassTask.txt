@@ -1,0 +1,63 @@
+CREATE TABLE DEPARTMENTS(
+	department_id 	 NUMBER(5) PRIMARY KEY,
+	department_name	 VARCHAR2(30),
+	manager_id 	 NUMBER(5),
+	location_id  	 NUMBER(5)
+);
+
+
+CREATE TABLE LOCATIONS(
+	location_id    NUMBER(5) PRIMARY KEY,
+	street_address VARCHAR2(50),
+	postal_code    VARCHAR(10),
+	city           VARCHAR2(30),
+	state_province VARCHAR2(30),
+	country_id     NUMBER(5)
+);
+
+
+CREATE TABLE COUNTRIES(
+    country_id   NUMBER(5) PRIMARY KEY,
+    country_name VARCHAR2(30),
+    region_id    NUMBER(5)
+);
+
+
+
+CREATE TABLE REGIONS(
+    region_id    NUMBER(5) PRIMARY KEY,
+    region_name  VARCHAR2(30)
+);
+
+
+
+CREATE TABLE JOB_HISTORY(
+	start_date 	 DATE PRIMARY KEY,
+	employee_id 	 NUMBER(5),
+	end_date 	 DATE,
+	job_id  	 NUMBER(5),
+	department_id  	 NUMBER(5)
+);
+
+
+CREATE TABLE JOBS(
+    job_id      NUMBER(5) PRIMARY KEY,
+    job_title   VARCHAR2(30),
+    min_salary  NUMBER(6,2),
+    max_salary  NUMBER(10,2),
+);
+
+
+CREATE TABLE EMPLOYEES(
+	employee_id 	 NUMBER(5) PRIMARY KEY,
+	first_name	 VARCHAR2(20),
+	last_name	 VARCHAR2(20),
+	email 		 VARCHAR2(30),
+	phone_number     NUMBER(12),
+	hire_date 	 DATE,
+	job_id		 NUMBER(5),
+	salary		 NUMBER(7,2),
+	commission_pct	 VARCHAR2(30),
+	manager_id 	 NUMBER(5),
+	department_id 	 NUMBER(5)
+);

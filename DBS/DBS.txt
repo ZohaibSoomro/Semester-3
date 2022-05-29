@@ -1,0 +1,2836 @@
+data is raw facts
+information is processed data that is in a form that is useful for making decisions.
+information is generally reconstructed or devised from raw facts
+-> good decisions require good infromation from raw facts
+
+sometimes data is directly gotten/ interpreted by a major column 
+but sometimes we have to co-relate two/or more columns for interpretation.
+
+without data, information and knowledge can not exist.
+
+======================
+Dimensions of information:
+
+sentatic = we r able to differenciate b/w diferent aspect e.g to read an unknown language u will be able
+ to recognise commas, paragraphs, words, sentenences but not meaning
+
+semantic =  we r also able to know its meaning  : E.g traffic signsls have meaning 
+pragmatic  = we r able to apply it practically E.g traffic signals are able to stop cars. 
+ 
+File based systems´(disadvantages)
+==> Structural dependency= if some data is changed in file then it also needs to be changed in app
+==> Redundency: same data sharing b/w different entities 
+       if redundncy is uncontrolled then following come into existance:
+	a. Data inconsistency: same data in many variations.   :1)causes data integrity.
+	b. Data Anamalies: problems/errors that created bcz of data repeatition 
+		  i) update anamaly
+		 ii) insert anamaly
+		iii) delete anamaly
+==> Concurrency: same data can not be used simultaneously. like on websites decades back.
+==> Security:  data can not be shown partially or say it is not that much secured. // e.g uni result
+
+
+
+
+
+
+
+Database Systems:
+=============================
+
+Database: A shared Collection of logically related data.
+DBA(FB adminsitration)= has all access to database.
+
+DBMS: A software used to manage database.i.e to define, modify,etc
+distributed system: data is stored at many systems i.e data is not centralized.
+Data in dbs: data is facts that are stored in database systems
+
+Database Systems Benefits over Filebase Systems:
+   1. Concurrency
+   2. Structured & Described data.  i.e metadata
+   3. Separation of data &application i.e by DBMS.
+   4. Data integrity   ==> using constraints no null, check(condition) ,unique,default,extra
+   5. Transactions   => bundle of actions that are done within a db to bring it from one consistant state to another.
+         // Transaction is single logical unit of work which access and possibly modifies contents of a database.
+   6. Data views     => we can give partial ACCESS to users using this.
+               //they allow to show a users only some particular records/columns/information/data.
+		rest data will be also there but user willbe unaware of it.i.e its invisible to him. 
+   7. Access Control   ==> u just take preileiges out of user if u dont wantto give access to some fuctionality 
+                       //like  creating table, modifying. These previleages are given by DBA as it has access to all .
+   8. Scalability   ==> ability of a system to adapt changes without functionality of it being affescted.
+		    what we have to do is to increase storage.
+   9. Backup Recover  ==>dbs allow us to backup all data if we have got a system failure we recover our data.
+   10. Security.    ==> dbs allow us security through previleages, data views
+
+MetaData: data about data i.e in dbs data about stored data is also stored like; number of tables,
+     datatype, columns.
+==>This all metadata is stored at a place in dbs that is called system catalog/data dictionary.  
+
+ACID(Automacity(either transaction will happen or not)Consistency(integrty is mainted using integrity constants)
+	 Isolation(Multiple users accessing same dbs) Durability(if trans.. is successful then changes are stored 
+permanently i.e we can not undo if a transaction has completed successfully .all accounts will be updated.))
+ Transactions:
+    they ensure if data is consistant.
+
+==================================
+ One consistant state to another state: If we go to atm for transaction if its successful then i debited money to 
+another account then his account willbe credited with the amount i debited.
+that is a one consistant state to another consistant , acid transactions enure this that 
+data is consistant.
+
+==> Partial transaction: in dbs partial trans.. does not happen e.g i debited but the one to which i debited 
+does not gets credits i.e his account is not credited.
+
+
+Disadvantage of DBS:
+================
+1.increased cost
+2.Management complexity
+3.qualified personnel   //i.e who can write sql queries.
+4.frequent upgrades    //db needs to be upgraded 
+
+Database Model:
+//////////////////
+A DB model is a collection of concepts and rules for the description of the database structure.
+structure of the db means the datatypes the contraints and reationships for the description or 
+storage of data respectively.
+
+DB model is a collection of logical constructs used to represent the data structure and the data 
+relationships found within the database.
+Two groups Of DBM:
+1) Conceptual Models.
+	in this model we design ER model:
+       it concerns with that what is to be repesent in/by db instead of how it is represented by database.
+	it forms basis of blue/blueprints for making database.
+	This category includes ER(Entity Relationship) models. it is high level(of abstraction) data model that tells 
+	what are the entities in db what are their attributes.
+	===>when this conceptual model is converted into tables.
+	E.g: ER example is a "STORE keeps PRODUCT"  here store and product are two entities and keeps is relationship.
+		entities are repsented with rectangle , relationship with diamond and attributes with ellipses.
+		Élipses when ER model is converted in physical model then they show columns. 
+	Entities which depend on another entity then it is called  weak-entity
+and they are represented by a rectangle inside rectangle like  ............
+							       . ........ .        
+							       . .      . .
+							       . ........ .
+							       ............
+						
+Primary key/attribute key: is represented by its name(underlined) written a ellipse
+derived attribute is  represented by dotted ellipses.
+
+2) Implementation Models.
+	it is concerned with that how will we implement the data , based on some data.
+	These models are also called Physical models. 
+	E.G:
+	1)' Hirearchical model: 
+	
+	collection of records organised logically to conform to the upside-down tree(a kind of DS) structure. 
+	where top layer is known as parentroot to all beneath layers/childs having levels.  first child of root 
+ 	has level 1 and child of the child has level 2 and so on... A child node can have only one parent . 
+	child which dont have further childs is known as "leaf node".
+
+	2) Network model:
+		A relationship is called set and is in the form of owner and member.
+		in this model a member can have multiple owners(parents) unlike hirearchical.
+	
+
+All the models depend upon scenario, what kind of data is, how is flow of data for organization. and many more rules
+
+3) Relational db model:
+    data is stored in the form of tables(relation) : rows and columns.
+	columns=attributes/fields
+	row=record=tuple
+degree of table= total number of columns in a table 
+cardinality= total number of rows
+==============> edgar frenk codd in 1970 introduced this model.
+
+
+
+4)  Object Oriented model:
+	data is stored in the form of objects with features and methods.
+	objects that have similiar chracteristics are all grouped in clases.
+class-> table
+objects -> records/tuple                                //-> = in database it represents
+variables-> columns/attributes
+methods->  stored procedures.
+
+=======================
+Database Schema:
+	description of database is known as db schema.
+	Shema-less databases are called nosql databases.
+	Because of schema RDBS are flexible.
+E.g: before building a house we first make a plan and we act upon it because all the thinggs are connected to 
+one another .
+Tempelate for a table is known as schema and when this tempelate is filled with data then it is called 
+instances/records.
+
+
+18/01/2021
+===========================================================================
+Based on level of abstraction/amount of details, there are 3 db models:
+  1. conceptual:
+      	It is at the highestlevel of abstraction bcz there is very summarized view of data.
+      It only contains entities that contain data, relationship whether entities are related with one 
+	another or not.but dont tell how are they related, or their attributes, no primary etc that's
+	 why it is on highest level of abstraction.
+
+E.G:  time & product is related to sales and sales is related to store , but some how we can say that product and time
+    are related to eachother. that's called logically related data, i.e that is definition of database: collection of
+       logically related data.
+
+  2. Logical:
+       Middle level of abstraction. contains, entities, relationships just like conceptual but also adds
+       which/how many attributes will an entities contain, also this model specifies primary key /foreign keys.
+	and normalization: many to one, 1 to many relationships , many to many relationships.
+	IN logical MOdELS  we resolve many to many relationships.
+
+
+
+Primary key: is reference to a table. 
+Foreign key: a foreign key in sales table is primary key in other tables.
+These keys are used to keep data logically related/form relationship b/w tables.
+  3. Physical:
+	In physical  data models  mtmr are not allowed. only 1tm & mto   are allowed. 
+	Normalization is use to get rid of many to many relationships(mtmr) so that  model is free from many 
+	to many relationships.
+
+
+
+19/01/2021
+==============================================
+Database Keys:
+   They are used to establish relationships b/w tables / enforce integrity.
+	They ensure data integrity.
+	They are also used to identify records uniquely.
+4 types of keys:
+============
+Super key:  Just like a super set.   It is a combination of fields wihtin a table uniquely identifies each record within table.
+
+	E. g Records should be unique 
+Candidate key: Subset of super key. Records are being identified uniquely.
+	Super key is reduceable i.e it has extra attributes inside it. but candiadte key has less attributes
+       as compared to superkey.Candiadtey ke is irreduceable if we reduce it then we will not be able to uniquely identify 
+	records.
+	Every table must have at least one candidate key.
+	if a column/field is chosen as candiadte key then It should contain unique values and not null value(s).
+	and shoud uniquely identify records.
+==============================================================
+In actual / practical only primary / Foreign keys are used.
+==============================================================
+Primary key:   Primary key is chosen from candidate keys.A table can have several candiadte kes but it can only 
+		have one single-primary key. primar key can be combination of two or more fields e.g first+lastName
+		but still it will be considered as single-primary key even being combination of two fields.
+		It is a cadidate key that is most appropriate to be the main reference key for table
+       ===========
+	*Not have null values        *have unique value              *uniquely identify records
+	A primary key is known as simple key if it contains  one column/fields of candidate keys.
+	A primary key is known as composite key if it contains  multiple columns/fields of candiadate keys.
+
+While choosing primary key , simple primary key is prioritized as compared to composite key.
+Primary key is needed when we are relating one table with another table(s). 
+=========== 
+Foreign key:   A primary key that is inserted into another table to create a relation b/w them.
+		A foreign key is always a primary key in another table. and is used to create logical
+		connection b/w them both. 		
+		It can not exist without it being a primry key in another table.
+		
+		it can have repitition and null values too unlike primary key but it can contain onl those values 
+	that are in  primary key in other table.
+
+	Primary key containing Numeric data  is preferred to use as foreign key as it promotes faster traversing
+	as compared to the PK containing
+	textual data.
+=> in 1 to many relationship of tables the foreign key is kept in table of many sides.
+
+Differenece b/w Composite And ComPOund key:
+	as both are containing more than one fields then diffe is...
+        that in composite keys each field is not stand alone simple key that can uniquely identify the records
+	unlike in compound keys each field is stand alone simple keys.
+
+
+Referencial integrity:
+     Term used with relational database to describe integrity .It ensures that relationships 
+	B/W tables remain consistent.
+	It says if there is a foreign key then it should countain same values that primary key contains
+	
+The table containing a foreign key is called a child table of the table containing same primary key.
+Parent table's primary key is inserted into a table and it becomes foreign key there and that table is 
+called child table.
+
+=>========>Referential integrity is implemented using constraints(but not primary key) e.g foreign key 
+constraints bcz it is responsible for creating connnection b/w tables.
+
+ 
+If constraints are applied to a table then foreign key can not contain values other than that values that are in
+primary key.
+
+If any of the foreign key's value is not present in primary key then data become inconsistent that 
+that referential integrity does not allow.
+we can apply constraints if a table has no data, or has data that does not violates any of the condition of a
+constraint e.g for primary key constraint data should be unique, not null and not repeated. 
+
+
+
+
+
+
+21/01/2021
+===================================================
+12 rules of Edger Codd's(Inventer of RDBS) for a database to be a relational database:
+===================================================
+
+Rule#1: Information rule:
+    The metadata/data in data dictionary or any data that is present in RDBS should be 
+	in the form of tables( in form of rows and columns.)
+Rule#2:Guaranteed Access Rule
+     Every data/record inside a db should be accessible through one column(PK) by some query.
+Rule#3:Treatment of Null values
+    Database must allow representation of a null value.But it should not allow to insert null value in PK if
+	contraints is applied. 
+Rule#4: Active online catalog:
+          DB should also allow to store data about data . that can also be accessed by user using queries.
+Rule#5 : Comprehensive Data sub-language:
+       the query language which we r using it should allow us to define database i.e creting tables/updating data.
+	e.gsql is data sub-language 
+Rule#6: View updating rule:
+	All the views of database which can theoritically be updated must also be updatable by system.
+Rule#7:  High-level insert,update,delete:
+ 	it should allow to insert/update/delete multiple records 
+	it(query language taht we use) must also support union, intersection, minus 
+Rule#8: Physical data independence:
+	if we r making any type of physical change in a database then it should not affect application to be
+	changed.  that is accessing data.
+Rule#9: logical Data independence:
+	it should allow also logical independence(Just like rule#8)
+Rule#10: Integrity independence:
+	Database must be independent of application that is accessing data or they should be separated by a DBMS
+Rule#11: Distributed Independence:
+        Data can at different locations ; but user will not know/feel that from where data is coming/ data is coming from
+	distributed locations.
+Rule#12: Non-subversion rule:
+	If there's an app that can modify records, then it should not be allowed to violate integrity constraint.
+	e.g if there's PK & FK , and app adds a value in FK that is not in PK then databse should not allow it to do it.
+
+===========================================================================================================================
+
+
+Logical Data Independence:
+      if we r making changes in data in db then it should not affect app that is accessing that data.
+	or 
+	The ability to change the logical schema(tables e.g) without having to change the external schema(app). 
+Physical Data Independence:
+	The ability to change the physical schema without changing logical schema.
+	e.g: using new storage devices, using different data structures, using different file organizations of 
+	 	storage structures.
+
+22/01/2021
+  SQL: structured query language:
+	They are used to make querries in db
+	they classified in two languages:
+	Informational retreival QL:  it doesnot give exact answers.e.g for seraching an employee it will give whole document. 
+	Database query language: it gives exact answers to queries.  e.g CQL(Contexual query language, SQL etc.
+
+SQL:   First name: Sequel
+	=> developed by IBM
+	=> non-procedural language: in which we have to tell what to do but not how to do.E.g Lisk,SQL
+//Procedural lanuguage: step by step instructions are in sequencial order/step by step instructions   //e.g C,Fortran.Cobol
+	=>Not case-sensitive for its keywords, but case sensitive for its data while comparing.
+	=>  used to manipulate data in db
+Action that can do: execute queries, retreive data ,update, insert, delete,create database, create database objects, tables,
+create stored procedures setting permissions on tables,procedures, and views.
+
+PLSQL: procedural SQL: it gives ability to SQL of a procedural programming.  e.g control structures, loops etc.
+
+
+Database Objects:
+ 1. Tables
+ 2. Index
+ 3. View
+ 4. Sequence
+ 5. Synonym
+
+Datatypes in SQL: 1. Numeric:     Number e.g Number, Number(L)//length,NUmber(L,D)//Number covers both ints and decimals   
+				  E:G Number(7)    //number of max 6 digits can be st0red (one of deciml point)
+				  E.g Number(7,2)   //////////////////////////////////////////////with 2 decimal places
+
+				  ,Integer(//same as Number),Decimal (in this)
+				  E.g  Decimal(7,2)  ///here in Decimal datatype we can store minimum 6 digits not maximum
+					unlike Number and Integer
+		2. Character:    Char(//fixed sized datatype), E.g Char(5) //if we store 'hi' then internally it will insert 3 blank 
+					spaces after 'hi' to make 5 characters  hence called a fixed Sized character
+				Varchar:(automatically converted into Varchar2 ), can store max 2000 chars
+				Varchar2: no default value, can store max 4000 chars and do not inserts useless spaces at last.
+		3.Date:         will be given 10 size for each entry: e.g 2020-12-06,     YYYY-MM-DD(format)     
+
+
+
+
+SQl Statements are categorized in 5 :
+	1. DDL: Data definition language: create and manipulate data objects (Tables,index,views,sequence,synonym)
+	2. DQL: Data query language:         to retreive data from database. 
+	3. DML: Data Manipulation Language: to manipulate data (if we want to change/update/delete some data) 
+	4. DCL: Data control language:    Composed of commands that will allow to manipulate particular data 
+						e.g allows acessing data using previeliges
+	5. TCL: Transaction control language: what the chnage has been made by a query is it permanent or not 
+							this is ensured by these statements. E.g Commit command
+								makes a change permanant we can not undo that.
+=============================================================================0
+1/25/2021
+==============================================
+1. DDL:
+	whenever we issue DDl command, if its executed successfully , we can not undo it.
+	i.e automatic commit occurs.
+    E.g of these statements are: create, drop, alter, rename, truncate.
+
+Create: whichever Db object we r trying to create then we will follow that objects name after create
+	i.e create table, create index, create view, create sequence, create synonym.
+	
+naming Convension for creating table:
+	max of 30 chars, start with a letter but not special chars, can not contain spaces
+	dash & underscores are allowed,reserved words are not allowed,
+	Column names within each table should be unique.
+        in a DB two tables can't have same name.
+	E.g: Emp-1,Emp_1,emp are allowed while _emp is not allowed.
+
+=>Table constraints are given after description of last column(both separated by a comma) and are 
+	optional. and they are not same as column constraints
+=======================================================================================================
+=> desc command shows names of all columns in capital forms even the are in mixed case /lowercase
+=> desc don't show constraints of columns except "not null" cnstraint 
+=======================================================================================================
+
+
+Create table table_name(column-name,...(this is optional))] AS (subquery)      //Creates new table as well as 
+			populates it.
+	 
+e.g: 1>Create table EMP2 AS select * from EMP;   //all data will be now contained in EMP2 too.
+	i.e If EMP has 8 columns
+          and we select * from Emp but give just 2 column names after EMP2 then this query will not run
+	either we should not write this optional part(column names) or we should also select that number of columns
+	from EMP that we are writing no of columns after EMP2. 
+     2>Select * from Emp2;	
+		//same data as of EMP willbe printed here too.  only data, names of columns but constraints
+			are not copied implictly for that we will need to apply explicitly.i.e The
+		referencial integrity constraint won't have been applied implicitly.  
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+================================================================================================
+26/1/2021
+================================================================================================
+For using encrypt keyword with a column, a wallet should be created
+Datatype 'Blob' is used for storing images/ any graphical representation in database
+
+Virtual Column: a column for which we can not provide values but its values
+		 are calculated based on some other column:
+	e.g column#1:  salary Number(7,2)  ,c2: hrl_rate Number(7,2) GENERATED ALWAYS AS (sal/2080)
+				 c2 is same as, hrl_rate Number(7,2)  AS (sal/2080)
+	Here hrly_rate is a virtual column.
+
+if we provide value to the virtual column then query won't be executed.
+	
+
+
+2.DQL:
+	Select is able to do projection(retreive columns from table/specific data that we want i.e columns), Selection(that is it can
+		selct all rows'/records) and JOining(retreiving data from multiple tables simultaneously by linking /joining),
+
+				where= for row restriction this clause is used.
+
+Syntax: Select *| Distinct | unique (column_name) as alias arithmetic_exp from table1,table2... where ... group by ... having ...  
+			order by ... 
+
+
+Select at least needs from to be used in its statements
+Columns written after select keyword form  "select list".
+Another variation: Select sal*(20/100) from Emp;    // it will print 20 % of salary.  //in o/p the column name/heading will also appear like
+									SAL*(20/100)					 
+		
+As: the alias/wordName followed by AS will be the column heading of the column preceding AS keyword in select statement:
+ E.G : Select sal*12 AS AnnualSalary from Emp;    //  So the column heading in data retrived of sal*12 will be 'AnnualSalary' 
+							but here column heading(AnnualSalary) willbe  in uppercase as 
+						select prints in uppercase. like 'ANNUALSALARY'
+	///////////To print Name as it is/to make it case sensitive/it contains spaces then we will need to write alias in double quotation 
+						marks(not single quotes) like
+	Select sal*12 AS "AnnualSalary" from Emp;      //Column heading willbe AnnualSalary.  i.e as it is
+	
+	//////////if alias  contains spaces then we will need to write alias in quotation marks otherwise it will generate an error:
+	Select sal*12 AS "Annual Salary" from Emp;
+
+	we can also skip AS keyword like:
+	Select sal*12 "Annual Salary" from Emp;
+
+							
+
+3. DML:
+	SELECT DISTINCT deptno FROM EMP;
+	/////////OR
+	SELECT UNIQUE deptno  FROM EMP;
+			Only unique values willbe printed.
+	SELECT DISTINCT deptno, job FROM EMP;
+		in O/p both columns willbe affected; (here ordered pair is formed b/w deptno & job)
+			that willbe compared with other records.
+	in general:
+	SELECT DISTINCT selectListHere FROM EMP;
+		So whole select list willbe affected
+
+	Concatenation:  tw0 ways: 
+		 ||, or concat(arg1,arg2)   takes two args and concates both  and returns concatenated string
+	Select ename || job from emp; 
+		in o/P  column heading willbe ENAME||JOB and O/p is in single columns e.g SmithClerk   i.e Smith=ename, job=Clerk
+	
+	Select ename || 'is a' || job from emp;      //O/P e.g  Smithis aClerk   i.e Smith=ename, job=Clerk       ||=pipe operator
+	
+	
+	E.G:
+	Select Concat(Concat('20% of sal of ',ename),Concat(' is ',sal*(20/100)));
+		O/p:E.G: 20% of sal of SMITH is 160
+
+
+
+	Where Clauses: Is followed by FROM keyword and is used to restrict rows;
+		Select ename,job from emp where job= 'Manager'; 
+	select ename from emp where sal<600;
+			// No error but no output too// as there is no emploee having salar less than 600	
+	=> To compare date same format of date should be written that is contained by the date column(e.h hireDate) 
+		in our table       
+	E.g: select job from emp where hiredate > '21-FEB-81';  //then in our table emp the hiredate column must have 
+								this format 'DD-MON-YY'
+
+
+NOte:  For comparison only single quotes is used but for aliases double quotes is used.
+	
+
+MM/DD/YYYY
+2/1/2021
+=========================================================================================
+
+	Select deptno, Distinct job from emp;
+		will generate error because 14 rows of deptNo should be printed and after that 8 rows should be printed 
+		as for job column we are printing distinct values, so this kinda confliction that's why it will gnerate error.
+	
+
+Mathemtical Opeartors in SQL:
+   not equal to: <>, !=, ^=   
+Logical Conditional operators: 
+	AND:
+	     SELECT selectListHere from tableListHere WHERE condition1 AND Condition2 and so on... 
+	OR: 
+	     SELECT selectListHere from tableListHere WHERE condition1 OR Condition2 and so on... 
+	NOT:
+	     SELECT selectListHere from tableListHere WHERE NOT condition1 ='xyz' and etc 
+	
+        BETWEEEN-AND   (requires two values lower-range & Upper_range)
+		e.g:  SELECT empno,ename,sal, from emp WHERE sal BETWEEN 800(//lower range) AND 1800(//upper range); 
+	Note: => records having Lower & upper bounds in the required column(i.e like sal here having 800 & 1800)
+		will also be included in o/p.
+
+
+
+MM/DD/YYYY
+2/2/2021
+=========================================================================================
+Like 'expression' Operator:       //two wildcards that are used in Like=  %(percentage) , _(underscore)
+    e.g    
+    1. select * from emp where name like 'A%';    //all records having whose name starts with 'A' or 'a' willbe retreived here.
+    2. select * from emp where name like '%A%';    //all records having whose name contains 'A' or 'a' at any position
+							 willbe retreived here.
+    3. select * from emp where name like '%A';    //all records having whose name ends with 'A' or 'a' willbe retreived here.
+    4. select * from emp where name like 'A%';    //all records having whose name starts with 'A' or 'a' willbe retreived here.
+    5. select * from emp where name like '_A%';    //all records having whose name contains 'A' or 'a' at 2nd position 
+							willbe retreived here.
+    6. select * from emp where name like 'A__E';    //all records having whose name starts with 'A' or 'a' and contains 'e' or 'E'
+							at 4th position and has total 4 characters, willbe retreived here.
+    7. select * from emp where name like 'A _ _ E';    //will generate an error we can not provide spaces in like expression
+    8. select * from student.student where name like '%A%A%';   //all records containing at least two 'a' or 'A' at any position in name
+							
+
+IN operator:
+	It can take one, two or multiple values and allows us to match a column to the given values in parenthesis in the where clause.
+	It behaves like OR operator.
+	For comparison we will need to put quotes for column data having datatype as character 
+  e.g:
+	1. select * from emp where sal in(2450,500);    //employees having sal 2450 or 500 will be printed in output
+	2. select * from emp where job in('CLERK','SALESMAN');    //employees having sal 2450 or 500 will be printed in output
+
+IS NULL , IS NOT NULL operators:
+    	Select ename, job, sal FROM emp where comm IS NULL ;   ////records having commision null will be printed
+	Select ename, job, sal FROM emp where comm IS NOT NULL ;   ////records having commision not null will be printed  i.e Salesman
+
+
+ORDER BY columnNameHere ASC ,       ORDER BY columnNameHere DESC , :
+        =>It is used to print output in ascending or descending order.
+	=>Default order is ascending.
+	=>if a column has null value and we print order by ascending order then null will be the last record.
+	=>we can also order output with aliases of columns. 
+		  select sal*12 "Annual Salary" from emp where "Annual Salary" IN(2000,3000) order by "Annual Salary";
+	=>it is always last part of select statement. 
+
+	e.g:  SELECT ename, job, sal, comm, hiredate FROM emp WHERE hiredate > '21-FEB-81' ORDER BY sal DESC;
+		         //Prints all employees who are hired after 21st FEb 1981 based on highest pay scales(i.e salary)
+	=>we can also do like this:
+			Select ename,deptno from emp order by deptno asc, ename desc;
+				//here deptno will be called as primary sort and ename will be called secondary sort.
+===========================================================
+principle: if there's unique/distinct keyword used in select list then we should order by that column name that's present 
+									in select list. 
+===========================================================
+
+MM/DD/YYYY
+2/4/2021
+=========================================================================================
+	
+Functions:
+1.Single Row Functions/Scalar Functions:
+		For every row it will give one output/Provides one result for every row
+	String,Numeric Data
+String Functions: 
+	Concat(arg1,arg2): returns text strings concatenated
+	Instr(arg1,arg2):  //in string//returns location/position of substring in a string: e.g: Select INSTR('helo','e') from dual; //O/p=2
+	Length(arg1): returns total number of chars a string contains: Select Length('hehe') from dual;    //O/P=4
+
+	//as these are scalar functions so they will be processed for each row:
+	Select Length('hehe') from emp;      //will print 4 , 14 times bcz there are 14 rows in emp hence 14 time Length() is processed.
+
+Select Length('hehe') from dual;
+//will  be same as
+Select DISTINCT Length('hehe') from emp;
+	//both are equal and will generate only one row.
+	
+	RTRIM(arg1);   also RTRIM(arg1,'characterToBeTrimmed');  
+		select Rtrim(' Hehe    ') from dual;           //o/p will be " Hehe"   //right spaces trimmed
+		select Rtrim('Hello','o') from dual;            //o/p= Hell
+			//2nd argument i.e('o') will be chopped/trimmed if its present on right most position
+		select Rtrim('Hello','l') from dual;            //o/p= Hello
+			//as 'l' is not present at right most position
+
+	LTRIM(arg1);   also LTRIM(arg1,'characterToBeTrimmed');  
+		select Ltrim(' Hehe    ') from dual;           //o/p will be "Hehe    "   //left spaces trimmed
+	REPLACE(arg1,arg2,arg3);
+		select Replace('KOlar','O','o') from dual;     //in o/p capital 'O' of KOlar will be replaced with small 'o'
+	REVERSE(arg1);
+		select Reverse('Kolar') from dual;             //o/p will be raloK(i.e Kolar in reverse)
+	SUBSTR(arg1,arg2,arg2);      Returns Part of a text
+		select substr('Kolar',2,3) from dual;         //O/p=  ola    //i.e from 2nd position  3 chars will be in o/p
+		select substr(empno,-3,2);                  // here minus represents that position strats from backwards/right side
+			O/p E.G:  if empno= 7235       then o/p will be  23
+		select substr('kolar',0,3) from dual;          //O/P= kol   //same output as of using substr('kolar',1,3);
+		select substr('kolar',2,-3) from dual;    //O/P= null , we should not give length(3rd arg) negative.
+		select substr('kolar',6,2) from dual;    //O/p=null,    as starting position here is 6 but we have total 5 chars in kolar		
+
+=========================================================================	
+2.Multiple Row Functions:
+		Provides one result per group
+=============================================================================
+
+MM/DD/YYYY
+2/8/2021
+=========================================================================================
+Case-Conversion functions:
+	LOWER(arg1):
+	 	returns lowercase equivalent string of specified string(direct a string or a column name)
+		e.g:  select LOWER('Hello') from dual;   //op:    hello 
+	UPPER(arg1):
+	     	returns uppercase equivalent string of specified string(direct a string or a column name)
+		e.g:  select LOWER('Hello') from dual;   //op:    HELLO
+		
+	INITCAP(arg1):
+	   	returns equivalent string of specified string having first char as capital(direct a string or a column name)
+		e.g:  select LOWER('hello') from dual;   //op:    Hello
+		
+Other examples:
+	SElect ename, LOWER(ename), initcap(ename) from emp;    //three column will be printed in o/p having enames, enames in lowercase,
+									 enames in sentence case(1st char capital) respectively.
+	SElect ename,job  from emp  where LOWER(ename)='king' ;     // o/p:     KING   PRESIDENT
+	SElect ename,job  from emp  where ename =UPPER('king');     // o/p:     KING   PRESIDENT
+		//here Upper/lower is not used in select list(i.e used only for comparison) hence it will have no effect on output
+
+
+
+=========================================================================================
+DATE functions:
+	ADD_MONTHS(date1,noOfmonths):
+		Returns a specified date with additional 'n' months
+		E.G:    SELECT ADD_MONTHS('05-JAN-2001',4) from dual;    //will print o/p after adding 4 months to this date i.e (05-MAY-2001)
+
+	EXTRACT(arg1):
+		Returns value(current day(number) of month) of specified date:
+		E.G:    SELECT EXTACT(DAY FROM SYSDATE)  from dual;        //O/P:  8 (i.e tday is 8th feb 2021)
+			SELECT EXTACT(MONTH FROM SYSDATE)  from dual;        //O/P:  2/FEB (i.e tday is 8th feb 2021)
+
+	LAST_DAY(date1):
+		Returns last day of month in specified date:
+		E.G:   SELECT LAST_DAY('14-FEB-2021')  from dual;      //28 (this feb has 28 days)
+
+	MONTHS_BETWEEN(date1,date2):       //if 2nd date is greater than first, result will be negative but will caculate no: of months
+		returns months between the two specified dates
+		SELECT MONTHS-BETWEEN('01-MAY-2010','01-JAN-2010') FROM dual;             //O/p=4   ; May=5th month, Jan=1st month; 5-1=4
+	NEXT_DAY(date1,'dayName'):
+		returns first weekday that is greater than that day
+		SElect NEXT_DAY('08-FEB-2021','friday') from dual;    //o/p:   10-FEB-2021 //as next friday is on this date 
+	SYSDATE:
+		Returns Current database system date.
+		SELECT SYSDATE FROM dual;                      //o/p: current date i.e 08-FEB-2021
+
+NUMBER FUNCTIONS:
+===========================================
+TRUNC(arg1):
+	Truncates decimal part
+	Trunc(arg1,arg2):
+	==============================================================
+	SELECT	Trunc(23.347666,2) FROM emp;                   //O/P= 23.34   //i.e prints decimal number upto arg2(i.e 2 here)decimal numbers
+CEIL(arg1):	
+	returns a least integer greater than or equal to arg1
+
+FLOOR(arg1):
+	returns a greater integer less than or equal to arg1
+
+ROUND(arg1): 
+	rounds arg1 according to math convensions of (>=0.5, <0.5); 
+	SELECT ROUND(23.6345) FROM emp;			//o/P= 24
+	
+	ROUND(arg1,arg2):  works same as TRUNC(arg1,arg2)
+	==============================================================
+	SELECT ROUND(23.6345,2) FROM emp;			//o/P= 23.63
+
+NULL-RELATED FUNCTIONS:
+==============================================
+NVL(arg1,arg2):  			//arg1 can be column name
+	substituting a value for a null value.
+	
+	args1= source having NULL 
+	arg2=  value to be substituted if arg1 is null, can contain a number, character or a date
+NVL2(arg1,arg2,arg3):
+	substituting a value for a null value.
+	args1= source having NULL 
+	arg2=  value to be substituted if arg1 is not null, can contain a number, character or a date
+	arg3=  value to be substituted if arg1 is null, can contain a number, character or a date
+
+
+
+///Gross-pay= basic_salary+ total allowance 
+	e.g:
+	SELECT ename, sal+NVL(comm,0) from emp;   //O/p wherever there is null in comm column will be replaced with 0 and is returned.
+	or					//otherwise commision value is returned and added in salary that is 'gross pay'
+	SELECT ename NVL2(comm,sal+comm,sal) FROM emp;
+
+	SELECT ename, sal+NVL(NULL,0) from emp;  //Every time NVL returns 0 because everytime NULL is replaced by 0
+						//here NULL will be replaced wherever in select list columns it exists not only in comm column.
+
+
+	SELECT ename, sal+comm from emp;   //Arithmetic expressions are evaluated to null if the invlove a null value in operation
+						//i.e if a record has null in 'comm' column then for that record sal+comm=null 
+
+
+	SELECT ename, sal+ NVL2(comm,sal+comm,sal) from  emp;   /// replaces comm of current record with sal+comm if its not null otherwise 
+								replaces with sal if its null and then adds in sal that is printed.
+
+
+
+
+MM/DD/YYYY
+2/9/2021
+=========================================================================================
+2.Multiple Row Functions/Aggregate Function/Group Functions:
+=========================================================================================
+		Provides one result per group/for whole table(if there's no group by clause).
+	=>G.Funcs ignore Null Values but they can be included using NVL or NVL2.
+	=>Group is formed by 'GROUP BY' keyword.
+		i.e if we have formed two groups then o/p will have two results an so on.
+		but if we have not made any group using GROUP BY then whole table is considered as a single group.
+	=>G.Functions process the values of multiple rows to give one result per group.
+
+There are 5 GROUP functions:
+
+
+1.SUM(arg1):
+    	returns total sum of a arg1 column.
+
+2.MIN(arg1)
+	returns minimum number present in arg1 column.
+
+3.MAX(arg1):
+	returns maximum number present in arg1 column.
+
+4.AVG(arg1):
+	returns total sum of a arg1 column dividee by total number of records present in arg1 column.
+	i.e returns average of records present in arg1 column.
+
+	SELECT AVG(comm) FROM emp;      //null valued records are not included
+	is not same as
+	SELECT AVG(NVL(comm,0)) FROM emp;      //Records having null values is also included   
+		//because here denominator is also affected:   i.e Avg= sum/total records // total is affected           
+	
+5.COUNT(arg1):
+	E.G:
+	SELECT COUNT(*) FROM emp;   //O/P: 14     //null will be included here becoz of '*'
+	SELECT COUNT(comm) FROM emp;      //o/P: 3   //for a column records having null values is ignored.
+	SELECT COUNT(DISTINCT job) FRom emp;    //O/P: 8
+
+/////THese above 5 function can take a number or a number column as an arg1.
+=======================================================================================
+'GROUP BY' CLAUSE:
+=======================================================================================
+1.Column aliases are not allowed.
+2.Results of Groups are by default outputed in desecnding order. 	
+3.Every column that appears in GROUP BY clause doesnot need to be present in SELECTLIST.
+4.Every column that appears in a GROUP function & that group function is in select list then that column should also appear in GROUP BY clause.
+         //i.e If a group function is used in SELECT clause then any individual column listed in the select clause must also be listed in
+		the GROUP BY clause. 							
+
+SYNTAX:
+	GROUP BY column_name1,column_name2... ans so on
+
+E.G:
+	SELECT DEPTNO FROM emp GROUP BY DEPTNO;      //O/P:   30			//point#2 achieved
+							      20
+					  		      10    //i.e in descening order //looks like distinct bit do not works like that.
+	SELECT deptno FROM emp GROUP BY deptno,job;   //not mandatory to write job also in selectlist   //point#3 achieved
+
+	SELECT deptno "dept" FROM emp GROUP BY "dept",job;    //will generate error bcz of using alias in GROUP BY caluse //point#1 achieved
+
+	SELECT deptno, AVG(sal) FROM emp;        //will generate error bcz of AVG(sal) will generate a single output for whole table
+						as there's no any 'GROUP BY' clause hence whole table is considered as a single group so
+						AVG(sal) will give single row of output but in select list we also wanna print deptno in output
+						and we know there are 3 departments so is kinda confliction that's why query won't be executed.
+						 //point#4 achieved
+	//Correction:
+========================================================================================================  
+ Statement: Display average salary of Department in emp table:
+	SELECT deptno, AVG(sal) FROM emp GROUP BY deptno;      //now it willbe executed  //point#4 achieved
+
+	
+	SELECT deptno, MAX(AVG(sal)) FROM emp GROUP BY deptno;  //will generate error because Avg will give 3 rows in O/p bcz of
+									deptno 10,20,30 and MAX will give maximum of these three rows
+									and it gives a single row O/P but again it will try to generate 3 rows 
+									bcz of GROUP by deptno(i.e 30,20,10) //so won't be executed
+	//Correction:
+========================================================================================================  
+	SELECT MAX(AVG(sal)) FROM emp GROUP BY deptno;		//max of the salaries(obtained from AVG(sal) for each dept(i.e 10,20,30)) 
+									will be printed 
+	
+	select max(avg(5)) from dual ;		//this can't be done 
+	//we can't use nested group functions without having group by clause
+	it can also executed by writing this:
+	select max(avg(5)) from emp Group by 2;		//we can write any number here instead of 2			
+
+
+
+
+
+=======================================================================================
+'HAVING' CLAUSE:
+=======================================================================================
+	=>Just Like 'WHERE' clause but can not be operated for individual column despite operated on Grouped records returned by 
+						'GROUP BY' clause.
+	=>'HAVING' & 'WHERE' can be used simultaneuly in single query.
+	=>Used For Group Restriction unlike 'WHERE' clause that is for Row Restriction.
+	=>'HAVING' in a query having no 'GROUP BY' clause, can not be used.
+	=>Only those groups (Generated  by 'GROUP BY' clause) which acccomplish 'HAVING' criteria are included in output records. 
+	=>'WHERE' can not be used for applying condition on GROUP FUNCTIONS unlike 'HAVING'
+
+
+E.G:
+	=>SELECT sum(sal),deptno,job FROM emp GROUP BY deptno,job HAVING sum(sal)>1000;
+		//calculates sum of salaries of Groups according to deptno,job
+		//& prints only sum of salary,deptno,job of that group having  sum of salaries >1000 
+		
+
+
+
+MM/DD/YYYY
+2/11/2021
+=========================================================================================
+Rules for subquery:
+	SELECT * from emp WHERE sal=(SELECT COUNT(*) FROM emp);
+	=> It has nothing to do with final output it is just for row restriction.
+	=> it has to be in parenthesis.
+	=> it should be a complete query by itself
+	=> It should be placed to the right side of the comparison operartor of 'WHERE' clause.
+	=> We can not place 'ORDER BY' clause in subquery.
+	=> Subquries returning single row should be used with single row operators(i.e <,>,!=,=,<>,^=)
+	=> If subquery returns null then outer query will also does not have any values to compare with this null
+		hence also no output.
+	=> Subquery is always processed/executed before outer query.
+
+
+TYPES of SUBQUERIES:
+==================================================================================
+1. Single row subqueries:
+	returns maximum 1 row in output.	//but returns single column in output
+2. Multiple rows subqueries:
+	returns multiple rows.			//but returns single column in output
+3. Multiple columns subqueries:
+	returns one or more columns.
+
+========================================================================
+1. SINGLE ROW SUBQUERY/INNER QUERY/INNER SELECT:
+	returns one or zero row.
+	It can be placed in a Where clause, having clause or FROM of a 'SELECT' clause.
+	
+NOTE: Subqueries are normally used when one needs to retrieve rows from a table based on a condition that depends 
+	upon the data in the table itself. i.e By using subqueries we are trying to retreive records based on some data(condition) 
+	that is also present in same table.
+
+E.G:
+1. Display all the employees who are earning more than 'scott'. 
+	a. FIND how much scott earns?    
+	b. Used scott's salary to find the required employees
+question needs two queries to get output.
+but we can also do it by one query using subquery.
+
+	SELECT * FROM emp where sal >(SELECT sal FROM emp WHERE ename='SCOTT');	
+
+
+2. DIsplay employees whose job description is same as that of employee 7428.
+	//inner query has to return a single row of containing job of employee#7428
+	
+	SELECT * FROM emp WHERE job= (SELECT job FROM emp WHERE empno=7428);
+
+
+
+=====================================================================================
+2. MULTIPLE ROWS SUBQUERY/INNER QUERY/INNER SELECT:
+	returns multiple rows to the outer query but containing one column..
+	=>WE have to use Multiple row OPerators here.(i.e IN,ANY,ALL)
+MUltiple Rows Operators:
+  IN:
+	SELECT * FROM emp WHERE job IN('SALESMAN','MANAGER');
+    //also already covered behind
+  
+  ANY:
+	=>We can use to compare a value with any value in a list.
+	=>We must place <,> or = before any operator in our query.
+	=>The   '< ANY ' operator is used to find records that have value less than highest value returned by subquery. 
+	=>The   '> ANY ' operator is used to find records that have value greater than lowest value returned by subquery. 
+		OR
+	=> '> ANY(arg1)' means greater than any value in obtained rows of subquery.
+	=> '= ANY'(args1) works same as of 'IN' operator.
+
+
+
+
+
+
+
+
+MM/DD/YYYY
+2/12/2021
+=========================================================================================
+ 
+Different Tables in Outer and Inner Query:
+	
+E.g#1: Find names of the employees who are working in the research department:
+	SELECT ENAME,DEPTNO FROM emp WHERE DEPTNO= (SELECT DEPTNO FROM DEPT WHERE DNAME='RESEARCH'); 
+	
+	SELECT * FROM emp WHERE ENAME= (SELECT SAL FROM EMP WHERE ENAME='SMITH'); //will generate error as mismatch datatype
+
+
+ALL operator:
+	Is used in conjunction with > or < operators but nor with '='.
+	=>If '> ALL' is used then outer query searches for all records with value higher than highest value returned by subquery.  	
+	=>If '< ALL' is used then outer query searches for all records with value lower than lowest value returned by subquery.  	
+
+
+Multiple row subquery:
+	Display all employees who are working in the same department as that of employees who earn salary of 1250;
+
+	SELECT * FROM emp WHERE deptno IN(SELECT deptno FROM emp WHERE sal=1250);	// multiple comparison operator
+	or
+	SELECT * FROM emp WHERE deptno ANY(SELECT deptno FROM emp WHERE sal=1250);		//multiple comparison operator
+	or
+	SELECT * FROM emp WHERE deptno = (SELECT DISTINCT deptno FROM emp WHERE sal=1250);	//single row comparison operator
+	or
+	SELECT * FROM emp WHERE deptno = (SELECT UNIQUE deptno FROM emp WHERE sal=1250);	//single row comparison operator
+	
+
+
+=> IN is more flexible than '=' operator as it works with both single & multiple rows but '=' only works with single row.
+
+	Class Task:
+	Display the employee numbers and names of all employees who work in a department with any employee whose name contains an 'A'
+		
+		SELECT empno,ename FROM emp WHERE deptno IN(SELECT deptno FROM emp WHERE ename LIKE('%A%'));
+
+
+MM/DD/YYYY
+2/15/2021
+=============================================================================================================
+Class task:   Identify single / multiple row subqueries.
+	1. Select min(sal) from emp where deptno in(10,30);
+		//single row sq
+	1. Select min(sal) from emp where deptno in(10,30) group by deptno;
+		//multiple row sq
+	
+
+3.MULTIPLE COLUMNS SUBQUERY:
+=======================================
+	E.G:
+		SELECT * FROM emp WHERE(job,mgr) IN(SELECT job,mgr FROM emp WHERE job='MANAGER');
+
+1. Retreives Multiple columns for outer query.
+2. The no# of columns in subquery should be equal to the no# of column in 'WHILE' clause's list and the datatype
+	of corresponding columns should be the same for query in order to be executed.
+3. Data types of corresponding columns(i.e columns of WHILEargumentList & columns returned by subquery) is necessary 
+		for the execution(i said execution not giving output) of query.
+4. Internally ordered pairs are formed while comparing multiple columns.
+
+There can be two Camparisons between columns:
+=====================================================
+	1. Pairwise comparison:
+	===============================================================================================
+		In this comparison database looks for rows/records which have exactly the same values as that of in ordered 
+			pair(formed by the output values of sub query)  for the columns that are compared.
+		   Or
+		It looks for a match of exact combination of the columns in same row/record.
+	e.g: 
+	1.Display details of the employees who are managed by the same manager and work in same department as the 
+		employees with employee id 7521 or 7788.
+	
+		SELECT empno,mgr,deptno FROM emp WHERE(mgr,deptno) IN(SELECT mgr,deptno FROM emp WHERE empno IN(7521,7788))	
+			AND empno NOT IN(7521,7788);
+
+	2. Non-pairwise comparison:
+	===============================================================================================
+		In this comparison the database evaluates the conditions about the columns independently.
+	      =>In non-pairwise comparison, Cartesian product of column values returned by two sub queries is formed.
+			i.e If 1st SQ(sub-query) has returned values  20,30 respectively
+				&  2nd SQ(sub-query) has returned values  'John','Cena' respectively
+			then internally the ordered pairs will be formed like:
+		(20,'John'),(20,'Cena'),(30,'John'),(30,'Cena')
+		i.e the number of rows returned by 1st SQ  multiplied by no# of rows returned by 2nd SQ=4
+			 that is the cartesian product of column values returned by both queries.
+	     =>Now the records in the specified table(i.e emp) containing values in specified(i.e provided while comparison)
+			 columns same as the values that are present in the ordered pairs for the corresponding column will 
+			  be fetched in output.
+
+	e.g: 
+	1.Display details of the employees who are managed by the same manager as the employees with employee id 7521 or 7788
+		 and work in same department as the employees with employee id 7521 or 7788
+	
+		SELECT empno,mgr,deptno FROM emp WHERE mgr IN(SELECT mgr FROM emp WHERE empno IN(7521,7788)) AND
+			deptno IN(SELECT deptno FROM emp WHERE empno IN(7521,7788))  AND empno NOT IN(7521,7788);
+
+=>Both pairwise & non-pairwise working mechanism is different.
+
+
+
+
+MM/DD/YYYY
+2/16/2021
+=============================================================================================================
+REMAINING DDL(DATA DEFINITION LANGUAGE) COMMANDS:
+========================
+  ALTER/DROP/RENAME/TRUNCATE:
+    ============================
+    
+     1.ALTER:
+	=========
+	=>Is used for modifications of already created database objects.
+	=>Automatically Commit occurs so ROLLBACK command will not able to undo.
+
+Syntax:	
+	THREE VARIATIONS:
+	i). ALTER TABLE table_name ADD(column_name);
+       ii). ALTER TABLE table_name MODIFY(column_name);
+      iii). ALTER TABLE table_name DROP COLUMN(column_name);
+
+	//Pre-condition: The table_name provided here should already be created in the database.
+
+i). ALTER TABLE table_name ADD(column_name);	
+=> ADDING A COLUMN TO an existing table:
+	SYNTAX:
+
+	  TWO VARIATIONS:
+		1. ALTER TABLE table_name ADD(column_name DATATYPE(default));     //to add one column 
+				//column_name DATATYPE(default)  = Column_definition
+		2. ALTER TABLE table_name ADD(column_definition,column_definition,...& so on);			//to add multiple columns in the table
+
+=>The new column to be added should be different from the other already columns.
+=>Default given here in parenthesis is optional. & is used to give default value to that column. 
+
+E.G:
+	ALTER TABLE SW_Students ADD(phone NUMBER(10));   //always this column will be added as the very last column in table.
+		//original table= Create table SW_Students(ST_id NUmber(5),S_name varchar2(15),S_dob date);
+	ALTER TABLE SW_Students ADD(address varchar2(30),grade char(2));
+
+
+
+ii). ALTER TABLE table_name MODIFY(column_name);
+=============================================================
+	=>to modify the description of existing columns.
+	=>Can change datatype or add/change default values.
+	=>IF the column to be modified has no data/null values then any kind of modification is possible i.e to change default 
+			values,datatypes,values etc
+	=>But if column to be modified has data then under some circumstances it can be modified only.
+	=>We can increase size of column's data type in both populated column/column having no data.
+	=>WE can not decarease size of column's datatype in case its populated// but if it has no data then size can be decreased. 
+
+	DATATYPE CHANGE:
+	=>char to varchar OR varchar to char OR number to character can only be done when column has no values/data.
+	=>Default values can be changed but it will affect the new rows/future data that will be inserted later.
+			//i.e will show default values in that row only that is added in the current table after this query
+				changing deafult value of a column.
+
+	SYNTAX:
+
+	  TWO VARIATIONS:
+		1. ALTER TABLE table_name MODIFY(column_name DATATYPE(default));     //to modify one column 
+				//column_name DATATYPE(default)  = Column_definition
+		2. ALTER TABLE table_name MODIFY(column_definition,column_definition,...& so on);  //to modify multiple columns in the table
+
+	Examples:
+	 Increasing size:
+		ALTER TABLE EMP2 MODIFY(empno NUMBER(5));   //original size =4
+								   //even if its popultaed we can increase size of column 
+		//once data increased then we can still not decrease the size of column if its populated. 
+	 Decrease Size(possible when column has no data):
+		ALTER TABLE emp2 MODIFY(empno NUMBER(3));   //error will be occurred as the empno column is already populated having size=4
+		ALTER TABLE SW_Students MODIFY(address varchar2(25));   //original size=30  //assuming that this table has no data 
+										query will run perfectly.
+	 Changing Column datatype(Char to Varchar):    //less flexible to flexible
+		ALTER TABLE EMP2 MODIFY(job varchar2(30));  //original datatype= char(10)
+		ALTER TABLE EMP2 MODIFY(ENAME varchar2(10))   //original dataytype=char(10)
+		ALTER TABLE EMP2 MODIFY(ENAME varchar2(9))   //will generate error because we are decreasing size of already populated
+								column while converting it from char to varchar2/varchar.
+		
+	Changing Column datatype(Varchar to char):	//flexible to less flexible
+		ALTER TABLE EMP2 MODIFY(job char(30));  //original datatype= varchar(10)    
+							//changing datatype & also increasing size.
+		ALTER TABLE EMP2 MODIFY(ENAME char(9))   //original dt= varchar(10)    //will work bcz the 
+							size=9 is greater than the Ename column value that has max chars(//wrong acc/ to me)
+		ALTER TABLE EMP2 MODIFY(ENAME char(6))   //original dt= varchar(10)    //will generate error bcz the 
+							size=6 is not greater than the Ename column value that has max chars even by 1 point
+										//(wrong acc/ to me)
+		Size decrease is possible while converting from varchar to char if the size in which we want to convert the original 
+			is even 1 point greater than the column value that has maximum characters.	//(wrong acc/ to me)
+			
+		
+	NUMBER to character:
+		If column has data then query of converting datatype of a column from number to character/varchar, will generate error.
+		=>But when the column has no/null values then query may execute:
+		
+		ALTER TABLE EMP2 MODIFY(empno varchar(5));//original D.T=number(6)   //Assuming empno column has null values for every row.
+
+MM/DD/YYYY
+2/18/2021 THU
+=============================================================================================================
+		
+	CHAR to NUMBER:
+		same working mechanism as of converting from NUMBER to CHARACTER; 
+
+	CHANGING DEDAULT VALUES:
+		SELECT TABLE_NAME,COLUMN_NAME,DATA_DEFAULT  FROM   DBA_TAB_COLUMNS WHERE table_name='ADMIN_EMP';
+				       //DBA_TAB_COLUMNS  is table stored as DATA DICTIONARY TABLE 
+					//ADMIN_EMP has 11 columns we created when studying virtual column.
+					//This query should be executed by DBA account having database prevelieges
+						// i.e system/sys as sysdba
+
+	=>WE ARE NOW GOING TO CHANGE DEFAULT DATE OF 'hiredate' column that was  'sysdate' before.
+		ALTER TABLE ADMIN_EMP MODIFY(hiredate DEFAULT('13-FEB-2012'));
+
+	=> AFter making this change whichever rows /data is inserted only that have data default value of what we have set
+			but the previous records will not have any affect of it.
+	
+		SELECT TABLE_NAME,COLUMN_NAME,DATA_DEFAULT  FROM   DBA_TAB_COLUMNS WHERE table_name='ADMIN_EMP';
+				//now in this table we can see that the default hiredate will be changed from sysdate to '13-FEB-2012'
+	=>WE can also add a default value while we create our table.
+		CREATE TABLE tbl(id Number, mgr Number Default(113));
+
+	
+
+ iii). ALTER TABLE table_name DROP COLUMN(column_name);
+=============================================================
+	two types of delete:
+	====================
+	1. Soft delete/Logical Delete : 
+			=>we can mark a column/table as unused(logical delete).   
+					//these deleted columns/tables can be recovered/backed up.
+		=>Once this is done then columns will no longer be visible to the user but can be recovered.
+		=>We should use it for auditing purposes.
+				//audit= meeting in last months of a year by an organization to compare 
+					//current information with previous year information
+		SYNTAX:
+			ALTER TABLE table_name SET UNUSED(column_name)
+			ALTER TABLE table_name SET UNUSED(column_name1,column_name2)
+				//to delete these unused setted columns we should use 'DROP UNUSED' clause.
+
+		=>ONCE A column is logically deleted then it will never come in output of any query done with that table however
+					it will exist in our database.
+		=>If at a laterdate we have time to physically delete the columns then we can use this delete(logical).	
+
+			ALTER TABLE table_name DROP UNUSED columns;
+			
+
+	2. Hard delete/Physical delete: 
+			=>we can delete a column/table  completely.
+
+		ALTER TABLE table_name DROP COLUMN(column_name)
+		ALTER TABLE table_name DROP(column_name1,column_name2)
+
+	=>By doing this delete, all the unused column/tables are also deleted automatically(permnenetly/physically).
+	=>Dropping a column from a table will cause all unused columns in that table to be dropped at the same time. 
+	
+	E.G:
+		ALTER TAble emp drop column(job);   //to delete single column.
+		ALTER Table emp drop(comm,job); //to drop multiple columns 
+	=>WE can not delete a column that is only column in a particular Table then that column can not be deleted using 'DROP COLUMN'
+				OR 'DROP'. The only solution to delete this column is to delete the whole table in which it exist.
+
+
+	RENAMING A COLUMN:
+		ALTER TABLE Table_name RENAME COLUMN old_column_name to new_column_name;
+			E.G:
+				ALTER TABLE emp2 RENAME COLUMN job to jobtitle;
+
+	RENAMING A TABLE(By ALTER COMMAND):
+		ALTER TABLE OLD_TABLE_NAME RENAME TO NEW_TABLE_NAME;
+			E.g:
+				ALTER TABLE emp2 RENAME TO emp1;
+=======
+RENAME:
+=======
+	RENAMING A TABLE(By RENAME COMMAND):
+	======================================
+		RENAME OLD_TABLE_NAME to NEW_TABLE_NAME;
+			E.g:
+				RENAME emp2 to Employee;
+	=>RENAME is only capable of renaming only tables while 'ALTER' command is capable of renaming tables as well as columns.
+	 
+
+
+MM/DD/YYYY
+2/19/2021 FRI
+=============================================================================================================
+
+TRUNCATE:
+========
+	=>WE  USE the TRUNCATE TABLE statement to delete all rows from table but to have its description.
+	=>TRUNCATE Only deletes rows & spaces occupied by rows. Structure of the table/preveilieges(views/indexs)/constraints/TRGGERS remain 
+		intact(working), that is if we issue DESC command after this TRUNCATE Command, then it will show the structure of table.
+	
+	=>It is used to empty a table.
+	=>TRUNCATE works faster than DELETE(also deletes indexes/views/triggers/constraints etc) command.
+	=>WE can not TRUNCATE the parent table(in which its PK) of an enabled forerign key constraint. For that we will need to 
+		 disable the constraint WE MUST disable the constraint before truncating table. An exception is that we can TRUNCATE 
+		 the table if the integrity constraint is self-referencial(That is If a table has same column as Foreign & Primary Key).
+				//E.G in our emp table 'empno & mgr' can be PK & FK respectively of our emp table hence we can call 
+					emp table as self-referential.
+//To DISABLE Constraints:
+	ALTER TABLE table_name DISABLE CONSTRAINT constraint_name;
+	 
+//:> TRIGGERS=KINDA SPECIAL STORED PROCEDURES; //Applied on tables mainly.
+	E.G:
+		TRUNCATE TABLE emp2;		//structure will still be there.
+
+
+DROP:
+====
+	=>It is used to move a table to the recyclebin or to remove table(including its data) from database entirely.
+	=>If PURGE command is not used with/after DROP command with the same table then it will be present in recyclebin but do not
+			get deleted entirely from database(i.e it will still occupy space).	
+	=>If we issue DROP command with/without purge command then its preveilages(FK/PK/Views) are also deleted.
+	=>ALL indexes,rows,triggers etc are deleted when DROP TAbLE command is executed.
+	=>CASCADE CONSTRAINTS keyword should be used if referential-integrity constraints are enabled on table in order to delete it using 
+		DROP clause otherwise it will not be deleted.
+
+		SYNTAX:
+			DROP TABLE table_name CASECADE CONSTRAINTS PURGE;
+			DROP TABLE table_name;     //if there's no constraints we can try this.  
+
+	=>WE can create another table with the same name if we have deleted it before and it goes to recyclebin.
+	
+	TO see whatever user has deleted:
+	=====================================
+	For Scott Account:
+		SELECT * FROM USER_RECYCLEBIN;
+	For DBA ACCOUNT:
+		SELECT * FROM DBA_RECYCLEBIN;   //it will show scott's and any other user's Deleted objects too in its recyclebin.
+
+
+FLASHBACK COMMAND:
+==================	
+	=>It is used to restore tables/objects from recyclebin.
+		FLASHBACK TABLE sw_student TO BEFORE DROP;		//sw_student deleted by query://DROP table sw_student;
+
+
+
+MM/DD/2021
+03/13/2021
+=========================================================================
+
+DML(Data Manipulation Language):
+================================
+ =>DML commands are used to modify data within database objects.
+ =>Unlike DDL commands, auto(implicit) commit doesn't occur, that is we can rollback our data. 
+ =>DML Commands:
+	INSERT,UPDATE,DELETE
+ INSERT:
+========
+	Data can be inserted in FOUR ways:
+
+ 1.Without using column names:
+
+	=>but the values on either side should be equal and corresponding column values should have same data type.
+	Syntax:
+		INSERT INTO table_name VALUES(val1,val2,val3...);
+	E.G: 
+		insert into emp2 select * from emp;
+
+ 2.With using column names:
+
+	=>but the values on either side should be equal and corresponding column values should have same data type.
+	Syntax:
+		INSERT INTO table_name(col1,col2,col3...) VALUES(val1,val2,val3...);
+	E.G: 
+		insert into emp2(empno,ename) Values(4567,'ZHS');
+
+
+ 3. Inserting data through text box:
+	
+	Syntax:
+		INSERT INTO table_name(col1,col2,col3...) VALUES(&val1,&val2,&val3...);
+	E.G: 
+		insert into emp2(empno,ename) Values(&eno,&ename);
+		=>Note: The title for text box will be eno,ename respectively here... 
+
+ 4. Inserting data using Select statement:
+	=>This can also be done in two ways:
+		a) For inserting data to all columns:
+			Syntax:
+			=======
+			 INSERT INTO table_name SELECT * FROM table_name;
+		b) For inserting data to some specific columns:
+			Syntax:
+			=======
+			 INSERT INTO table_name(col1,col2...) SELECT col1,col2... FROM table_name WHERE condition;
+
+	=>NOTE: For this kind of insert the both tables should have same structure(i.e same no of columns 
+		,data types of corresponding columns & should not violate any integrity constraint.)
+		
+
+Inserting NULL into Table:
+==========================
+	NULL can be inserted in three ways:	
+   1. By Skipping That column while inserting data
+   2. using null keyword:
+	E.G:   
+		Insert into emp(empno,deptno) values(8678,NULL);
+   3. Providing Blank Space:
+	E.G:
+		Insert into emp(empno,deptno) values(8678,'');
+  
+
+
+INSERT ALL Command:
+===================
+  =>Used For inserting data into multiple tables simultaneously.
+	Syntax:
+		INSERT ALL 
+			into table1(col1,col2...) Values(val1,val2...)
+			into table2(col1,col2...) Values(val1,val2...)
+			into table1(col1,col2...) Values(val1,val2...)
+			.
+			.
+			.
+		SELECT * FROM DUAL;
+		//we are selecting from dual so all data will be inserted once only.
+	E.G:
+	   INSERT ALL
+		into emp(empno,ename) values(1234,'ZHS')	
+		into emp(empno,ename) values(2345,'ZSH')
+		into emp(empno,ename) values(3456,'SHZ')
+	   SELECT * FROM DUAL;
+
+INSERT ALL command has 4 restriction:
+  1. Only applicable to insert data into tables(i.e not other database objects e.g views)
+  2. It can not be used to insert data into remote tables(i.e when we have data on distributed database systems).
+  3. The no# of columns in all the 'insert into' clauses must not exceed 999.
+  4. The subquery of multi-table insert(i.e using insert all command) can not use a sequence.
+					//(i think it should not return multiple rows.)
+
+
+
+
+UPDATE:
+=======
+  =>It is used to update/modify existing records.
+	Syntax:
+		UPDATE table_name SET col1=val1, col2=val2,...  WHERE some_column=some_value;
+	NOTE: If we don't write 'WHERE' clause here then all records will be updated.
+
+
+	=>For updating with data from another table:
+		UPDATE table_name 
+		   SET col1= (select col1 From table_name WHERE some_column=some_value) 
+		Where some_column=some_value;
+=>Update command will not be executed if it violates any of the integrity constraints.
+
+
+
+
+DELETE:
+=======
+  =>It is used to delete rows from table.
+  =>Truncate is faster than delete command when deleting all data of table.
+     Syntax:
+	 DELETE FROM table_name Where some_column=some_value;
+    NOTE: If we don't provide where condition(clause) then it will delete all rows from table(i.e truncates it).
+
+=>delete command will not be executed if it violates any of the integrity constraints.
+
+
+
+
+
+MM/DD/YYYY
+03/15/2021
+==========================================================================
+
+	CONSTRAINTS:
+	============
+	=>They are used to maintain data consistency/integrity. 
+    Two types of definition of constraints:
+	1. Table Level:
+	==============
+		=>Constraint information is saved(i.e in database) after definition of whole table.	
+	       	Syntax:
+		   create table tab_name(column_name column_type,[constraint constraint_name] constraint_type(column_name));
+		
+		E.G:
+			Create table emp3(empno Number(5),deptno Number(2),constraint emp3_deptno_fk Foreign key(deptno)
+				 References Dept2(deptno));
+		=>Not Null constraint can never be applied on column(s) by table level definition.
+		=>If we don't provide constraint_name(which is optional part) then system will automatically generate the constraint names
+			like System_C1,System_C2,...System_Cn.
+		
+	1. Column Level:
+	===============
+		=>Constraint information is saved(i.e in database) right after definition of that column.	
+	       	Syntax:
+		   	column_name column_type [constraint constraint_name] constraint_type;
+				//no need to provide column name in constraint type's bracket.
+		
+		E.G:
+			Create table emp3(empno Number(5),deptno Number(2) constraint emp3_deptno_fk Foreign key
+				 References Dept2(deptno));
+		=>If we don't provide constraint_name(which is optional part) then system will automatically generate the constraint names
+			like System_C1,System_C2,...System_Cn.
+		=>While defining a Foreign key constraint for a column by using column level definition,we can exclude foreign key keyword.
+			i.e
+				create table test(dno Number(2) Constraint dno_fk references dept2(deptno));
+	Syntax for adding composite key(Composite-PK):
+	==============================================
+		constraint constraint_name primary key(col1,col2...);
+	
+	=>Composite primary key constraint can only be defined on table level we can not define it by column level.
+		
+		
+
+	Two Ways to apply constraints:
+	==============================
+	1. While creating Table
+	2. By ALTER command(after table creation).
+
+
+
+1. While creating Table:
+========================	
+	create table tab_name(column_name column_type,[constraint constraint_name] constraint_type(column_name));
+		
+	E.G:
+			Create table emp3(empno Number(5),deptno Number(2),constraint emp3_deptno_fk Foreign key(deptno)
+				 References Dept2(deptno));
+
+
+
+2. By ALTER command(after table creation):
+==========================================	
+	=>Here(by using alter command) except 'NOT NULL' constraint all other constraints can be added only by using	
+		(ALTER+ADD) command.
+	=>To add a 'NOT NULL' constraint we need to use (ALTER+MODIFY) command.
+
+	Adding NOT NULL constraint:
+	===========================
+		Syntax:
+			Alter table tab_name Modify(col_name [constraint constraint_name] NOT NULL);
+	Adding Another Constraint:(E.g)
+	===========================
+			Alter table tab_name ADD [constraint constraint_name] Foreign Key(col_name) References tab_name(col_name);
+
+Viweing User Constraints:
+=========================
+	Query(E.g):
+	======
+		SELECT * FROM USER_CONSTRAINTS [WHERE table_name='EMP'];
+
+
+Enabling/Disabling A Constraint:
+================================
+	Syntax:
+	=======
+	FOR ENABLING A CONSTRAINT:
+	==========================
+		ALTER TABLE table_name ENABLE CONSTRAINT constraint_name;
+
+	FOR DISABLING A CONSTRAINT:
+	==========================
+		ALTER TABLE table_name DISABLE CONSTRAINT constraint_name;
+
+
+
+DELETING A CONSTRAINT:
+======================
+	1.Dropping PRIMARY KEY Constraint:
+	=================================
+	=>We can delete a primary key constraint for a table directly by:
+		ALTER TABLE table_name DROP PRIMARY KEY;
+			//as one table can have only one primary key so we can delete directly without providing constraint name. 
+		
+	2.Dropping UNIQUE Constraint:
+	============================	
+	=>We can also delete a unique constraint for a table directly by:
+		ALTER TABLE table_name DROP UNIQUE(col_name);
+			//as one table can have only multiple unique constraints(each one is unique) so
+				 we can delete directly without providing constraint name. 
+		
+
+	3.Dropping Another Constraint:
+	============================
+	=>For other constraints we will need to provide constraint name for dropping them.	
+		ALTER TABLE table_name DROP CONSTRAINT constraint_name;
+
+
+
+
+
+
+
+MM/DD/YYYY
+03/22/2021   Mon
+==========================================================================
+	JOINS:
+	=====
+	=>Combines rows from two or more tables or views. Output might be based on some condition called as JOIN Condition.
+	=>To JOIN 'n' number of table we may need (n-1) number of JOIN conditions.
+	=>A JOIN condition may appear in 'FROM' clause or 'WHERE' clause. It compares two columns each of a different table.
+	=>There are two types of joins:
+		1. ANSI  (SQL/1999 approach) : Supported by all Relational Databases.
+		2. NON-ANSI(Oracle approach) : Supported by only Oracle Database.
+	=>In ANSI(SQL/99) approach of Joining tables, JOIN condition always appear in 'FROM' clause.
+	=>In NON-ANSI(Oracle) approach of Joining tables, JOIN condition always appear in 'WHERE' clause.
+
+NOTE:	ANSI & NON-ANSI JOINS are also further divided into other joins which are mentioned below:
+====	==========================================================================================
+	1. ANSI(SQL/99):
+	===============
+	   1. INNER JOIN(or SIMPLE JOIN)
+	   2. OUTER JOIN 
+		OUTER JOIN is further divided into following joins:
+		1. LEFT JOIN 
+		2. FULL JOIN 
+		3. RIGHT JOIN 
+	   3. CROSS JOIN 
+	
+	2. NON-ANSI(ORACLE):
+	===================
+	   1. EQUI JOIN 
+	   2. NON-EQUI JOIN 
+	   3. OUTER JOIN 
+		OUTER JOIN is further divided into following joins:
+		1. LEFT JOIN 
+		2. RIGHT JOIN 
+	   4. SELF JOIN 
+	   5. CARTESIAN nJOIN 
+
+KEY POINTS FOR JOINs:
+=====================
+	=>An 'INNER(SIMPLE) JOIN'(i.e from ANSI) may produce the same output as 'EQUI JOIN', 'NON-EQUI JOIN'
+		& 'SELF JOIN' (i.e from NON-ANSI(Oracle approach)).
+	=>A 'CROSS JOIN'(i.e from ANSI) may produce the same output as 'CARTESIAN JOIN' (i.e from NON-ANSI(Oracle approach)).
+	=>An 'OUTER JOIN'(i.e from ANSI) may produce the same output as 'OUTER JOIN' (i.e from NON-ANSI(Oracle approach)).
+ NOTE: They may produce same output but the way the are used, is different.
+====== 
+
+
+JOINS METHODS:
+============
+    =>There are two join methods:
+	  1. TRADITIONAL METHOD(Oracle Approach) :
+	  =====================
+			 It is supported by Oracle only.
+	  2. JOIN METHOD - ANSI Syntax (SQL/99 Approach):
+	  ===================== 
+		It is supported by all RDMS.
+	
+1.CARTESIAN/CROSS JOIN:
+=======================
+	   =>They produce cartesian product of joined tables(i.e two or more tables) by combining each row of one table 
+					with all rows of the other table(s).
+		so if 'x' is no of rows in 1st table so as 'y' is of 2nd table then in output the no of rows will be = x*y
+														       
+	Syntax:
+		a) CROSS JOIN(JOIN method or SQL approach):
+		==============
+			SELECT * FROM table1 CROSS JOIN table2;
+		   E.g: 
+			SELECT ename ,dname FROM emp CROSS JOIN dept ;
+		b) CARTESIAN JOIN(Traditional Method or Oracle approach):
+		==================
+			SELECT * FROM table1,table2;
+				//i.e just put a comma between tables
+		   E.g: 
+			SELECT ename ,dname FROM emp,dept ;
+
+
+2.EQUI/INNER JOIN:
+==================
+	  =>These are the joins with equality operator.
+	  =>They Combine rows that have equivalent values for the columns specified in join condition.
+	  =>INNER JOIN creates an intersection between the tables based on the columns specified in join condition.
+	  =>The columns to be checked for equality in join conditions must have same data type otherwise query will 
+			generated an error & this kind of join condition will be called as 'FLAWED JOIN' condition.
+		E.g:
+			Select e.ename,d.dname From emp e, dept d where e.deptno=d.dname;
+				//so this will generate an error as deptno & dname columns have diffrent data types.
+	Syntax:
+	======
+a)EQUI-JOIN(Traditional Method):
+===============================
+		i)With Table aliases:
+			Select e.ename,d.dname From emp e, dept d where e.deptno=d.deptno;
+				//here 'e' & 'd' are table aliases
+		ii)Without Table aliases:
+			Select ename,dname from emp,dept where emp.deptno=dept.deptno;
+NOTE:
+==== 
+   1. If we are also selecting the column which we checking for equality too in join condition then 
+	query will generate an error or ambiguity(i.e from which table it should select that column) 
+	until we precede that column name with table alias, in select list.
+	E.G:
+	        Select empno,deptno from emp e,dept d where e.deptno=d.deptno;
+		  //so here empno is OK but deptno in select list is ambiguous so this query won't execute
+	    Correction:
+		Select empno,d.deptno from emp e,dept d where e.deptno=d.deptno;
+			OR
+		Select empno,e.deptno from emp e,dept d where e.deptno=d.deptno;
+   2. If we have specified table aliases in our query, then we can not use table names further to reference to a column
+	despite we should use that table alias.
+	//so we can not do like this:
+		Select ename,dname from emp e, dept d where emp.deptno=dept.deptno;	
+			//so here we have declared aliases 'e' & 'd' but in join condition we are using the table names 
+			//to reference to the column(i.e deptno) so this query won't be executed & will generate error.
+	Correction:
+		 Select ename,dname from emp e, dept d where e.deptno=e.deptno;	   //used table aliases in condition
+			OR
+		 Select ename,dname from emp, dept where emp.deptno=dept.deptno;	//removed table aliases
+
+
+
+MM/DD/YYYY
+03/25/2021
+===========
+
+b)EQUI-JOIN(JOIN Method(SQL/99)):
+===============================
+
+EQUI-JOIN Formation Through 'NATURAL JOIN' Clause:
+===========================================
+    Syntax:
+	Select * from table1 NATURAL JOIN table2;
+    E.g:
+         select e.ename,deptno,d.dname from emp NATURAL JOIN dept;
+   =>Here common columns of both tables will occur once in the output.
+   =>The all columns having same names will be considered as common columns and based on their equality(in both tables) the 
+		EQUI-JOIN will be formed through "NATURAL JOIN CLAUSE".
+   =>We can not use qualifiers(table aliases) with the common columns like the JOIN---USING clause.
+
+EQUI-JOIN Formation Through 'USING' Clause:
+===========================================
+    Syntax:
+	Select tab1.column,tab2.column From table1 JOIN table2 USING(,common_column1_name,common_column2_name,...);
+    E.g:
+	1)  SELECT ename,dname From emp JOIN dept using(deptno);
+		//internally it works as AND operator if multiple common columns provided in its brackets
+ 	2)  SELECT Emp.*,dept.dname from emp,dept WHERE emp.deptno=dept.deptno;
+		//note: here no any ambiquity occurs because we have already given qualifier with all columns of emp table like(Emp.*)
+		//	so the deptno(common column) is also included in it.
+    =>'USING' clause is used when multiple columns have same name in both tables and we want output to be based on 
+		particular column(s), also these columns will not be prefixed with the qualifiers but the 
+		remaining common columns(that are not in USING clause) must be prefixed with the qualifier.
+    =>Both 'USING' & 'NATURAL JOIN' clause can not occur in the same query.
+    =>Through 'USING' clause we can form EQUI-JOIN based on columns that have same names, no matter if they have diffrent datatype.
+	e.g:
+		Select sal,ename,dname from emp2 join dept using(dname);  
+			//here dname in dept has datatype as "dname  char(10)"
+			//and  dname in emp2 has datatype as "dname  varchar(10)" 
+			//and the query will run without any error.
+
+ 
+EQUI-JOIN Formation Through 'ON' Clause:
+========================================
+    Syntax:
+	Select tab1.column,tab2.column From table1 JOIN table2 ON(tab1.column_name=tab2.column_name);
+
+    =>Useful when common column have not same name but have same data type.
+    =>Widely applicable clause to form join , also used to form other joins such as(Left,Right,Full joins).
+    =>Qualifiers(or aliases) with the common columns are must.
+    =>Join condition is same as of join condition in Oracle approach, the only difference is of position of occurrence.
+    =>This is the most flexible way to form EQUI-JOIN.
+
+
+EQUI-JOIN FORMATION Through 'INNER JOIN':
+========================================
+   =>It works same as NATURAL JOIN, but in addition to that we can also give join conidtions, also it gives twice the common columns 
+		in the output, that Natural Join only display once.
+   =>It can use ON/USING clause for join condition.
+   =>If we are forming join condition through 'USING' clause then common columns of both tables will occur once only unlike if we join 
+			through 'ON'.
+     Syntax:
+	Select tab1.column,tab2.column From table1 INNER JOIN table2 USING(common_column_name);
+     	For Joining multipe tables:
+	SELECT column_name(s) FROM(Select column_name(s) From table1 INNER JOIN table2 USING(common_column_name));
+
+MM/DD/YYYY
+03/26/2021   FRi
+==========================================================================
+
+
+SELF JOIN(Traditional-method(Non-Ansi(oracle))):
+================================================
+	=>This kind of joins create uniry relationship.
+	=>Aliases is must.	
+   Syntax:
+	SElect a.columnName,b.columnName FROM table1 a , table1 b Where a.common_column_name=b.common_column_name;
+   E.g:
+	Select e.empno "E.ID",e.ename ,s.mgr "Manager-id",s.ename "Superviosor" FROM emp e,emp s WHERE e.mgr=s.empno;
+		//king won't be in output here as his mgr is null and in emp table there's no row contaning empno as null 
+		//	to which it should equate.
+   =>Whatever we can do with self join we can do that with subquery as it is substitute to the SELF JOIN.
+
+
+
+SELF JOIN(join-method(Ansi(SQL/99))):
+================================================
+
+   Syntax:
+	SElect a.*,b.columnName FROM table1 a JOIN table2 b ON a.common_column_name=b.common_column_name;
+  
+
+NON-EQUI JOIN:
+==============
+    =>Join condition contains comparison operator other than '='.
+    =>It can use multiple join conditions too, that have non equi-join operator.
+
+   Traditional Syntax:
+	SElect a.*,b.columnName FROM table1 a,table2 b Where a.common_column_name > | < | >= | <= b.common_column_name | between x1 and x2;
+  
+   ANSI-Syntax:
+	SElect a.*,b.columnName FROM table1 a JOIN table2 b ON a.common_column_name > | < | >= | <= b.common_column_name | between x1 and x2;
+
+
+
+MM/DD/YYYY
+__________
+03/29/2021
+==========
+
+
+OUTER JOINS:
+===========
+     =>INNER JOIN only gives intersection of two tables.
+     =>FULL OUTER JOIN gives UNION of two tables.(the rows that are common or un-common both)'.
+     =>RIGHT OUTER JOIN gives the all rows of Right table and the common rows of both table in output. 
+     =>LEFT OUTER JOIN gives the all rows of LEFT table and the common rows of both table in output.
+     =>We can skip the keyword 'OUTER' in right,left or Full outer joins 
+		
+	OUTER JOIN(Traditional Method):
+	==============================
+	     =>"(+)" is used to denote outer join in traditional method and is placed in where clause.
+	     =>"(+)" should be placed with the table having deficit(i.e other table has more unmatched data than it) information.
+ 	     =>"(+)" can be only placed with one table at a time.
+	     =>Output depends on position of '(+)' symbol, if placed with table that is on left side of join condition, then 
+			this join will be called as 'RIGHT OUTER JOIN' and if vice versa then it will be called as
+			'LEFT OUTER JOIN'.
+
+	Syntax:
+		SELECT select_list FROM table1,table2 WHERE condions(+);
+		
+        E.g:
+		SELECT e.ename,e.deptno,d.dname from emp e,dept d where e.deptno(+) = d.deptno;  
+				//example of right outer join
+	
+		SELECT e.ename,e.deptno,d.dname from emp e,dept d where e.deptno= d.deptno(+);  
+				//example of left outer join
+
+
+	OUTER JOIN(JOIN Method):
+	=======================
+ 		Syntax:
+			Select column_names from table1 FULL OUTER JOIN | RIGHT OUTER JOIN | LEFT OUTER JOIN table2
+				ON table1.column_name=tabl2.column_name;	
+	     =>We can skip 'OUTER' keyword too.
+		   E.G:
+			Select ename,dept.deptno ,dname from emp RIGHT OUTER JOIN dept ON emp.deptno=dept.deptno;
+				Or
+			Select ename,dept.deptno ,dname from emp RIGHT JOIN dept ON emp.deptno=dept.deptno;
+				or
+			Select ename,deptno ,dname from emp RIGHT OUTER JOIN dept using(deptno);
+				or
+			Select ename,deptno ,dname from emp NATURAL RIGHT JOIN dept;
+			these all above queires are equivalent to:
+				Select ename,dept.deptno ,dname from emp,dept WHERE emp.deptno(+)=dept.deptno;
+				
+			Select ename,dept.deptno ,dname from emp LEFT JOIN dept ON emp.deptno=dept.deptno;	
+			these above queiry is equivalent to:
+				Select ename,dept.deptno ,dname from emp,dept WHERE emp.deptno=dept.deptno(+);
+			
+			Select ename,dept.deptno ,dname from emp FULL OUTER JOIN dept ON emp.deptno=dept.deptno;	
+			
+			
+
+SEQUENCE:
+========
+   =>A DB-Object which is used to generate numbers(unique/random), and are helpful in generating primary key values.
+   =>It eliminate serialization & improve concurrency of an application.
+   =>we can use same sequence to generate numbers for multiple tables.
+   =>CURRVAL(or sequenceName.CURRVAL) & NEXTVAL(or sequenceName.NEXTVAL) are used to get value generated by Sequence.
+		=>Currval & Nextval can be termed as a pseudo-column while selecting them from a table.
+			e.g: select mysequence.currval from emp;
+				//here it will be like a column.
+		Currval: it returns the current value generated by the sequence.
+			Syntax(E.g):
+				Select my_sequence.CURRVAL from dual;      //let my_sequence is a sequence.
+		=>Note: To use CURRVAL in an statement, the NEXTVAL must be called at least once while logged in with current
+				user i.e to start the sequence.
+
+		Nextval: it increments the current value of the sequence and then returns the new value.
+			Syntax(E.g):
+				Insert into sw_students2(st_id,st_name) values(my_sequence.NEXTVAL,'XYZ');
+
+   =>In order to create a sequence in current schema we need to have the 'CREATE SEQUENCE' system privilege.
+   =>In order to create a sequence in another user's schema we need to have the 'CREATE ANY SEQUENCE' privilege.
+   
+	Syntax:
+		CREATE SEQUENCE schemaName.sequneceName
+			INCREMENT BY interval_number
+			START WITH first_number
+			MAXVALUE max_val_number | NOMAXVALUE
+			MINVALUE min_val_number | NOMINVALUE
+			CYCLE | NOCYCLE
+			CACHE cache_size_number | NOCACHE
+			ORDER | NOORDER;
+			
+
+
+MM/DD/YYYY
+03/31/2021   WED
+==========================================================================
+	Using Sequence Via IDENTITY column:
+	==================================
+	=>From Oracle 12c, we can associate a sequence with a table column via identity column.Behind the scenes Oracle creates a 
+			 sequence(having a diffrent name i.e sys.idnseq$ to store link b/w table & sequence) and associates 
+			with the column defined as an IDENTITY column.
+	=>When we add an IDENTITY column then System automatically creates a new SEQUENCE GENERATOR(SG) that provides the 
+		values(i.e everytime next) to that IDENTITY column whenever required.
+	=>The metadata about all Sequence Generators is in the table named "Sys$SGAttributesTable";
+		
+	Three variations while defining a column as identity:
+	Examples: 
+Create Table data(
+	1. id Number Generated Always as Identity
+		//if identity column(IC) is defined like this then we won't be able to insert values manually for the column "id" 
+			even we can not insert NULL in id column too, despite the system(i.e SG) will automatically supply 
+				values to that column.
+		E.G:  //we can not do like this:
+			  insert into data(id,title) values(1,'XZY');       //the query will generate error 
+			  insert into data(id,title) values(NULL,'XZY'); 	  //the query will generate error 
+		      //Correction
+			  insert into data(title) values('XZY');	//now the query will be executed and the value for id will be 1 here.
+	2. id Number Generated By Default as Identity
+		 //if identity column(IC) is defined like this then we won't be able to insert NULL into the column "id" despite the 
+			system(i.e SG) will automatically supply values to that column if we do not specify a value but if we 
+			do(other than NULL) then that value will be considered for the "id" column.
+		E.G:  //we can not do like this:
+			  insert into data(id,title) values(NULL,'XZY'); 	  //the query will generate error 
+		      //Correction
+			  insert into data(title) values('XZY');	//now the query will be executed and the value for id will be 1 here.
+			  insert into data(id,title) values(5,'XZY');       //this query will also execute and value for id will be 5 here
+	3. id Number Generated By Default on NUll as Identity 
+		//if identity column(IC) is defined like this then the system(i.e SG) will automatically supply values to that column 
+		if we do not specify a value o specify the NULL value but if we do(other than NULL) then that value considered 
+			for the "id" column.
+		E.G:  All of the queries below will be executed without giving any error(s):
+			  insert into data(id,title) values(NULL,'XZY');  // the query will be executed and the value for id will be 1 here. 
+			  insert into data(title) values('XZY');	//the query will be executed and the value for id will be 2 here.
+			  insert into data(id,title) values(5,'XZY');       //this query will also execute and value for id will be 5 here
+		
+,title Varchar(20));  //table data creation ended here
+
+
+	SEQUENCE in Data-Dictionary:
+	===========================
+		SELECT * FROM USER_SEQUENCES;
+			//this query can be executed by any user
+		SELECT * FROM ALL_SEQUENCES;
+			//this query can only be executed by 'SYSTEM' user
+
+	ALTERING A SEQUENCE:
+	===================
+		=>For Altering a sequence we must have an 'ALTER ANY SEQUENCE' system privilege and sequence which we want to alter
+			should be already created.
+		=>We can change all parameters that define a sequence using 'ALTER SEQUENCE' command except START WITH parameter for that 
+			we will need to drop the sequece and then recreate it.
+		SYNTAX:
+			ALTER SEQUENCE sequence_name
+			INCREMENT BY a_number
+			MAXVALUE a_number
+			MINVALUE a_number
+			NOCYCLE
+			CACHE a_number;
+			
+	DROPPING A SEQUENCE:
+	===================
+		=>For dropping a sequence we must have an 'DROP ANY SEQUENCE' system privilege and sequence which we want to drop
+			should be already created.
+		=>When a sequence is dropped its metadata is removed but any synonyms defined for that sequence remain still, returning
+				error when used/referenced.
+		SYNTAX:
+			DROP SEQUENCE sequence_name;
+			
+
+MM/DD/YYYY
+03/31/2021   THU
+==========================================================================
+    PRIVILEGES:
+    ===========
+	=>A Privilege is right to execute some kind of query or to access another user's object.
+	=>If unnecessary privileges are given to the users then security is compromised.
+	TWO TYPES:
+	=========
+    1. SYSTEM PRIVILEGES.
+    1. OBJECT PRIVILEGES.
+
+1. SYSTEM PRIVILEGES:
+=====================
+   =>It is a Right to perform a particular action.
+   =>There are over 200 distinct system privileges to manage.
+   =>All privileges associated with creation,modification & deletion of Database Objects fall under this catagory.
+   =>We should grant system privileges only to the roles or trusted users as these are very powerful.
+	//query to see the system privileges that have been granted to users
+	      Select * from DBA_SYS_PRIVS;
+	//query to see the all system privileges(i.e 200)
+	      SELECT * FROM SYSTEM_PRIVILEGE_MAP;
+   GRANTING SYSTEM PRIVILEGES:
+   ==========================
+       SYNTAX:
+	  GRANT sys_privilege_name1,sys_privilege_name2,sys_privilege_name3...
+	  To user_name1,user_name2,user_name3,role1,rol2... | PUBLIC		
+	  [WITH ADMIN OPTION];
+	=>//if PUBLIC is written then the specified privileges will be granted to all users.	  
+
+=>Only two type of users can grant / revoke system privileges.
+   1. Users who have been granted that system privileges with 'ADMIN OPTION'.
+   2. Users with the system privilege 'GRANT ANY PRIVILEGE'.
+
+	=>To see the system privileges that are assigned to the current user:
+		SELECT * FROM USER_SYS_PRIVS;
+	=>The below query will show the roles assigned to the current user:
+		SELECT * FROM USER_ROLE_PRIVS;
+	=>To see the system privileges that are assigned to a particular ROLE:
+		SELECT * FROM ROLE_SYS_PRIVS WHERE ROLE=role_name;    //e.g role_name='RESOURCE'
+
+CREATING USERS:
+==============
+   =>'CREATE USER' statement is used to create users in database, through which we can log into our 
+		database IF the 'CREATE SESSION' system privilege is granted to it. Therefore we should grant at least this
+		system privilege to the new user just after its creation.
+   =>For creating a user we must have the system privilege 'CREATING USER';
+	Syntax(for creating a user):
+		CREATE USER user_name IDENTIFIED BY password [PASSWORD EXPIRE];
+	=>If EXPIRE wrod is specified the it means the database will prompt the user to change his password, just after he 
+		logins first time.
+	e.g:
+		CREATE USER THOMAS IDENTIFIED BY ZHS; 	
+
+REVOKING  SYSTEM PRIVILEGES:
+============================
+	SYNTAX:
+		REVOKE sys_privilege_name1,sys_privilege_name2,...
+		FROM USER1,Role1,user2,role2,...;
+
+GRANTING ALL SYSTEM PRIVILEGES TO A USER:
+=========================================
+	SYNTAX:
+		GRANT ALL PRIVILEGES TO USER1,Role1,user2,role2,...;
+	
+
+
+MM/DD/YYYY
+04/02/2021   FRI
+==========================================================================
+  CREATING A ROLE:
+  ===============
+    =>We can grant privileges to a role(i.e a name of grouped privileges) and the  we can grat that role to the users/other roles.
+    =>Roles allow us to btter & easier management of privileges.
+    =>It is necessary to enable the Role for the user to it has been granted.   
+	 Syntax:
+		CREATE ROLE role_name [IDENTIFIED BY password] | NOT IDENTIFIED.
+	=>If 'IDENTIFIED BY password' is specified then it will require this password while enabling this role after being granted to user.
+	=>If 'NOT IDENTIFIED' is specified then it won't require this password while enabling this role after being granted to user.
+        GRANTING PRIVILEGES TO A ROLE:
+	 	GRANT system_privilege_name | object_privilege_name To Role_name;
+	GRANTING ROLE TO Another ROLE:
+	 	GRANT role_name To another_role_name;
+
+STEPS CONCERNING ROLE CREATION AND GRANT OF PRIVILEGES(WITHOUT PASSWORD):
+==========================================================================
+    1. CREATE A ROLE.
+		CREATE ROLE role_name;
+    2. GRANT PRIVILEGES TO ROLE.
+		Grant system_privilege_name to role_name;
+    3. GRANT ROLE TO USER.
+		Grant role_name to User_name;
+    4. GO TO THE USER ACCOUNT & SET(i.e enable) THE ROLE.
+		Set role role_name;   	//note:- this query should be executed while logged into the user's 
+					//account whom this role is has been assigned.
+STEPS CONCERNING ROLE CREATION AND GRANT OF PRIVILEGES(WITH PASSWORD):
+==========================================================================
+    1. CREATE A ROLE.
+		CREATE ROLE role_name IDENTIFIED BY password;
+    2. GRANT PRIVILEGES TO ROLE.
+		Grant system_privilege_name to role_name;
+    3. GRANT ROLE TO USER.
+		Grant role_name to User_name;
+    4. GO TO THE USER ACCOUNT & SET(i.e enable) THE ROLE.
+		Set role role_name identified by password;   	
+			//note:- this query should be executed while logged into the user's 
+				//account whom this role is has been assigned.
+=>Query to see the roles associated with the logging(connectivity) in database i.e 
+	SELECT * FROM SESSION_ROLES;
+
+
+OBJECT PRIVILEGES:
+ =================
+  =>It is a permission to perform a particular action on a specific schema object.
+  =>The owner of an object in a schema has all privileges on the object and can also grant privileges on that object to other users.
+
+WHO CAN GRANT OBJECT PRIVILEGES:
+===============================
+  =>The owner of an Object can grant privileges on that object to any user.
+  =>The owner of schema in which object is contained has also this authority.
+  =>A user with 'GRANT ANY OBJECT PRIVILEGE' can grant or revoke any object-privilege to another user.
+  =>SELECT,INSERT,DELETE,UPDATE are the example of OBJECT PRIVILEGES. 
+	SYNTAX:
+		GRANT obj_privilege1_name[(column1_name,column2_name,...)],obj_privilege2_name2,...
+		ON Object_name To user1,role1,role2,user2,... | PUBLIC [WITH GRANT OPTION];
+		//The code written in [] is optional.
+  =>The column_list(i.e column_names)  paramter is used if Object is a table and only certain columns of table are made available
+		for modifications by other users.
+  =>The 'WITH GRANT OPTION' clause provides ability to the user for granting this privilege to another user if he wants.
+  =>Query to see the object privileges on a Table(i.e which is an OBJECT):-
+	SELECT * FROM USER_TAB_PRIVS WHERE table_name='table_name_here';   //for current user account
+	SELECT * FROM DBA_TAB_PRIVS WHERE table_name='table_name_here';   //for dba account
+ 
+
+
+DML OPERATIONS:
+===============
+  =>WE can grant DML operations(DELETE,INSERT,UPDATE,SELECT) on a table/view to users.
+  =>We can restrict INSERT & UPDATE privileges for a table to specific columns of the table by using Selective insert/update.
+	that is the user will be able to insert/update that column(s) of the table.
+  =>Selective update/insert are used to restrict user to access sensitive data.
+ E.g:
+	GRANT SELECT ON emp to PUBLIC;
+		//all users will be able to select  from emp table after this query.
+	GRANT UPDATE(job,sal) ON emp TO thomas;
+		//with this query the user 'thomas' will only be able to update job/sal column of emp.
+	GRANT UPDTAE ON EMP TO THOMAS;
+	GRANT INSERT(COMM,EMPNO) ON EMP TO THOMAS;
+		//with this query thomas will be able to insert values for only comm/empno columns rest of  columns
+		//	will either get null value or their default value if specified.
+	GRANT INSERT ON EMP TO THOMAS;
+	GRANT UPDATE EXCLUDING(empno) ON EMP TO THOMAS;
+		//with this query thomas will be able to update values for all columns except empno.
+	GRANT SELECT,UPDATE(deptno) ON EMP TO THOMAS;	
+		//with this query thomas will be able to update values for only deptno column but he can select 
+		// all rows(values) from table.
+	GRANT ALL ON EMP TO THOMAS;	
+		//with this query thomas will be able to perform any DML operation on EMP table.
+    Examples:-
+		CREATE USER TIM identified by abc;    => Grant Create session to TIM;
+		Grant SELECT ON SCOTT.EMP to TIM;	//excuted from thomas account 
+			//so to grant privilege on an object of another's account we need to refer that object name 
+			//preceded by user name+dot(e.g SCOTT.emp)
+    Query user tables privileges that are made by us:
+	SELECT * FROM USER_TAB_PRIVS_MADE;
+
+
+
+
+
+MM/DD/YYYY
+04/05/2021   MON
+==========================================================================
+ 
+DDL OPERATIONS(some objects fall in catagory of object privileges E.G(ALTER,INDEX,REFERENCES)):
+==============
+  =>Sometimes performing a DDL operation on a table needs some more system/object privs E.g. to create a trigger we need 'alter
+			table' object privilege along with 'CREATE TRIGGER' system privilege.
+  =>A column-specific 'REFERENCES' privilege restricts the grantee(whom privs is granted) to use the named columns(at least one PK/Unique
+									 key column).
+ 
+REVOKING PRIVILEGES GIVEN WITH GRANT OPTION:
+===========================================
+  =>If the owner revokes a privilege from a user who granted privileges to other users, the revoke statement cascades to all privileges 
+		granted.
+E.g:	A => B => C => D
+Explaination=>if 'A' user granted an object priv to user 'B' and same the user 'B' did to user 'C' and user 'C' to user 'D'
+		then revoking privileges from user A will automatically cause users B,C,D to be revoked from those privs.
+
+REVOKING OBJECT PRIVILEGES:
+==========================
+	REVOKE priv1,priv2,... | ALL ON object_name FROM user1,user2,role1,... | PUBLIC [CASCADE CONSTRAINST];
+   =>'CASCADE CONSTRAINST' is required to remove any referential integrity constraints made to the object by means of 
+	'REFERENCES' privilege.
+     E.G:
+	 REVOKE UPDATE ON emp FROM thomas;
+    NOTE: We can not specify column_list(either as of update/insert priv) while revoking
+
+
+
+
+PLSQL(Procedural Language Structured Query Language):
+====================================================
+   =>A powerful,staraightforward(direct connection Oracle server/database) databse programming language.
+   =>It is combination of SQL and procedural fearures of programming languages.
+   =>Developed b Oracle Corporation in early 90's to enhance capabilities of SQL.
+   =>PL/SQL is one of three programming languages embedded in Oracle database along with SQL & java.
+   =>Easy to write and read, provides security features(handling exceptions ect).
+   =>It is a BLOCK-STRUCTERED language; means PL/SQL programs are written in logical blocks of code.
+  
+	THREE PARTS/SECTIONS OF BLOCK;
+1.DECLARATIONS:
+==============
+   =>This section start with keyword 'DECLARE'. It is an optional section in whic we define all
+			variables, cursors, subprograms and other elements to be used in the program.
+2. EXECUTABLE COMMANDS:
+======================
+   =>This section is enclosed b/w keywords 'BEGIN' & 'END' and is mandator section.
+   =>Consists of PL/SQL program statements and must have at least one executable line of code, which may be just
+		a NULL command to indicate that nothing should be executed.
+3. EXCEPTIONAL HANDLING:
+=======================
+   =>This section starts with keyword 'EXCEPTION'.
+   =>This optional section contains exception(s) that handle errors in program.
+  
+SYNTAX:
+======
+      DECLARE 
+	<declare section>
+	BEGIN
+		<Executable statements>
+	      EXCEPTION
+		<Exception handling>
+        END;
+
+
+THE OUTPUT PACKAGE:
+==================
+    =>Like in cpp ther's 'std::cout', in java there's 'System.out.println()', similarly for output 
+	in PL/SQL 'DBMS_OUTPUT' package is used that has many function for producing output.
+   E.G:
+	BEGIN
+          	DBMS_OUTPUT.PUT_LINE('I');		//prints 'I' on current line and moves cursor to the next line
+		DBMS_OUTPUT.NEW_LINE;			//this procedure produces new line
+		DBMS_OUTPUT.PUT_LINE('am');
+		DBMS_OUTPUT.PUT_LINE('Zohaib');
+	END;
+	/          //:-this slash is necessary on very first blank line after last line of code
+			//when we are writing code in sql plus/commadn line.
+
+	Output of above PL/SQL program:
+		I
+	
+		am
+		Zohaib
+
+
+'HELLO WORLD!' EXAMPLE:
+======================
+	SET SERVEROUTPUT ON      		//if running first time the PL/SQL program in oracle.
+	DECLARE
+		message varchar2(20) := 'Hello World!'
+	BEGIN
+		dbms_OUTPUT.put_line(message);
+	END;
+	/
+=>'END' signals end of Pl/SQL block.
+
+PL/SQL Datatypes:
+================
+1.SCALAR=>           (holds single value e.g NUMBER,DATE,BOOLEAN,ROWID)
+2.COMPOSITE=>        (hold internal components that can be accessed individually)
+3.LARGE OBJECT(LOB)=>Large objects, i.e songs,texts,graphic images,clips,sound waveforms e.g Bfile,Blob,Clob,Nclob
+4.REFERENCE=>	      (holds pointer to other data items)
+
+
+VARIABLE DECLARATION:
+====================
+ Variable name 
+  =>should not exceed 30 characters.
+  =>should not be among PL/SQL reserved keywords.
+  =>is not case-sensitive by-default.
+  =>should be written in declaration section of PL/SQL program. 
+  =>Gets memory being allocated by PL/SQL.
+
+SYNTAX:
+  variable_name [CONSTANT] datatype[NOT NULL] := DEFAULT  | initial_value;
+
+Examples:
+ 	sales Number(10,2);
+	pi constant float=3.1415
+	name varchar2(25);
+	counter binary_integer:=0;	
+	greetings varchar2(20) default 'Have a good day';
+=>When we provide a size, scale or precision limit with the data type, it is called a constrained declaration otherwise 
+	unconstrained declaration.
+=>Constrained declarations require less memory than unconstrained declarations.
+	
+	
+	
+	
+MM/DD/YYYY
+04/06/2021   TUE
+==========================================================================
+ 	
+GLOBAL AND LOCAL VARIABLE DECLARATION:
+===========================
+SET SERVEROUTPUT ON
+DECLARE
+    --Global variables
+	a integer :=10;
+	b integer :=20;
+	sum real; 
+BEGIN
+	sum=a+b;
+	dbms_output.put_line('sum is' || sum);
+	
+	DECLARE
+    		/*local variables wrt outer query*/
+		a integer :=10;
+		b integer :=20;
+		mul real; 
+	BEGIN
+		mul=a*b;
+		dbms_output.put_line('Multiplication is' || mul);
+	END;
+END;
+/
+
+
+PL/SQL SELECT STATEMENT:
+=======================
+ Syntax:
+	SELECT col1,col2,col3,... into var1,var2,var3,...
+	FROM table_name
+	[WHERE condition];
+
+E.G:
+1. Integer type Variables:
+=========================
+	DECLARE
+    		Bonus integer;
+	BEGIN
+		select sal*0.1 into bonus from emp where empno=7788;
+		dbms_output.put_line(boNUS);		--as variables are incase-sensitive.
+	END;
+	/
+
+1. REFERENCE type Variables(a):
+=============================
+	DECLARE
+    		e_id emp.empno %type :=7788	--this will automatically make datatype of e_id varisable same as of empno in emp table
+		e_name emp.ename%type;
+		e_sal emp.sal %type;
+	BEGIN
+		select ename,sal into e_name,e_sal from emp where empno=e_id;
+		dbms_output.put_line(e_name ||' ' ||e_sal);		--as variables are incase-sensitive.
+	END;
+	/
+
+
+1. REFERENCE type Variables(b):
+=============================
+	DECLARE
+    		emp_rec emp %ROWTYPE;	--emp_rec can hold complete row(s) including all columns of emp table.
+	BEGIN
+		select * into emp_rec from emp where empno=&EmployeeNumber;       --substituition variable
+		dbms_output.put_line(emp_rec.ename ||' ' ||emp_rec.sal);		--as variables are incase-sensitive.
+	END;
+	/
+	
+=>LIKE, IN, BETWEEN, IS NULL operators can be used in a pl/sql program.
+
+
+
+
+PL/SQL CONTROL STRUCTURES:
+=========================
+three types:
+
+1. CONDITIONAL CONTROL STRUCTURES
+2. ITERATIVE CONTROL STRUCTURES
+3. SEQUENCIAL/LOOP CONTROL STRUCTURES
+
+
+1. CONDITIONAL CONTROL STRUCTURES:
+=================================
+=>it includes following statements:
+	a. IF-THEN :
+		syntax:
+			IF condition THEN
+				block_code;
+			END IF;
+		E.g:
+			DECLARE 
+				v_num NUMBER:=10;
+			BEGIN
+				IF v_num=10 THEN
+					dbms_output.put_line('equal to 10');
+				END IF;
+			END;
+			/
+	b. IF-THEN-ELSE:
+		syntax:
+			IF condition THEN
+				block_code1;
+			ELSE
+				block_code2;
+			END IF;
+		E.g:
+			DECLARE 
+				v_num NUMBER:=10;
+			BEGIN
+				IF v_num=10 THEN
+					dbms_output.put_line('equal to 10');
+				ELSE
+					dbms_output.put_line('not equal to 10');
+				END IF;
+			END;
+			/
+	c. IF-THEN-ELSEIF
+	d. CASE
+	e. SEARCHED CASE
+	f. NESTED IF-THEN-ELSE:
+		syntax:
+			IF condition THEN
+				block_code1;
+				IF condition THEN 
+					block_code2;
+				ELSE 
+					block_code3;
+				END IF;
+			ELSE
+				block_code4;
+			END IF;
+		E.g:
+			DECLARE 
+				v_num NUMBER:=10;
+			BEGIN
+				IF v_num=10 THEN
+					dbms_output.put_line('equal to 10');
+				ELSE
+					dbms_output.put_line('not equal to 10');
+				END IF;
+			END;
+			/
+
+
+2. ITERATIVE CONTROL STRUCTURES:
+===============================
+=>it includes following statements:
+
+	a. PL/SQL BASIC LOOP:
+		syntax:
+			LOOP
+				statements;
+				EXIT[WHEN condition];
+			END LOOP;	
+		=>If 'EXIT[WHEN condition]' comes before statements in a loop then it is called a 'PRE-TEST LOOP' if vice versa then called 	
+				'POST TEST LOOP'	
+	b. PL/SQL WHILE LOOP
+	c. PL/SQL FOR LOOP:
+		syntax:
+			FOR counter in[REVERSE] lowerlimit..upperlimit LOOP
+				statements;
+			END LOOP;	
+		=>counter is implicitly declared when loop is executed first time,therefore it is not a variable	that we should declare in 
+				declarative section.
+		Example:
+			BEGIN 
+				FOR i IN REVERSE 1..10 LOOP
+					DBMS_OUTPUT.PUT_LINE(i);
+				END LOOP;
+			END;					
+			/
+
+			//output will be: 10 9 8 7 6 5 4 3 2 1 (every digit on next line)
+		=>Default inrement in a for loop is '1', custom increments must be accomodated through code.
+	d. NESTED LOOPS IN PL/SQL
+
+LOOP CONTROL STRUCTURES:
+=======================
+=>It includes following:
+
+1. EXIT			//terminates the loop and control transfers to the statement following loop.
+2. CONTINUE		//skips current iteration of the loop
+3. GOTO			//It Transfers the control to the labeled statement.
+			//label syntax:         <<labelNameHere>>
+
+LOOP LABELS:
+===========
+=>PL/SQL loops can be labeled.
+=>The label should be enclosed by double angle brackets(<<Label>>) and also can be used with END LOOP  statement to exit loop.
+E.G:
+	DECLARE 
+		i Number(1);
+		j Number(1);
+	BEGIN
+		<<outer_loop>>
+	   FOR i in 1..3 LOOP
+		dbms_output.put_line(i);
+		    <<inner_loop>>
+		FOR j in 4..6 LOOP
+			dbms_output.put_line(j);
+		END LOOP inner_loop;
+	   END LOOP outer_loop;
+	END;
+	/
+
+
+EXCEPTIONS:
+==========
+=>Abnormal conditions which cause disruption in programs's flow are called as EXCEPTIONS.
+=>They may occur due to invalid user input, system failure or logical errors.
+=>Every exception has an 'error number' and 'error message' and some have 'names' too.
+=>The code in PL/SQL for handling these kinda EXCEPTIONS is written in 'EXCEPTION BLOCK'
+
+Three categories of PL/SQL EXceptions:
+
+1. Pre-Defined System Exception
+2. User-Defined Exceptions
+3. Undefined System Exceptions
+
+1. Pre-Defined System Exception:
+===============================
+=>Every Pre-Defined Exception has a name and error number but these exceptions are handled by their names and are 
+		thrown automatically by system i.e do not need to be declared.
+  e.g: exceptionName(errorNumber):
+	DUP_VAL_ON_INDEX(ORA-00001)
+	INVALID_CURSOR(ORA-01001)
+	LOGIN_DENIED(ORA-01017)
+	NO_DATA_FOUND(ORA-01403)
+	TOO_MANY_ROWS(ORA-01422)
+	ZERO_DIVIDE(ORA-01476)
+
+SYNTAX:
+======
+DECLARE 
+	declare_section;
+BEGIN
+	statements_causing_exceptions;
+EXCEPTION
+	WHEN exception1 THEN 
+		statements;
+	WHEN exception2 THEN
+		statements;
+	WHEN exception3 THEN
+		statements;
+	...
+	WHEN OTHERS THEN
+		statements;
+END;
+/
+
+e.g:
+
+DECLARE 
+	eid emp.empno %type;
+	ename emp.ename %type;
+BEGIN
+	SELECT ename into ename from emp where empno=eid;
+	DBMS_OUTPUT.put_line(ename);
+EXCEPTION
+	WHEN no_data_found THEN 
+		DBMS_OUTPUT.put_line('No such employee');
+	WHEN zero_divide THEN
+		DBMS_OUTPUT.put_line('divide by zero!');
+	WHEN OTHERS THEN
+		DBMS_OUTPUT.put_line('error!');
+END;
+/
+	
+
+RAISING EXCEPTIONS:
+=================
+SYNTAX:
+
+DECLARE 
+	exception_name EXCEPTION;
+BEGIN
+	IF condition THEN
+		raise exception_name;
+	END IF;
+EXCEPTION
+	WHEN exception_name THEN 
+		statements_to_handle;
+END;
+/
+		
+
+2. USER-DEFINED EXCEPTIONS:
+==========================
+=>It is declared by user using 'EXCEPTION' datatpe and is also raised by user using 'RAISE' statement.
+=>Or it can be raised b using WHEN clause=> DBMS_STANDARD.RAISE_APPLICATION_ERROR(userErrorNumber,userErrorMessage).
+							//note:here error number should be in range of -20000 to -20999
+	SYNTAX Of declaration:
+		DECLARE 
+			exception_name EXCEPTION;
+
+e.g:
+DECLARE 
+	eid emp.empno %type;
+	ename emp.ename %type;
+	myexcp Exception;
+	
+BEGIN
+	SELECT ename into ename from emp where empno=eid;
+	if ename='' then
+		raise myexcp;
+EXCEPTION
+	WHEN myexcp THEN 
+		DBMS_OUTPUT.put_line('my exception');
+END;
+/
+
+
+MM/DD/YYYY
+04/09/2021   FRI
+==========================================================================
+ 		
+3. UN-DEFINED EXCEPTIONS:
+========================
+
+=>The execption that are raised due to an error in PL/SQL or RDBMS, and are not defined in PL/SQL are known as
+	Un-Defined Exceptions.
+=>Only most common exceptions have names rest have error numbers only but we can assign names to those using procedure: 
+		'PRAGMA_EXCEPTION_INT'.
+
+
+
+CURSORS:
+=======
+ =>A cursor is a pointer to the context area that is actually a memory area in which the information that 
+	how a sql statement will be processed is save. 
+=>It holds the row(s) returned by a sql statement and this set or rows is known as 'ACTIVE SET'.
+=>We can also name a cursor which we can refer to fetch /process this set of rows.
+
+TWO TYPE:
+========
+1. IMPLICIT CUSROR
+2. EXPLICIT CURSOR
+
+
+1. IMPLICIT CUSROR:
+==================
+   =>It is automatically created by oracle(having name SQLcursor) if there's no any explicit cursor whenever 
+		a sql stmt is executed.
+   =>For INSERT operation cursor holds data that is gonna be inserted.
+   =>For UPDATE/DELETE operations it  identifies which rows need to be affected.
+   =>We can refer to the most recent cursor(implicit) as SQLcursor, always having attributes such as 
+	%FOUND :	Returns true if a row affected/returned by 'insert/update/delete/select into' operation and viceversa.
+	%NOTFOUND:	Returns false if a row affected/returned by 'insert/update/delete/select into' operation and viceversa.
+	%ISOPEN:	Always returns false for implicit cursors as they are opened & closed automatically by oracle.
+				but for explicit cursors Returns true if it is open and vice versa.
+	%ROWCOUNT:	Returns number of rows affected/returned by 'insert/update/delete/select into' operation and viceversa.
+   =>We don't need to OPEN,FETCH or CLOSE implicit cursor.
+
+=>Any SQL cursor attribute will be accessed as 'SQL%attribute_name'.
+
+E.G:
+DECLARE
+	total_rows number(2);
+BEGIN
+	UPDATE emp2 set sal=sal+145;
+	IF SQL%NOTFOUND THEN 
+		dbms_output.put_line('No employees selected!');
+	ELSIF SQL%FOUND THEN 
+		total_rows:=SQL%ROWCOUNT;
+		dbms_output.put_line(total_rows || ' employees selected!');
+	END IF;
+END;
+/
+	
+
+2. EXPLICIT CURSOR:
+==================
+   =>They are used to gain more control over context area.
+   =>They are defined by programmer.
+   =>It is created on a SELECT statement which returns more than one row.
+
+SYNTAX:
+======
+	CURSOR cursor_name IS select_statement;
+	
+Working with explicit cursors include Following steps:
+
+1. Declaring cursor to initialize memory.
+2. Opening cursor to allocate memory.
+3. Fetching cursor to retrive data.
+4. Closing cursor to release allocated memory.
+
+
+1. Declaring cursor to initialize memory:
+========================================
+Three types of cursor declaration
+
+a. Cursor without parameters
+b. Cursor with parameters
+c. Cursor with return clause
+
+
+a. Cursor without parameters:
+============================
+	Syntax:
+		CUSROR cursor_name IS select_statements;
+	Example:
+		DECLARE 
+			CURSOR emp_cur
+			IS
+			SELECT * FROM emp where sal >1000;
+
+
+2. Opening cursor to allocate memory:
+====================================
+
+=>Opening of cursor allocates it the memory and make it ready for fetching rows returned by SQL statement into it.
+
+SYNTAX:
+	OPEN cursor_name;
+Example:
+	OPEN emp_cur;		//the cursor which we created in above example
+
+
+3. Fetching cursor to retrive data:
+==================================
+
+=>'FETCH' statement is used to fetch data from cursor and assign that to variables.
+=>fetch statement retrieves current row and makes cursor to point to next row in the remaning rows.
+
+SYNTAX:
+	FETCH cursor_name into var1,var2,...
+
+
+4. Closing cursor to release allocated memory:
+=============================================
+
+=>'CLOSE' statement is used to disable cursor i.e to release memory.
+
+SYNTAX:
+	CLOSE cursor_name;
+
+
+MM/DD/YYYY
+04/12/2021   FRI
+==========================================================================
+E.G:
+===
+
+DECLARE 	
+	e_id emp.empno %type;
+	e_name emp.ename %type;
+	
+	CURSOR emp_cur IS
+		SELECT empno,ename FROM emp;
+BEGIN
+	OPEN emp_cur;
+	LOOP
+		FETCH emp_cur INTO e_id,e_name;
+	   EXIT WHEN emp_cur%NOTFOUND;
+		DBMS_OUTPUT.PUT_LINE(e_id || ' : ' || e_name);
+	END LOOP;
+	CLOSE emp_cur;
+END;
+/
+
+
+CURSOR FOR LOOP:
+===============
+    =>It is Extension of the numeric FOR LOOP, which executes body of loop once for 
+	each row returned by cursor query associated with it.
+    =>We do not need to open,fetch & close the cursor as it is implicitly done by oracle(i.e creates loop index variable of row type 
+			and fetches each row of associated query with this cursor until no row is fetched(returned)).
+    =>Cursor is also closed if some statement inside loop causes control to be transferred outside of loop. e.g EXIT,GOTO or 
+										raise of ANy exeption
+
+SYNTAX:
+	FOR record IN cursor_name LOOP
+		statements;
+	END LOOP;
+E.g:
+===
+CURSOR c_product IS
+	SELECT  product_name,list_price FROM products ORDER BY list_price DESC;
+BEGIN	
+	FOR r_product IN c_product LOOP
+		DBMS_OUTPUT.PUT_LINE(r_product.product_name || ':$' || r_product.list_price);
+	END LOOP;
+END;
+/
+
+
+VIEWS:
+=====
+=>It is logical representation of a table(s)/other View(s). hence derives data from these tables/Views which we call as 'Base Table(s)'.
+=>Operations(like query,update,insert,delete) performed on view will affect the base table.
+=>Using views we can present data to different type of users. hence views are powerful.
+
+
+Advantages Of Views:
+====================
+
+1.Simplifying data retreival:
+=============================
+     =>After testing a complex query carefully we encapsulate it in a view then we can access the result of that query very easily
+		by querying that view and we don't need to write that complex query again & again.
+2.Maintaining logical data independance:
+=======================================
+     =>We can expose that data to external apps via views.
+     =>When table structure is changed then we just need to update the view. Interface b/w database and external apps remain intact
+	i.e we don't need to change any single line of code to keep external app running.
+3.Implementing data security:
+============================
+     =>Views allow us to implement additional security layer b/w users and actual tables.
+     =>GRANT and REVOKE commands can be used to specify which user can perform against a view.
+
+TYPES:
+=====
+
+1. Simple View:
+  =>View based on single table having no 'GROUP BY' and functions. 
+2. Complex View:
+  =>A view based on multiple tables or having 'GROUP BY' and functions. 
+3. Inline Views:
+  =>A view based on a subquery in 'FROM' clause that creates a temporary table and simplify the complex query.
+4. Materialized Views:
+  =>A view that stores data(physically in database) along with its definition.
+
+	Simple Versus Complex Views
+	<-------------------------->
+	Features		Simple Views	Complex Views
+	-----------------------------------------------------
+1.	No. of Tables		    One		 One or More
+2.	Containing Functions	    No		   Yes
+3.	Containing group of data    No		   YES
+4.	DML through VIEW	    Yes		 Not allowed
+
+
+INLINE VIEWS:
+============
+
+=> It is a SELECT statement in the FROM clause of another SELECT statement to create a temporary table that could 
+		be referenced by SELECT statement.	
+=> Mostly used to write complex queries without join clause /subqueries operations.
+=> It is so called Temporaray table becuase the data(duplicate copy of table) returned by the subquery of FROM clause 
+	isn't stored in database.
+=>It is also referred to as SUB-SELECT statement.
+
+	SYNTAX:
+		SELECT column_names,... FROM (subquery) WHERE ROWNUM<=N;
+
+MATERIALIZED VIEWS:
+===================
+
+=> It replicate the retreived data physically.
+=> This replicated data canbe reused without executing view again.
+=> This type of VIEW is also known as "SNAPSHOTS".
+=> Materialized View reduce processing time to regenerate the whole data.
+=> It helps remote users to replicate data locally and improve query performance.	
+
+
+	 Views Versus Materialized Views
+	<------------------------------>
+		    View			  	     Materialized View
+	--------------------------------------------------------------------------------------------------
+1.	=>View is a logical structure of 	  =>Materilized views are also logical 
+	  table which will be used to retreive	     structure but data is
+	  data from one or more tables.		     physically stored in Database. 
+2.	=>Data access is slower compared to	  =>Data access is faster compareed to simpler view
+		materialized view.	 	     because it's direcly accessed from physical location.
+3.	=>Views are generally used to restrict	  =>Materialized views are used in Data
+		data from database.				Warehousing.
+
+
+CREATING VIEWS:
+==============
+Syntax:
+
+CREATE [OR REPLACE] VIEW view_name[(column_aliases)] AS defining_query 
+[WITH READ ONLY]
+[WITH CHECK OPTION]
+
+=>Note: Whatever is written in square brackets is optional.
+
+
+OR REPLACE:
+==========
+
+=>The "OR REPLACE" options replaces the def: of existing view.
+=>It's handy if we have granted various privileges on view, because when we use DROP VIEW and CREATE VIEW
+	to change the view defi: then Oracle removes view privileges which may not be what we want. To avoid this,
+	we can use the CREATE OR REPLACE clause that preserves the view privileges.
+
+FORCE:
+======
+
+=>Usually we create a view based on existing tables. However, sometimes, we may want to create a view based on that tables
+	that we will create later or tables that we don't have sufficient privileges to access at the time of creating the view. 
+	In These cases, we can  use the "FORCE" option.
+
+
+column_aliases:
+==============
+
+=>Typically, the column names of view are derived from select list of defining query, However column_names of defining
+	query may contain functions or expressions that can not use for the view definition. To solve this problem
+	we have two options:
+   1. Use column aliases that adhere to naming rules in SELECT clause of the defining query.
+   2. Explicitly specify column aliases for the view's columns between the CREATE VIEW and AS clauses.
+
+
+AS defining_query:
+==================
+
+=>The defining query is a SELECT statement that defines columns and rows of the view.
+
+
+WITH READ ONLY:
+==============
+
+=>The 'WITH READ ONLY' clause prevents underlying tables from changes through view.
+
+
+WITH CHECK OPTION:
+==================
+
+=>The 'WITH CHECK OPTION' clause protects the view from any changes to underlying table that would produce rows which 
+	are not included in the defining query.
+
+
+PREREQUISITES FOR VIEW CREATION:
+================================
+	To create a VIEW we must meet following requirements:
+
