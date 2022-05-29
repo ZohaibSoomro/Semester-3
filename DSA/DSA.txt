@@ -1,0 +1,77 @@
+aggregation-> diamond(unfilled)= if object A exists without Object B But A is memeber of B(class)
+then it its said to be aggregation.
+class Uni{
+}
+class deptA : uni{
+}
+class deptB : uni{
+
+}
+
+composition: diamond(filled)=if object A has references/objcets B then it is said to be composition.
+===> diamond willbe with class A here.
+compsition: 
+class A{
+class B{  //in composition  class B willbe nested class
+}
+B obj= new Obj();
+}  
+Aggregation:
+class A{
+B obj;   //here it will not be initialized.
+}
+
+
+in Fortran lower bound of an array= 1
+in Ada , Pascal lower bound can be set by programmer.
+
+a subarray is a consecutive portion in array.
+
+sequencial/linear search has more complexity than binary search
+for binary seaRCH sequanece should be sorted. 
+
+Abstract datatypes specifies how it behaves / or they just define behaviour
+
+
+
+ctrl+Z (undo) operations are also exmaple of stacks
+Most important operations in stacks: Peek,Pop,Push,Size
+
+
+Reverse polish notation 
+Applications of stacks:
+
+infix notations:
+   (a+b)*(c-d)
+
+postfix notations:
+  a b + c d - * (using operators after operands)
+
+e.g  (7+2)  *  (5-(8/4))  
+  postfix= 7 2 + 5 8 4 / - *
+
+x 4 + z 3 - / z +=((x+4)/(y-3)) + z
+x 9 y + 6 z - * - =(x)-((9+y) * (6-z))
+x 3 y 2 z ////=(x/(3/(y/(2/z))))
+
+Stacks are used in Games, chat messengers, grids,and many more
+
+In Collection we dont care about order of insertion
+
+processes in operating system is an example of queue
+1. Sequencial access: Stacks,Linkedlists,Queue
+2. Direct/Random access: Arrays,Collections
+
+Linear Search= O(n)
+binary Search= O(log n)
+hash table Search= O(1)    //we can get result on 1st attempt by using hashmethod
+
+hashCode()= 31*iso.charAt(0)+iso.charAt(1)+...and so on
+//here iso is a string variable   //hashCode() is a built in function by Object Class in java
+//31 for 4 bytes.
+
+int index= (iso.hashCode() & 0x7FFFFFF)  % countries.length
+	//&= and operator , 0x7FFFFFFF= a hexadecimal number to make sure that iso.hashCode() 
+	returns a positive value //countries= array in which we are searching for element having key iso.
+
+
